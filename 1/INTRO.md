@@ -1,11 +1,6 @@
 
 ![okladka.png](1/okladka.png)
 
-# Proteusz 999
-
-Janusz Zajdel, Tom Sapletta
-
----
 
 "Proteusz" to termin, który ma kilka znaczeń:
 
@@ -17,4 +12,3 @@ W sensie przenośnym, określenie "proteuszowy" odnosi się do czegoś bardzo zm
 
 Jest to również tytuł kilku dzieł literackich i artystycznych.
 
----

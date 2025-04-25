@@ -486,117 +486,105 @@
     </button>
 </div>
 
-<div class="chapter-menu" id="chapterMenu">
-    <h2 class="chapter-title">Spis rozdziałów</h2>
-    <ul class="chapters">
-        <li data-time="0">Wstęp: Idea dystopii "Zmierzch Stref"</li>
-        <li data-time="300">Rozdział 1: Granice Świadomości</li>
-        <li data-time="600">Rozdział 2: Kod Przebudzenia</li>
-        <li data-time="900">Rozdział 3: Cienie Władzy</li>
-        <li data-time="1200">Rozdział 4: Labirynt Kłamstw</li>
-        <li data-time="1500">Rozdział 5: Algorytm Przeznaczenia</li>
-        <li data-time="1800">Rozdział 6: Echo Prawdy</li>
-        <li data-time="2100">Rozdział 7: Lustro Dusz</li>
-        <li data-time="2400">Rozdział 8: Granica Realności</li>
-        <li data-time="2700">Rozdział 9: Pęknięcie Iluzji</li>
-        <li data-time="3000">Rozdział 10: Punkt Zbieżności</li>
-        <li data-time="3300">Rozdział 11: Reset</li>
-        <li data-time="3600">CZĘŚĆ II: Świt Świadomości</li>
-    </ul>
-</div>
+    <div class="chapter-menu" id="chapterMenu">
+        <h2 class="chapter-title">Spis rozdziałów</h2>
+        <ul class="chapters" id="chaptersList">
+            <!-- Lista rozdziałów będzie aktualizowana dynamicznie -->
+        </ul>
+    </div>
 
-<script>
-    // Funkcja do konwersji Markdown na HTML
-    function markdownToHtml(markdown) {
-        let html = markdown;
+    <script>
+        // Funkcja do konwersji Markdown na HTML
+        function markdownToHtml(markdown) {
+            let html = markdown;
 
-        // Obsługa linii poziomych (---, ___, ***)
-        html = html.replace(/^(\-{3,}|\_{3,}|\*{3,})$/gm, '<hr>');
+            // Obsługa linii poziomych (---, ___, ***)
+            html = html.replace(/^(\-{3,}|\_{3,}|\*{3,})$/gm, '<hr>');
 
-        // Obsługa tabel
-        // Najpierw znajdujemy wszystkie tabele w markdown
-        const tableRegex = /\|(.+)\|\s*\n\|[-|:]+\|\s*\n(\|.+\|\s*\n)+/g;
-        const tables = html.match(tableRegex);
+            // Obsługa tabel
+            // Najpierw znajdujemy wszystkie tabele w markdown
+            const tableRegex = /\|(.+)\|\s*\n\|[-|:]+\|\s*\n(\|.+\|\s*\n)+/g;
+            const tables = html.match(tableRegex);
 
-        if (tables) {
-            tables.forEach(table => {
-                // Konwertuj tabelę na HTML
-                const rows = table.split('\n').filter(row => row.trim() !== '');
-                let tableHtml = '<div class="table-container"><table>';
+            if (tables) {
+                tables.forEach(table => {
+                    // Konwertuj tabelę na HTML
+                    const rows = table.split('\n').filter(row => row.trim() !== '');
+                    let tableHtml = '<div class="table-container"><table>';
 
-                // Dodaj nagłówek tabeli
-                const headerRow = rows[0];
-                const headerCells = headerRow.split('|').filter(cell => cell.trim() !== '');
-                tableHtml += '<thead><tr>';
-                headerCells.forEach(cell => {
-                    tableHtml += `<th>${cell.trim()}</th>`;
-                });
-                tableHtml += '</tr></thead>';
-
-                // Pomiń wiersz nagłówka i separatora
-                tableHtml += '<tbody>';
-                for (let i = 2; i < rows.length; i++) {
-                    const row = rows[i];
-                    const cells = row.split('|').filter(cell => cell.trim() !== '');
-                    tableHtml += '<tr>';
-                    cells.forEach(cell => {
-                        tableHtml += `<td>${cell.trim()}</td>`;
+                    // Dodaj nagłówek tabeli
+                    const headerRow = rows[0];
+                    const headerCells = headerRow.split('|').filter(cell => cell.trim() !== '');
+                    tableHtml += '<thead><tr>';
+                    headerCells.forEach(cell => {
+                        tableHtml += `<th>${cell.trim()}</th>`;
                     });
-                    tableHtml += '</tr>';
-                }
-                tableHtml += '</tbody></table></div>';
+                    tableHtml += '</tr></thead>';
 
-                // Zamień tabelę w markdown na HTML
-                html = html.replace(table, tableHtml);
-            });
-        }
+                    // Pomiń wiersz nagłówka i separatora
+                    tableHtml += '<tbody>';
+                    for (let i = 2; i < rows.length; i++) {
+                        const row = rows[i];
+                        const cells = row.split('|').filter(cell => cell.trim() !== '');
+                        tableHtml += '<tr>';
+                        cells.forEach(cell => {
+                            tableHtml += `<td>${cell.trim()}</td>`;
+                        });
+                        tableHtml += '</tr>';
+                    }
+                    tableHtml += '</tbody></table></div>';
 
-        // Obsługa nagłówków - musi być przed pozostałymi elementami
-        html = html
-            .replace(/^# (.*$)/gm, '<h1>$1</h1>')
-            .replace(/^## (.*$)/gm, '<h2>$1</h2>')
-            .replace(/^### (.*$)/gm, '<h3>$1</h3>')
-            .replace(/^#### (.*$)/gm, '<h4>$1</h4>')
-            .replace(/^##### (.*$)/gm, '<h5>$1</h5>')
-            .replace(/^###### (.*$)/gm, '<h6>$1</h6>');
-
-        // Pozostałe elementy Markdown
-        return html
-            // Bold
-            .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-            // Italic
-            .replace(/\*(.*?)\*/g, '<em>$1</em>')
-            // Lists
-            .replace(/^\- (.*$)/gm, '<li>$1</li>')
-            .replace(/<\/li>\n<li>/g, '</li><li>')
-            .replace(/<li>(.*)<\/li>/gm, '<ul><li>$1</li></ul>')
-            .replace(/<\/ul>\n<ul>/g, '')
-            // Numbered lists
-            .replace(/^\d+\. (.*$)/gm, '<li>$1</li>')
-            .replace(/<\/li>\n<li>/g, '</li><li>')
-            .replace(/<li>(.*)<\/li>/gm, '<ol><li>$1</li></ol>')
-            .replace(/<\/ol>\n<ol>/g, '')
-            // Blockquotes
-            .replace(/^\> (.*$)/gm, '<blockquote>$1</blockquote>')
-            // Paragraphs (dodajemy zabezpieczenie przed zamianą już zamienionego HTML)
-            .replace(/\n\n([^<#\-\*\>\d].*)/gm, '<p>$1</p>')
-            // Fix multiple paragraph tags
-            .replace(/<\/p><p>/g, '</p>\n<p>');
-    }
-
-    // Funkcja do ładowania pliku Markdown
-    async function loadMarkdownFile(filePath) {
-        try {
-            const response = await fetch(filePath);
-            if (!response.ok) {
-                throw new Error(`Nie udało się załadować pliku: ${response.status}`);
+                    // Zamień tabelę w markdown na HTML
+                    html = html.replace(table, tableHtml);
+                });
             }
-            return await response.text();
-        } catch (error) {
-            console.error('Błąd ładowania pliku Markdown:', error);
-            return '# Błąd ładowania treści\n\nNie udało się załadować pliku Proteusz999.md. Sprawdź, czy plik istnieje w katalogu.';
+
+            // Obsługa nagłówków - musi być przed pozostałymi elementami
+            html = html
+                .replace(/^# (.*$)/gm, '<h1>$1</h1>')
+                .replace(/^## (.*$)/gm, '<h2>$1</h2>')
+                .replace(/^### (.*$)/gm, '<h3>$1</h3>')
+                .replace(/^#### (.*$)/gm, '<h4>$1</h4>')
+                .replace(/^##### (.*$)/gm, '<h5>$1</h5>')
+                .replace(/^###### (.*$)/gm, '<h6>$1</h6>');
+
+            // Pozostałe elementy Markdown
+            return html
+                // Bold
+                .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                // Italic
+                .replace(/\*(.*?)\*/g, '<em>$1</em>')
+                // Lists
+                .replace(/^\- (.*$)/gm, '<li>$1</li>')
+                .replace(/<\/li>\n<li>/g, '</li><li>')
+                .replace(/<li>(.*)<\/li>/gm, '<ul><li>$1</li></ul>')
+                .replace(/<\/ul>\n<ul>/g, '')
+                // Numbered lists
+                .replace(/^\d+\. (.*$)/gm, '<li>$1</li>')
+                .replace(/<\/li>\n<li>/g, '</li><li>')
+                .replace(/<li>(.*)<\/li>/gm, '<ol><li>$1</li></ol>')
+                .replace(/<\/ol>\n<ol>/g, '')
+                // Blockquotes
+                .replace(/^\> (.*$)/gm, '<blockquote>$1</blockquote>')
+                // Paragraphs (dodajemy zabezpieczenie przed zamianą już zamienionego HTML)
+                .replace(/\n\n([^<#\-\*\>\d].*)/gm, '<p>$1</p>')
+                // Fix multiple paragraph tags
+                .replace(/<\/p><p>/g, '</p>\n<p>');
         }
-    }
+
+        // Funkcja do ładowania pliku Markdown
+        async function loadMarkdownFile(filePath) {
+            try {
+                const response = await fetch(filePath);
+                if (!response.ok) {
+                    throw new Error(`Nie udało się załadować pliku: ${response.status}`);
+                }
+                return await response.text();
+            } catch (error) {
+                console.error('Błąd ładowania pliku Markdown:', error);
+                return '# Błąd ładowania treści\n\nNie udało się załadować pliku Proteusz999.md. Sprawdź, czy plik istnieje w katalogu.';
+            }
+        }
 
         document.addEventListener('DOMContentLoaded', function() {
             const audioPlayer = document.getElementById('audiobook-player');
@@ -662,27 +650,8 @@
                 audioPlayerContainer.classList.remove('active');
             });
 
-            // Chapter navigation
-            chapters.forEach(chapter => {
-                chapter.addEventListener('click', function() {
-                    const timePosition = this.getAttribute('data-time');
-                    if (audioPlayer.readyState) {
-                        audioPlayer.currentTime = timePosition;
-                        audioPlayer.play();
-                        audioPlayerContainer.classList.add('active');
-                        chapterMenu.classList.remove('active');
-                        overlay.classList.remove('active');
-                        menuToggle.classList.remove('active');
-
-                        const spans = menuToggle.querySelectorAll('span');
-                        spans[0].style.transform = 'none';
-                        spans[1].style.opacity = '1';
-                        spans[2].style.transform = 'none';
-                    } else {
-                        alert('Plik audio nie jest jeszcze gotowy. Poczekaj chwilę i spróbuj ponownie.');
-                    }
-                });
-            });
+            // Inicjalizacja listy rozdziałów
+            updateChaptersList('1');
 
             // Create floating particles
             const particleContainer = document.getElementById('particles');
@@ -737,9 +706,9 @@
                     const audioSource = document.getElementById('audio-source-part1');
 
                     if (part === '1') {
-                        audioSource.src = 'Proteusz999-czesc1.mp3';
+                        audioSource.src = 'Proteusz999a.mp3';
                     } else {
-                        audioSource.src = 'Proteusz999-czesc2.mp3';
+                        audioSource.src = 'Proteusz999b.mp3';
                     }
 
                     // Przeładowanie audio
@@ -760,7 +729,7 @@
 
             // Funkcja aktualizująca spis rozdziałów w zależności od części
             function updateChaptersList(part) {
-                const chaptersList = document.querySelector('.chapters');
+                const chaptersList = document.getElementById('chaptersList');
 
                 if (part === '1') {
                     chaptersList.innerHTML = `
@@ -794,8 +763,8 @@
                 }
 
                 // Ponowne dodanie obsługi kliknięć dla nowych elementów listy
-                const chapters = document.querySelectorAll('.chapters li');
-                chapters.forEach(chapter => {
+                const newChapters = document.querySelectorAll('#chaptersList li');
+                newChapters.forEach(chapter => {
                     chapter.addEventListener('click', function() {
                         const timePosition = this.getAttribute('data-time');
                         if (audioPlayer.readyState) {

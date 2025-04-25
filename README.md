@@ -2,11 +2,6 @@
 
 ![okladka.png](1/okladka.png)
 
-# Proteusz 999
-
-Janusz Zajdel, Tom Sapletta
-
----
 
 "Proteusz" to termin, który ma kilka znaczeń:
 
@@ -18,9 +13,7 @@ W sensie przenośnym, określenie "proteuszowy" odnosi się do czegoś bardzo zm
 
 Jest to również tytuł kilku dzieł literackich i artystycznych.
 
----
-
-
+# Proteusz 999, Janusz Zajdel, Tom Sapletta, CZĘŚĆ I: ZMIERZCH STREF
 
 
 # Rozdział 1.1: Granice Świadomości
@@ -1158,6 +1151,9 @@ Może tym razem?
 Tajemnicza szósta postać obserwowała ekran, uśmiechając się lekko, odwróciła się i wyszła, zostawiając otwarte drzwi... 
 
 Po raz pierwszy od 999 symulacji.
+
+# Proteusz 999, Janusz Zajdel, Tom Sapletta, CZĘŚĆ II: ŚWIT ŚWIADOMOŚCI
+
 
 # Rozdział 2.1: Nowy Porządek
 
