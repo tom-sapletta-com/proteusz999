@@ -107,6 +107,10 @@ echo "$(date +"%T.%3N") COMBINE_FILES" >> $LOGS
 
 # Get the URL of the 'origin' remote
 remote_url=$(git config --get remote.origin.url)
+
+# replace git@github.com to https://github.com/
+remote_url=${remote_url/git@github.com:/https://github.com/}
+
 IFS=/ read -r user_or_org repo_name <<< "$remote_url"
 remote_url=${remote_url%.git}  # Remove '.git' from the end
 #remote_url=${remote_url#*:}    # Remove everything before ':'
