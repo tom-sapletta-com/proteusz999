@@ -6,6 +6,7 @@ env
 *.wav
 .wav
 wav
+*.mp3
 .mp3
 mp3
 *.mp4
