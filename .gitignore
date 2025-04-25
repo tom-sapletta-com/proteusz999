@@ -3,7 +3,9 @@ audiobook_maker
 .idea
 venv
 env
-Proteusz999.wav
+.wav
+.mp3
+.mp4
 # Logs
 logs
 *.log
