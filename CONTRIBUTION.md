@@ -85,3 +85,10 @@ docker run --rm \
     -u "$(id -u):$(id -g)" \
     jmaupetit/md2pdf --css styles.css INPUT.MD OUTPUT.PDF
 ```
+
+
+## konwersja pdf na audiobook
+
++ [eBook to Audiobook Converter with Piper-tts](https://huggingface.co/spaces/drewThomasson/ebook2audiobookpiper-tts-GPU/blob/81daf8c663616945516abb0efd3738bc9932c183/README.md)
+
+![img.png](img/text2audio.png)

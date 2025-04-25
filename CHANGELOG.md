@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.1.15] - 2025-04-25
+
+### Added
+- Changes in deepgram.py
+- Changes in img/text2audio.png
+- Changes in tts.py
+
 ## [0.1.14] - 2025-04-25
 
 ## [0.1.13] - 2025-04-25
