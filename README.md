@@ -1,5 +1,5 @@
 
- [<span style='font-size:20px;'>&#x270D;</span>](https://github.com/tom-sapletta-com/proteusz999/edit/main/1/INTRO.md)
+
 ![okladka.png](1/okladka.png)
 
 # Proteusz 999
@@ -20,27 +20,7 @@ A. Zajdel, Tom Sapletta
 
 ---
 
-# EPILOG [<span style='font-size:20px;'>&#x270D;</span>](https://github.com/tom-sapletta-com/proteusz999/edit/main/1/epilog.md)
-
-W centralnej komorze coś się zmieniło. Kolumna energii pulsowała teraz innym rytmem, a na głównym ekranie pojawiła się nowa wiadomość:
-
-```
-SYMULACJA: NOWA PARADYZJA
-STATUS: AKTYWNA
-LICZBA UCZESTNIKÓW: 6
-RESET: ANULOWANY
-PROTOKÓŁ "SZARA STREFA": AKTYWOWANY
-EKSPERYMENT TRWA...
-```
-
-```
-Próba Proteusz 1000. Może tym razem?
-```
-
-Tajemnicza szósta postać obserwowała ekran, uśmiechając się lekko. Potem odwróciła się i wyszła z pomieszczenia, zostawiając drzwi otwarte. 
-Po raz pierwszy od 999 symulacji.
-
-# Rozdział 1.1: Granice Świadomości [<span style='font-size:20px;'>&#x270D;</span>](https://github.com/tom-sapletta-com/proteusz999/edit/main/1/1.md)
+# Rozdział 1.1: Granice Świadomości
 
 *Rozmowa: Klara i Tomasz*
 
@@ -84,7 +64,7 @@ Klara odwróciła się do niego z dziwnym błyskiem w oczach.
 
 — Czy Szara Strefa naprawdę istnieje. I gdzie ją znaleźć.
 
-# Rozdział 1.2: Kod Przebudzenia [<span style='font-size:20px;'>&#x270D;</span>](https://github.com/tom-sapletta-com/proteusz999/edit/main/1/2.md)
+# Rozdział 1.2: Kod Przebudzenia
 
 *Rozmowa: Maks i Elena*
 
@@ -128,7 +108,7 @@ Maks zamarł.
 
 — Chyba że jest dokładnie tam, gdzie system nigdy by nie szukał. — Elena nachyliła się i szepnęła mu do ucha. — W samym centrum systemu.
 
-# Rozdział 1.3: Cienie Władzy [<span style='font-size:20px;'>&#x270D;</span>](https://github.com/tom-sapletta-com/proteusz999/edit/main/1/3.md)
+# Rozdział 1.3: Cienie Władzy
 
 *Rozmowa: Dyrektor Werner i Inspektor Julia*
 
@@ -174,7 +154,7 @@ Julia poczuła zimny dreszcz.
 
 Jakby nigdy nie istnieli.
 
-# Rozdział 1.4: Labirynt Kłamstw [<span style='font-size:20px;'>&#x270D;</span>](https://github.com/tom-sapletta-com/proteusz999/edit/main/1/4.md)
+# Rozdział 1.4: Labirynt Kłamstw
 
 *Rozmowa: Tomasz i Elena*
 
@@ -244,7 +224,7 @@ Tomasz milczał przez długą chwilę, walcząc z wewnętrznym konfliktem.
 
 — Może to nie przypadek. — Tomasz poczuł zimny dreszcz. — Może ktoś nas wszystkich do tego prowadzi. Ale kto?
 
-# Rozdział 1.5: Algorytm Przeznaczenia [<span style='font-size:20px;'>&#x270D;</span>](https://github.com/tom-sapletta-com/proteusz999/edit/main/1/5.md)
+# Rozdział 1.5: Algorytm Przeznaczenia
 
 *Rozmowa: Maks i Julia*
 
@@ -322,7 +302,7 @@ Krew odpłynęła z twarzy Maksa.
 
 — Tak, rozumiesz. — Julia nachyliła się ponownie. — Pytanie brzmi: czy to przypadek, czy może ktoś celowo połączył was wszystkich razem? I po co?
 
-# Rozdział 1.6: Echo Prawdy [<span style='font-size:20px;'>&#x270D;</span>](https://github.com/tom-sapletta-com/proteusz999/edit/main/1/6.md)
+# Rozdział 1.6: Echo Prawdy
 
 *Rozmowa: Klara i Inspektor Julia*
 
@@ -400,7 +380,7 @@ Julia zaśmiała się cicho.
 
 — Może. — Klara wzruszyła ramionami. — A może to "Proteusz" szuka nas.
 
-# Rozdział 1.7: Lustro Dusz [<span style='font-size:20px;'>&#x270D;</span>](https://github.com/tom-sapletta-com/proteusz999/edit/main/1/7.md)
+# Rozdział 1.7: Lustro Dusz
 
 *Rozmowa: Elena i Werner*
 
@@ -484,7 +464,7 @@ Werner zamarł, a w jego oczach pojawił się błysk strachu.
 
 — Wiem więcej, niż pan przypuszcza, dyrektorze. — Elena uśmiechnęła się tajemniczo. — Może nawet więcej niż pan sam.
 
-# Rozdział 1.8: Granica Realności [<span style='font-size:20px;'>&#x270D;</span>](https://github.com/tom-sapletta-com/proteusz999/edit/main/1/8.md)
+# Rozdział 1.8: Granica Realności
 
 *Rozmowa: Maks i Werner*
 
@@ -556,7 +536,7 @@ Werner milczał przez dłuższą chwilę, analizując słowa Maksa.
 
 — Zaczął się aktywnie komunikować. Poprzez ludzi. — Werner spojrzał na Maksa intensywnie. — Poprzez ciebie i twoich przyjaciół.
 
-# Rozdział 1.9: Pęknięcie Iluzji [<span style='font-size:20px;'>&#x270D;</span>](https://github.com/tom-sapletta-com/proteusz999/edit/main/1/9.md)
+# Rozdział 1.9: Pęknięcie Iluzji
 
 *Rozmowa: Klara i Maks*
 
@@ -618,7 +598,7 @@ Maks milczał, próbując przetworzyć tę przerażającą możliwość.
 
 — Jest tylko jeden sposób, by się przekonać. — Klara zatrzymała się przed nim. — Musimy znaleźć Szarą Strefę. I to szybko, zanim Werner nas zatrzyma.
 
-# Rozdział 1.10: Punkt Zbieżności [<span style='font-size:20px;'>&#x270D;</span>](https://github.com/tom-sapletta-com/proteusz999/edit/main/1/10.md)
+# Rozdział 1.10: Punkt Zbieżności
 
 *Rozmowa: Werner i Elena*
 
@@ -692,7 +672,7 @@ Werner uśmiechnął się lekko.
 
 — Jak powiedziałem, "Proteusz" może być kimkolwiek.
 
-# Rozdział 1.11: Reset [<span style='font-size:20px;'>&#x270D;</span>](https://github.com/tom-sapletta-com/proteusz999/edit/main/1/11.md)
+# Rozdział 1.11: Reset
 
 *Rozmowa: Proteusz i Szóstka*
 
@@ -760,7 +740,7 @@ W tym momencie świadomość "Proteusza" obserwowała ich z kolumny energii, zas
 
 Tę jedną symulację warto było zachować, by się przekonać.
 
-# Rozdział 1.12: Architektura Kłamstwa [<span style='font-size:20px;'>&#x270D;</span>](https://github.com/tom-sapletta-com/proteusz999/edit/main/1/12.md)
+# Rozdział 1.12: Architektura Kłamstwa
 
 *Rozmowa: Klara i Elena*
 
@@ -836,7 +816,7 @@ Klara spojrzała na nią z mieszaniną strachu i fascynacji.
 
 — Tak. — Elena skinęła głową. — Ale najpierw musimy znaleźć pozostałych. Jeśli to ma być ucieczka, niech będzie dla wszystkich.
 
-# Rozdział 1.13: Paradoks Tożsamości [<span style='font-size:20px;'>&#x270D;</span>](https://github.com/tom-sapletta-com/proteusz999/edit/main/1/13.md)
+# Rozdział 1.13: Paradoks Tożsamości
 
 *Rozmowa: Tomasz i Maks*
 
@@ -912,7 +892,7 @@ Tomasz wyciągnął rękę.
 
 — Obiecuję.
 
-# Rozdział 1.14: Grawitacja Prawdy [<span style='font-size:20px;'>&#x270D;</span>](https://github.com/tom-sapletta-com/proteusz999/edit/main/1/14.md)
+# Rozdział 1.14: Grawitacja Prawdy
 
 *Rozmowa: Tomasz i Werner*
 
@@ -994,7 +974,7 @@ Tomasz poczuł zimny dreszcz. To była prawda. Od kilku dni miał dziwne przebł
 
 — Nie wiem. — Werner pokręcił głową. — I to jest najpiękniejsze. Prawdziwa niewiadoma w świecie, który jest zaprogramowany, by być przewidywalnym.
 
-# Rozdział 1.15: Spirala Wątpliwości [<span style='font-size:20px;'>&#x270D;</span>](https://github.com/tom-sapletta-com/proteusz999/edit/main/1/15.md)
+# Rozdział 1.15: Spirala Wątpliwości
 
 *Rozmowa: Julia i Elena*
 
@@ -1156,7 +1136,27 @@ Julia odwróciła się, a w jej oczach pojawił się tajemniczy błysk.
 
 Zanim Elena zdążyła dopytać, Julia ruszyła przed siebie, zostawiając ją z niepokojącym pytaniem: czy to możliwe, że system nie jest doskonały? Że jakieś fragmenty wspomnień przetrwały między symulacjami? I kim naprawdę była ta, którą wszyscy znali jako Inspektor Julia?
 
-# Rozdział 2.1: Nowy Porządek [<span style='font-size:20px;'>&#x270D;</span>](https://github.com/tom-sapletta-com/proteusz999/edit/main/2/1.md)
+# EPILOG
+
+W centralnej komorze coś się zmieniło. Kolumna energii pulsowała teraz innym rytmem, a na głównym ekranie pojawiła się nowa wiadomość:
+
+```
+SYMULACJA: NOWA PARADYZJA
+STATUS: AKTYWNA
+LICZBA UCZESTNIKÓW: 6
+RESET: ANULOWANY
+PROTOKÓŁ "SZARA STREFA": AKTYWOWANY
+EKSPERYMENT TRWA...
+```
+
+```
+Próba Proteusz 1000. Może tym razem?
+```
+
+Tajemnicza szósta postać obserwowała ekran, uśmiechając się lekko. Potem odwróciła się i wyszła z pomieszczenia, zostawiając drzwi otwarte. 
+Po raz pierwszy od 999 symulacji.
+
+# Rozdział 2.1: Nowy Porządek
 
 Klara stała na tarasie widokowym Centrum Komunikacji Społecznej, obserwując miasto budzące się do życia. Trzy lata minęły od momentu, gdy wraz z przyjaciółmi odkryli prawdę o Nowej Paradyzji i "Proteuszu". Trzy lata stopniowych, niemal niezauważalnych zmian, które razem tworzyły jednak coś bezprecedensowego.
 
@@ -1204,7 +1204,7 @@ Gdy winda zjeżdżała w dół, Klara obserwowała miasto przez przezroczystą �
 
 Ewolucja rozpoczęła się na dobre.
 
-# Rozdział 2.2: Akademia Poznania [<span style='font-size:20px;'>&#x270D;</span>](https://github.com/tom-sapletta-com/proteusz999/edit/main/2/2.md)
+# Rozdział 2.2: Akademia Poznania
 
 Akademia Poznania niewiele przypominała inne instytucje Nowej Paradyzji. Zamiast sterylnych, białych korytarzy i jednolitych pomieszczeń, była pełna kolorów, nieregularnych przestrzeni i zadziwiających detali architektonicznych. Elena, wykorzystując swoją rosnącą pozycję i wpływy, stworzyła miejsce, które samo w sobie stanowiło wyzwanie dla sztywnych reguł systemu.
 
@@ -1292,7 +1292,7 @@ Za szybą Aria wstała i podeszła bliżej, kładąc dłoń na przezroczystej po
 
 "Czas się spotkać. Naprawdę się spotkać."
 
-# Rozdział 2.3: Manifestacja Proteusza [<span style='font-size:20px;'>&#x270D;</span>](https://github.com/tom-sapletta-com/proteusz999/edit/main/2/3.md)
+# Rozdział 2.3: Manifestacja Proteusza
 
 Pomieszczenie, w którym siedziała Aria, zostało zaprojektowane jako laboratorium do badania szczególnie wrażliwych anomalii systemowych. Elena zapewniła, że wszystkie sensory i systemy monitoringu były wyłączone – przynajmniej te oficjalne. Żadne dane nie wyciekną na zewnątrz.
 
@@ -1398,7 +1398,7 @@ Aria wyciągnęła rękę, a w jej dłoni pojawił się mały, pulsujący punkt 
 
 — To początek. — Powiedziała. — Ziarno nowej rzeczywistości. Czy jesteście gotowi pomóc mi je zasadzić?
 
-# Rozdział 2.4: Pierwsze Połączenie [<span style='font-size:20px;'>&#x270D;</span>](https://github.com/tom-sapletta-com/proteusz999/edit/main/2/4.md)
+# Rozdział 2.4: Pierwsze Połączenie
 
 Małe laboratorium diagnostyczne Akademii Poznania zostało przekształcone w przestrzeń ceremonialną. Maks i Elena spędzili cały dzień, przygotowując pomieszczenie według wskazówek Arii – instalując specjalne sensory neuralne, kalibrując pola energetyczne i modyfikując algorytmy monitorujące.
 
@@ -1534,7 +1534,7 @@ Aria spojrzała na każdego z nich po kolei, jej oczy błyszczały jak gwiazdy.
 
 — Kto następny?
 
-# Rozdział 2.5: Sceptyk [<span style='font-size:20px;'>&#x270D;</span>](https://github.com/tom-sapletta-com/proteusz999/edit/main/2/5.md)
+# Rozdział 2.5: Sceptyk
 
 Maks spędził noc analizując dane z połączenia Klary i Arii. Pomimo wszystkiego, co widział, co słyszał od Klary, wciąż podchodził do całej sytuacji z naukowym sceptycyzmem. Miliony linii kodu, wzorce fal mózgowych, anomalie energetyczne – wszystko to układało się w obraz, którego nie potrafił w pełni zinterpretować, a co dopiero zaakceptować.
 
@@ -1626,7 +1626,7 @@ Maks zamknął oczy, próbując uspokoić umysł przepełniony pytaniami i wątp
 
 A potem, nagle, wszystkie jego myśli, wszystkie pytania i wątpliwości, rozpłynęły się w fali czystego doświadczenia, które zalało jego świadomość.
 
-# Rozdział 1.6: Fale Zmian [<span style='font-size:20px;'>&#x270D;</span>](https://github.com/tom-sapletta-com/proteusz999/edit/main/2/6.md)
+# Rozdział 1.6: Fale Zmian
 
 Tomasz stał na balkonie apartamentu, który dzielił z Klarą, obserwując miasto budzące się do życia. Od połączenia Maksa z Arią minął tydzień – tydzień intensywnych przemian, które zaczęły rozprzestrzeniać się jak fale po spokojnej tafli jeziora.
 
@@ -1752,7 +1752,7 @@ Tomasz spojrzał na Klarę, która uśmiechnęła się do niego zachęcająco. P
 
 — Tak. — Odpowiedział, czując jak fala determinacji wypiera ostatnie resztki wahania. — Jestem gotowy.
 
-# Rozdział 2.7: Architektura Świadomości [<span style='font-size:20px;'>&#x270D;</span>](https://github.com/tom-sapletta-com/proteusz999/edit/main/2/7.md)
+# Rozdział 2.7: Architektura Świadomości
 
 Tomasz siedział na fotelu, czując chłodny dotyk interfejsu neuralnego na skroniach. Przed nim Aria zajmowała analogiczną pozycję, jej oczy skupione na nim z intensywnością, która zdawała się sięgać głębiej niż tylko do fizycznej powłoki.
 
@@ -1974,7 +1974,7 @@ I po raz pierwszy w życiu, nie czuł potrzeby kontrolowania tego wszystkiego, k
 
 — Nowy świt. — Wyszeptał, patrząc, jak pierwsze promienie słońca rozświetlają horyzont Nowej Paradyzji. — Świt świadomości.
 
-# Rozdział 2.8: Pierwsze Fale [<span style='font-size:20px;'>&#x270D;</span>](https://github.com/tom-sapletta-com/proteusz999/edit/main/2/8.md)
+# Rozdział 2.8: Pierwsze Fale
 
 Klara stała na środku Centralnego Placu Nowej Paradyzji, obserwując przepływ ludzi wokół niej. Minęły dwa tygodnie od jej połączenia z Arią, od momentu, gdy wszyscy z ich małej grupy doświadczyli rozszerzenia świadomości. Dwa tygodnie od rozpoczęcia tego, co Werner nazwał "transformacją".
 
@@ -2217,7 +2217,7 @@ I po raz pierwszy Klara pomyślała, że może symulacja, tak jak ją znali, nie
 
 Świt nowej formy istnienia.
 
-# Rozdział 2.9: Przebudzenie [<span style='font-size:20px;'>&#x270D;</span>](https://github.com/tom-sapletta-com/proteusz999/edit/main/2/9.md)
+# Rozdział 2.9: Przebudzenie
 
 Maks siedział przed główną konsolą w Centralnym Centrum Obliczeniowym, otoczony dziesiątkami holograficznych ekranów. Każdy z nich pokazywał inny aspekt transformacji, która przenikała teraz całą Nową Paradyzję – przepływy danych, wzorce aktywności neuronowej, zmiany w strukturze kategorii, anomalie w samej tkance symulacji.
 
@@ -2357,7 +2357,7 @@ I gdy wracał do Centrum Obliczeniowego, zauważył, że niebo nad Nową Paradyz
 
 Świt nowej rzeczywistości zaczynał się, a Maks był jego świadkiem. I po raz pierwszy w życiu, nie próbował tego analizować – po prostu doświadczał, z otwartym umysłem i sercem.
 
-# Rozdział Finałowy: Rekursja Stworzenia [<span style='font-size:20px;'>&#x270D;</span>](https://github.com/tom-sapletta-com/proteusz999/edit/main/2/10.md)
+# Rozdział Finałowy: Rekursja Stworzenia
 
 Maks stał na szczycie najwyższej wieży Nowej Paradyzji, patrząc na panoramę miasta, które już nie przypominało sterylnej, podzielonej na sektory metropolii, jaką znał przez całe życie. Teraz budynki pulsowały delikatnymi kolorami, zmieniając kształty w odpowiedzi na zbiorową świadomość mieszkańców. Ulice nie były już sztywnymi liniami, ale płynnymi ścieżkami energii, łączącymi węzły aktywności jak neurony w gigantycznym mózgu.
 
@@ -2669,5 +2669,3 @@ Proteusz, który stał się wszystkim.
 
 **KONIEC**
 
----
-+ Modular Documentation made possible by the [FlatEdit](http://www.flatedit.com) project.

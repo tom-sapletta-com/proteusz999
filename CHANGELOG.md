@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.1.9] - 2025-04-25
+
+### Removed
+- Changes in flatedit.sh
+
 ## [0.1.8] - 2025-04-25
 
 ## [0.1.7] - 2025-04-25

@@ -1,4 +1,4 @@
 #!/bin/bash
-python flatedit.py
+./flatedit
 python changelog.py
 bash git.sh

@@ -130,14 +130,15 @@ for FILE in $PROJECT_LIST; do
   BODY=$(tail -n +$((header_line_count + 1)) "$FILE")
   # Access the HEADER and BODY variables
   # get first line from file
-  echo "${HEADER} [<span style='font-size:20px;'>&#x270D;</span>](${remote_url}/edit/main/${FILE})" >> $OUTPUT
+  #echo "${HEADER} [<span style='font-size:20px;'>&#x270D;</span>](${remote_url}/edit/main/${FILE})" >> $OUTPUT
+  echo "${HEADER}" >> $OUTPUT
   echo "$BODY" >> $OUTPUT
   #cat $FILE >> $OUTPUT
   echo "" >> $OUTPUT
 done
 
-echo "---" >> $OUTPUT
-echo "+ Modular Documentation made possible by the [FlatEdit](http://www.flatedit.com) project." >> $OUTPUT
+#echo "---" >> $OUTPUT
+#echo "+ Modular Documentation made possible by the [FlatEdit](http://www.flatedit.com) project." >> $OUTPUT
 
 echo "`date +"%T.%3N"` STOP" >> $LOGS
 cat $LOGS
