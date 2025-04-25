@@ -26,3 +26,6 @@
 + [2 # Rozdział 2.8: Pierwsze Fale](http://github.com/2)
 + [2 # Rozdział 2.9: Przebudzenie](http://github.com/2)
 + [2 # Rozdział Finałowy: Rekursja Stworzenia](http://github.com/2)
++ [3 # Wstęp](http://github.com/3)
++ [3 # Świt Świadomości](http://github.com/3)
++ [3 Zakończenie "Proteusz, który stał się wszystkim" jest bardzo sensowne i doskonale dopełnia całą historię z kilku powodów:](http://github.com/3)
