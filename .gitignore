@@ -3,9 +3,14 @@ audiobook_maker
 .idea
 venv
 env
+*.wav
 .wav
+wav
 .mp3
+mp3
+*.mp4
 .mp4
+mp4
 # Logs
 logs
 *.log
