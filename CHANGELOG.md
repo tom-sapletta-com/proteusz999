@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.1.16] - 2025-04-25
+
+### Added
+- Changes in 1/0.md
+- Changes in Proteusz999.md
+- Changes in index.html
+- Changes in wav2mp3.sh
+
 ## [0.1.15] - 2025-04-25
 
 ### Added

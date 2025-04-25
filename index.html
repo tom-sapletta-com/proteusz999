@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proteusz 999 - Janusz Zajdel, Tom Sapletta</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #1a3366;
+            --secondary-color: #ff6b35;
+            --text-light: #f0f4ff;
+            --background-dark: #0a1730;
+            --background-gradient-start: #0a1730;
+            --background-gradient-end: #2a4a8a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--background-gradient-start), var(--background-gradient-end));
+            color: var(--text-light);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background-color: rgba(10, 23, 48, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .site-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .menu-toggle {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 21px;
+            cursor: pointer;
+            z-index: 101;
+        }
+
+        .menu-toggle span {
+            width: 100%;
+            height: 3px;
+            background-color: var(--text-light);
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+
+        .audio-button {
+            background: transparent;
+            border: none;
+            color: var(--text-light);
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .audio-button i {
+            color: var(--secondary-color);
+        }
+
+        .cover-section {
+            width: 100%;
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .cover-container {
+            position: relative;
+            width: 100%;
+            max-width: 400px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            margin-bottom: 1.5rem;
+        }
+
+        .cover-img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .book-title {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .book-authors {
+            font-size: 1.2rem;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 1rem;
+        }
+
+        .book-content {
+            padding: 0 1rem 3rem;
+            line-height: 1.6;
+        }
+
+        .book-content h1,
+        .book-content h2,
+        .book-content h3 {
+            color: var(--secondary-color);
+            margin: 1.5em 0 0.7em;
+        }
+
+        .book-content p {
+            margin-bottom: 1em;
+        }
+
+        .book-content ul,
+        .book-content ol {
+            margin: 0 0 1em 1.5em;
+        }
+
+        .book-content blockquote {
+            border-left: 3px solid var(--secondary-color);
+            padding-left: 1em;
+            margin: 1em 0 1em 1em;
+            font-style: italic;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .loading-message {
+            text-align: center;
+            padding: 2rem;
+            font-style: italic;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Audio Player */
+        .audio-player {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(10, 23, 48, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 0.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+            z-index: 99;
+        }
+
+        .audio-player.active {
+            transform: translateY(0);
+        }
+
+        .player-controls {
+            flex: 1;
+            display: flex;
+            align-items: center;
+        }
+
+        .player-info {
+            flex: 0 0 auto;
+            margin-right: 1rem;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        audio {
+            flex: 1;
+            height: 30px;
+        }
+
+        .close-player {
+            flex: 0 0 auto;
+            background: transparent;
+            border: none;
+            color: var(--text-light);
+            cursor: pointer;
+            font-size: 1.2rem;
+            margin-left: 1rem;
+        }
+
+        /* Chapters Menu */
+        .chapter-menu {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 80%;
+            max-width: 300px;
+            background-color: rgba(10, 23, 48, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+            z-index: 100;
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+            overflow-y: auto;
+            padding: 5rem 1rem 1rem;
+        }
+
+        .chapter-menu.active {
+            transform: translateX(0);
+        }
+
+        .chapter-title {
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            padding-bottom: 0.5rem;
+        }
+
+        .chapters {
+            list-style-type: none;
+        }
+
+        .chapters li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .chapters li:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Backgrounds */
+        .particle-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .particle {
+            position: absolute;
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            pointer-events: none;
+            opacity: 0;
+            animation: float 15s ease-in infinite;
+        }
+
+        @keyframes float {
+            0% {
+                opacity: 0;
+                transform: translateY(0) rotate(0deg);
+            }
+            10% {
+                opacity: 0.8;
+            }
+            90% {
+                opacity: 0.2;
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-100vh) rotate(360deg);
+            }
+        }
+
+        /* Overlay for menu open */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 99;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        .overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        @media (min-width: 768px) {
+            .book-content {
+                padding: 0 2rem 3rem;
+                max-width: 800px;
+                margin: 0 auto;
+            }
+
+            .cover-section {
+                padding: 2rem;
+            }
+
+            .book-title {
+                font-size: 2.5rem;
+            }
+
+            .menu-toggle span:first-child {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+
+            .menu-toggle span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .menu-toggle span:last-child {
+                transform: rotate(-45deg) translate(7px, -6px);
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="particle-container" id="particles"></div>
+<div class="overlay" id="overlay"></div>
+
+<header>
+    <div class="site-title">PROTEUSZ 999</div>
+    <button class="audio-button" id="audioButton">
+        <i class="fas fa-headphones"></i>
+    </button>
+    <div class="menu-toggle" id="menuToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</header>
+
+<div class="cover-section">
+    <div class="cover-container">
+        <img src="/1/okladka.png" alt="Okładka książki Proteusz 999" class="cover-img">
+    </div>
+    <h1 class="book-title">PROTEUSZ 999</h1>
+    <div class="book-authors">Janusz Zajdel, Tom Sapletta</div>
+</div>
+
+<div id="book-content" class="book-content">
+    <div class="loading-message">Ładowanie treści książki...</div>
+</div>
+
+<div class="audio-player" id="audioPlayer">
+    <div class="player-info">
+        <i class="fas fa-headphones"></i> Proteusz 999
+    </div>
+    <div class="player-controls">
+        <audio id="audiobook-player" controls>
+            <source src="Proteusz999.mp3" type="audio/mpeg">
+            <source src="Proteusz999.wav" type="audio/wav">
+            Twoja przeglądarka nie obsługuje elementu audio.
+        </audio>
+    </div>
+    <button class="close-player" id="closePlayer">
+        <i class="fas fa-times"></i>
+    </button>
+</div>
+
+<div class="chapter-menu" id="chapterMenu">
+    <h2 class="chapter-title">Spis rozdziałów</h2>
+    <ul class="chapters">
+        <li data-time="0">Wstęp: Idea dystopii "Zmierzch Stref"</li>
+        <li data-time="300">Rozdział 1: Granice Świadomości</li>
+        <li data-time="600">Rozdział 2: Kod Przebudzenia</li>
+        <li data-time="900">Rozdział 3: Cienie Władzy</li>
+        <li data-time="1200">Rozdział 4: Labirynt Kłamstw</li>
+        <li data-time="1500">Rozdział 5: Algorytm Przeznaczenia</li>
+        <li data-time="1800">Rozdział 6: Echo Prawdy</li>
+        <li data-time="2100">Rozdział 7: Lustro Dusz</li>
+        <li data-time="2400">Rozdział 8: Granica Realności</li>
+        <li data-time="2700">Rozdział 9: Pęknięcie Iluzji</li>
+        <li data-time="3000">Rozdział 10: Punkt Zbieżności</li>
+        <li data-time="3300">Rozdział 11: Reset</li>
+        <li data-time="3600">CZĘŚĆ II: Świt Świadomości</li>
+    </ul>
+</div>
+
+<script>
+    // Funkcja do konwersji Markdown na HTML
+    function markdownToHtml(markdown) {
+        // Podstawowa implementacja konwersji Markdown do HTML
+        return markdown
+            // Headers
+            .replace(/^# (.*$)/gm, '<h1>$1</h1>')
+            .replace(/^## (.*$)/gm, '<h2>$1</h2>')
+            .replace(/^### (.*$)/gm, '<h3>$1</h3>')
+            // Bold
+            .replace(/\*\*(.*)\*\*/gm, '<strong>$1</strong>')
+            // Italic
+            .replace(/\*(.*)\*/gm, '<em>$1</em>')
+            // Lists
+            .replace(/^\- (.*$)/gm, '<li>$1</li>')
+            .replace(/<\/li>\n<li>/g, '</li><li>')
+            .replace(/<li>(.*)<\/li>/gm, '<ul><li>$1</li></ul>')
+            .replace(/<\/ul>\n<ul>/g, '')
+            // Numbered lists
+            .replace(/^\d+\. (.*$)/gm, '<li>$1</li>')
+            .replace(/<\/li>\n<li>/g, '</li><li>')
+            .replace(/<li>(.*)<\/li>/gm, '<ol><li>$1</li></ol>')
+            .replace(/<\/ol>\n<ol>/g, '')
+            // Blockquotes
+            .replace(/^\> (.*$)/gm, '<blockquote>$1</blockquote>')
+            // Paragraphs
+            .replace(/\n\n([^#\-\*\>\d].*)/gm, '<p>$1</p>')
+            // Fix multiple paragraph tags
+            .replace(/<\/p><p>/g, '</p>\n<p>');
+    }
+
+    // Funkcja do ładowania pliku Markdown
+    async function loadMarkdownFile(filePath) {
+        try {
+            const response = await fetch(filePath);
+            if (!response.ok) {
+                throw new Error(`Nie udało się załadować pliku: ${response.status}`);
+            }
+            return await response.text();
+        } catch (error) {
+            console.error('Błąd ładowania pliku Markdown:', error);
+            return '# Błąd ładowania treści\n\nNie udało się załadować pliku Proteusz999.md. Sprawdź, czy plik istnieje w katalogu.';
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const audioPlayer = document.getElementById('audiobook-player');
+        const bookContent = document.getElementById('book-content');
+        const chapters = document.querySelectorAll('.chapters li');
+        const menuToggle = document.getElementById('menuToggle');
+        const chapterMenu = document.getElementById('chapterMenu');
+        const overlay = document.getElementById('overlay');
+        const audioButton = document.getElementById('audioButton');
+        const audioPlayerContainer = document.getElementById('audioPlayer');
+        const closePlayer = document.getElementById('closePlayer');
+
+        // Ładowanie treści książki z pliku Markdown
+        loadMarkdownFile('Proteusz999.md')
+            .then(markdown => {
+                const htmlContent = markdownToHtml(markdown);
+                bookContent.innerHTML = htmlContent;
+            })
+            .catch(error => {
+                bookContent.innerHTML = `<div class="error-message">
+                        <h3>Błąd ładowania treści</h3>
+                        <p>${error.message}</p>
+                        <p>Sprawdź, czy plik Proteusz999.md istnieje w katalogu.</p>
+                    </div>`;
+            });
+
+        // Menu rozdziałów
+        menuToggle.addEventListener('click', function() {
+            chapterMenu.classList.toggle('active');
+            overlay.classList.toggle('active');
+
+            // Animacja ikon menu (hamburger -> X)
+            this.classList.toggle('active');
+
+            const spans = this.querySelectorAll('span');
+            if (this.classList.contains('active')) {
+                spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+                spans[1].style.opacity = '0';
+                spans[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
+            } else {
+                spans[0].style.transform = 'none';
+                spans[1].style.opacity = '1';
+                spans[2].style.transform = 'none';
+            }
+        });
+
+        overlay.addEventListener('click', function() {
+            chapterMenu.classList.remove('active');
+            overlay.classList.remove('active');
+            menuToggle.classList.remove('active');
+
+            const spans = menuToggle.querySelectorAll('span');
+            spans[0].style.transform = 'none';
+            spans[1].style.opacity = '1';
+            spans[2].style.transform = 'none';
+        });
+
+        // Audio player
+        audioButton.addEventListener('click', function() {
+            audioPlayerContainer.classList.add('active');
+        });
+
+        closePlayer.addEventListener('click', function() {
+            audioPlayerContainer.classList.remove('active');
+        });
+
+        // Chapter navigation
+        chapters.forEach(chapter => {
+            chapter.addEventListener('click', function() {
+                const timePosition = this.getAttribute('data-time');
+                if (audioPlayer.readyState) {
+                    audioPlayer.currentTime = timePosition;
+                    audioPlayer.play();
+                    audioPlayerContainer.classList.add('active');
+                    chapterMenu.classList.remove('active');
+                    overlay.classList.remove('active');
+                    menuToggle.classList.remove('active');
+
+                    const spans = menuToggle.querySelectorAll('span');
+                    spans[0].style.transform = 'none';
+                    spans[1].style.opacity = '1';
+                    spans[2].style.transform = 'none';
+                } else {
+                    alert('Plik audio nie jest jeszcze gotowy. Poczekaj chwilę i spróbuj ponownie.');
+                }
+            });
+        });
+
+        // Create floating particles
+        const particleContainer = document.getElementById('particles');
+        const particleCount = 30;
+
+        for (let i = 0; i < particleCount; i++) {
+            createParticle();
+        }
+
+        function createParticle() {
+            const particle = document.createElement('div');
+            particle.classList.add('particle');
+
+            // Random styling
+            const size = Math.random() * 5 + 1;
+            const posX = Math.random() * 100;
+            const delay = Math.random() * 10;
+            const duration = Math.random() * 10 + 10;
+            const opacity = Math.random() * 0.6 + 0.2;
+
+            particle.style.width = `${size}px`;
+            particle.style.height = `${size}px`;
+            particle.style.left = `${posX}%`;
+            particle.style.bottom = `-${size}px`;
+            particle.style.opacity = opacity;
+            particle.style.animationDuration = `${duration}s`;
+            particle.style.animationDelay = `${delay}s`;
+
+            particleContainer.appendChild(particle);
+
+            // Remove and recreate particle after animation ends
+            setTimeout(() => {
+                particle.remove();
+                createParticle();
+            }, (delay + duration) * 1000);
+        }
+    });
+</script>
+</body>
+</html>

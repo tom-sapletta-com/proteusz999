@@ -183,7 +183,6 @@ Ta postać funkcjonuje jako finalny element zaskoczenia, pozostawiając otwarte 
 
 
 
-
 ## Nawiązania do twórczości Janusza A. Zajdla
 
 Historia zawiera liczne nawiązania do twórczości Zajdla:
