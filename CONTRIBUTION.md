@@ -24,9 +24,9 @@ Options:
 ```
 
 For example, try to generate the project documentation with:
-
+[Proteusz999.pdf](Proteusz999.pdf)
 ```bash
-md2pdf README.md README.pdf
+md2pdf README.md Proteusz999.pdf
 ```
 
 Optionally, you may load an external style:

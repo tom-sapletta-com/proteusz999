@@ -29,3 +29,4 @@
 + [3 # Wstęp](file:///home/tom/github/tom-sapletta-com/proteusz999/3/index.html)
 + [3 # Świt Świadomości](file:///home/tom/github/tom-sapletta-com/proteusz999/3/index.html)
 + [3 Zakończenie "Proteusz, który stał się wszystkim" jest bardzo sensowne i doskonale dopełnia całą historię z kilku powodów:](file:///home/tom/github/tom-sapletta-com/proteusz999/3/index.html)
++ [3 # Okładka książki zatytułowanej "Proteusz 999":](file:///home/tom/github/tom-sapletta-com/proteusz999/3/index.html)

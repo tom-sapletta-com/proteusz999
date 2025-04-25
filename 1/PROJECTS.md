@@ -29,3 +29,4 @@
 + [3 # Wstęp](http://github.com/3)
 + [3 # Świt Świadomości](http://github.com/3)
 + [3 Zakończenie "Proteusz, który stał się wszystkim" jest bardzo sensowne i doskonale dopełnia całą historię z kilku powodów:](http://github.com/3)
++ [3 # Okładka książki zatytułowanej "Proteusz 999":](http://github.com/3)

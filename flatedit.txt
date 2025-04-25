@@ -28,3 +28,4 @@
 3/wstep.md
 3/zarys.md
 3/pytania.md
+3/okladka.md
