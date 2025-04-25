@@ -1,2 +1,3 @@
-# proteusz999
+# Proteusz 999
+
 A. Zajdel, Tom Sapletta
