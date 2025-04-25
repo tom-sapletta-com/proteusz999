@@ -1,7 +1,9 @@
+
+![okladka.png](1/okladka.png)
+
 # Proteusz 999
 
 A. Zajdel, Tom Sapletta
-
 
 "Proteusz" to termin, który ma kilka znaczeń:
 

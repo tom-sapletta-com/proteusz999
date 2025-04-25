@@ -1,4 +1,5 @@
 + [github.com](http://github.com)
++ [1 ](http://github.com/1)
 + [1 # Rozdział 1: Granice Świadomości](http://github.com/1)
 + [1 ](http://github.com/1)
 + [1 # Rozdział 3: Cienie Władzy](http://github.com/1)
