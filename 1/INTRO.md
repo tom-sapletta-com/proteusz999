@@ -3,7 +3,7 @@
 
 # Proteusz 999
 
-Andrzej Zajdel, Tom Sapletta
+Janusz Zajdel, Tom Sapletta
 
 ---
 

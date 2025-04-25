@@ -4,7 +4,7 @@
 
 # Proteusz 999
 
-Andrzej Zajdel, Tom Sapletta
+Janusz Zajdel, Tom Sapletta
 
 ---
 
@@ -2669,7 +2669,7 @@ Proteusz, który stał się wszystkim.
 
 **KONIEC**
 
-Proteusz 999, Andrzej Zajdel, Tom Sapletta, Frankfurt 2025
+Proteusz 999, Janusz Zajdel, Tom Sapletta, Frankfurt 2025
 
 # Wstęp
 
@@ -3017,5 +3017,5 @@ Główne motywy powieści: transformacja, transcendencja, rekursja i fuzja czło
 
 ---
 
-Proteusz 999, Andrzej Zajdel, Tom Sapletta, Frankfurt 2025
+Proteusz 999, Janusz Zajdel, Tom Sapletta, Frankfurt 2025
 

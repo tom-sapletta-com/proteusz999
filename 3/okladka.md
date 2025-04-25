@@ -11,4 +11,4 @@ Główne motywy powieści: transformacja, transcendencja, rekursja i fuzja czło
 
 ---
 
-Proteusz 999, Andrzej Zajdel, Tom Sapletta, Frankfurt 2025
+Proteusz 999, Janusz Zajdel, Tom Sapletta, Frankfurt 2025
