@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.1.12] - 2025-04-25
+
+### Removed
+- Changes in venv/lib/python3.12/site-packages/fontTools/voltLib/__pycache__/lexer.cpython-312.pyc
+- Changes in venv/lib/python3.12/site-packages/fontTools/voltLib/__pycache__/parser.cpython-312.pyc
+- Changes in venv/lib/python3.12/site-packages/fontTools/voltLib/__pycache__/voltToFea.cpython-312.pyc
+- Changes in venv/lib/python3.12/site-packages/tinycss2/__pycache__/__init__.cpython-312.pyc
+- Changes in venv/lib/python3.12/site-packages/tinycss2/__pycache__/ast.cpython-312.pyc
+- Changes in venv/lib/python3.12/site-packages/tinycss2/__pycache__/bytes.cpython-312.pyc
+- Changes in venv/lib/python3.12/site-packages/tinycss2/__pycache__/color3.cpython-312.pyc
+- Changes in venv/lib/python3.12/site-packages/tinycss2/__pycache__/color4.cpython-312.pyc
+- Changes in venv/lib/python3.12/site-packages/tinycss2/__pycache__/nth.cpython-312.pyc
+- Changes in venv/lib/python3.12/site-packages/tinycss2/__pycache__/parser.cpython-312.pyc
+- Changes in venv/lib/python3.12/site-packages/tinycss2/__pycache__/serializer.cpython-312.pyc
+- Changes in venv/lib/python3.12/site-packages/tinycss2/__pycache__/tokenizer.cpython-312.pyc
+
 ## [0.1.11] - 2025-04-25
 
 ### Added
