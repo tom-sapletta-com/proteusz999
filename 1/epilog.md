@@ -11,10 +11,9 @@ PROTOKÓŁ "SZARA STREFA": AKTYWOWANY
 EKSPERYMENT TRWA...
 ```
 
-A potem, mniejszymi literami, ostatni dopisek:
-
 ```
 Próba Proteusz 1000. Może tym razem?
 ```
 
-Tajemnicza szósta postać obserwowała ekran, uśmiechając się lekko. Potem odwróciła się i wyszła z pomieszczenia, zostawiając drzwi otwarte. Po raz pierwszy od tysiąca symulacji.
+Tajemnicza szósta postać obserwowała ekran, uśmiechając się lekko. Potem odwróciła się i wyszła z pomieszczenia, zostawiając drzwi otwarte. 
+Po raz pierwszy od 999 symulacji.
