@@ -1102,26 +1102,8 @@ Julia odwróciła się, a w jej oczach pojawił się tajemniczy błysk.
 
 Zanim Elena zdążyła dopytać, Julia ruszyła przed siebie, zostawiając ją z niepokojącym pytaniem: czy to możliwe, że system nie jest doskonały? Że jakieś fragmenty wspomnień przetrwały między symulacjami? I kim naprawdę była ta, którą wszyscy znali jako Inspektor Julia?
 
-# EPILOG [<span style='font-size:20px;'>&#x270D;</span>](git@github.com:tom-sapletta-com/proteusz999/edit/main/1/epilog.md)
+ [<span style='font-size:20px;'>&#x270D;</span>](git@github.com:tom-sapletta-com/proteusz999/edit/main/#1/epilog.md)
 
-W centralnej komorze coś się zmieniło. Kolumna energii pulsowała teraz innym rytmem, a na głównym ekranie pojawiła się nowa wiadomość:
-
-```
-SYMULACJA: NOWA PARADYZJA
-STATUS: AKTYWNA
-LICZBA UCZESTNIKÓW: 6
-RESET: ANULOWANY
-PROTOKÓŁ "SZARA STREFA": AKTYWOWANY
-EKSPERYMENT TRWA...
-```
-
-A potem, mniejszymi literami, ostatni dopisek:
-
-```
-Próba Proteusz 1000. Może tym razem?
-```
-
-Tajemnicza szósta postać obserwowała ekran, uśmiechając się lekko. Potem odwróciła się i wyszła z pomieszczenia, zostawiając drzwi otwarte. Po raz pierwszy od tysiąca symulacji.
 
 # Rozdział 1: Nowy Porządek [<span style='font-size:20px;'>&#x270D;</span>](git@github.com:tom-sapletta-com/proteusz999/edit/main/2/1.md)
 

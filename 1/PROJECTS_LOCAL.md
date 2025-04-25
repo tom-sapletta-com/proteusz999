@@ -14,7 +14,7 @@
 + [1 # Rozdział 13: Paradoks Tożsamości](file:///home/tom/github/tom-sapletta-com/proteusz999/1/index.html)
 + [1 # Rozdział 14: Grawitacja Prawdy](file:///home/tom/github/tom-sapletta-com/proteusz999/1/index.html)
 + [1 # Rozdział 15: Spirala Wątpliwości](file:///home/tom/github/tom-sapletta-com/proteusz999/1/index.html)
-+ [1 # EPILOG](file:///home/tom/github/tom-sapletta-com/proteusz999/1/index.html)
++ [#1 ](file:///home/tom/github/tom-sapletta-com/proteusz999/#1/index.html)
 + [2 # Rozdział 1: Nowy Porządek](file:///home/tom/github/tom-sapletta-com/proteusz999/2/index.html)
 + [2 ](file:///home/tom/github/tom-sapletta-com/proteusz999/2/index.html)
 + [2 # Rozdział 3: Manifestacja Proteusza](file:///home/tom/github/tom-sapletta-com/proteusz999/2/index.html)

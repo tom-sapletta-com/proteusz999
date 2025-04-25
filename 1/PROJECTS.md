@@ -14,7 +14,7 @@
 + [1 # Rozdział 13: Paradoks Tożsamości](http://github.com/1)
 + [1 # Rozdział 14: Grawitacja Prawdy](http://github.com/1)
 + [1 # Rozdział 15: Spirala Wątpliwości](http://github.com/1)
-+ [1 # EPILOG](http://github.com/1)
++ [#1 ](http://github.com/#1)
 + [2 # Rozdział 1: Nowy Porządek](http://github.com/2)
 + [2 ](http://github.com/2)
 + [2 # Rozdział 3: Manifestacja Proteusza](http://github.com/2)
