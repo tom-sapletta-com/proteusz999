@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.1.11] - 2025-04-25
+
+### Added
+- Changes in CONTRIBUTION.md
+- Changes in Proteusz999.pdf
+- Changes in requirements.txt
+
 ## [0.1.10] - 2025-04-25
 
 ## [0.1.9] - 2025-04-25

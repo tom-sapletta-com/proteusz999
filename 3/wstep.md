@@ -110,23 +110,23 @@ Dystopia silnie nawiązuje do twórczości Janusza A. Zajdla, łącząc elementy
 
 ### Tabela dialogów krzyżowych - Zmierzch Stref
 
-| Nr | Rozdział | Rozmówca 1 | Rozmówca 2 | Temat dialogu |
-|----|----------|------------|------------|---------------|
-| 1  | Rozdział 1 | Klara | Tomasz | Granice Świadomości - system kategorii, plotki o Szarej Strefie |
-| 2  | Rozdział 2 | Maks | Elena | Kod Przebudzenia - programowanie mikroanomalii, pytania o Szarą Strefę |
-| 3  | Rozdział 3 | Werner | Julia | Cienie Władzy - zlecenie śledztwa, anomalie komunikacyjne |
-| 4  | Rozdział 4 | Tomasz | Elena | Labirynt Kłamstw - odkrycie nietypowego przepływu danych |
-| 5  | Rozdział 5 | Maks | Julia | Algorytm Przeznaczenia - przeszukiwanie archiwów przed Upadkiem, projekt "Proteusz" |
-| 6  | Rozdział 6 | Klara | Julia | Echo Prawdy - odkrycie, że "Proteusz" to osoba z modyfikowanym DNA |
-| 7  | Rozdział 7 | Elena | Werner | Lustro Dusz - wyznanie Wernera o stworzeniu Szarej Strefy |
-| 8  | Rozdział 8 | Maks | Werner | Granica Realności - odkrycie, że Nowa Paradyzja to kontrolowane środowisko |
-| 9  | Rozdział 9 | Klara | Maks | Pęknięcie Iluzji - teoria, że są częścią "Proteusza" lub symulacjami |
-| 10 | Rozdział 10 | Werner | Elena | Punkt Zbieżności - odkrycie, że wszyscy są symulacją |
-| 11 | Rozdział 11 | Proteusz | Wszyscy | Reset - konfrontacja z prawdą o symulacji i wybór dalszego losu |
-| 12 | Rozdział 12 | Klara | Elena | Architektura Kłamstwa - odkrycie schematu symulacji i wiadomości z poprzedniej iteracji |
-| 13 | Rozdział 13 | Tomasz | Maks | Paradoks Tożsamości - analiza zmieniających się kodów genetycznych i pytania o prawdziwą naturę |
-| 14 | Rozdział 14 | Tomasz | Werner | Grawitacja Prawdy - prośba Wernera o umożliwienie mu opuszczenia symulacji |
-| 15 | Rozdział 15 | Julia | Elena | Spirala Wątpliwości - odkrycie klucza mogącego wybudzić prawdziwą świadomość i decyzja o transformacji systemu |
+| Rozdział    | Rozmówca 1 | Rozmówca 2 | Temat dialogu |
+|-------------|------------|------------|---------------|
+|  1 | Klara | Tomasz | Granice Świadomości - system kategorii, plotki o Szarej Strefie |
+|  2 | Maks | Elena | Kod Przebudzenia - programowanie mikroanomalii, pytania o Szarą Strefę |
+|  3 | Werner | Julia | Cienie Władzy - zlecenie śledztwa, anomalie komunikacyjne |
+|  4 | Tomasz | Elena | Labirynt Kłamstw - odkrycie nietypowego przepływu danych |
+|  5 | Maks | Julia | Algorytm Przeznaczenia - przeszukiwanie archiwów przed Upadkiem, projekt "Proteusz" |
+|  6 | Klara | Julia | Echo Prawdy - odkrycie, że "Proteusz" to osoba z modyfikowanym DNA |
+|  7 | Elena | Werner | Lustro Dusz - wyznanie Wernera o stworzeniu Szarej Strefy |
+|  8 | Maks | Werner | Granica Realności - odkrycie, że Nowa Paradyzja to kontrolowane środowisko |
+|  9 | Klara | Maks | Pęknięcie Iluzji - teoria, że są częścią "Proteusza" lub symulacjami |
+|  10 | Werner | Elena | Punkt Zbieżności - odkrycie, że wszyscy są symulacją |
+|  11 | Proteusz | Wszyscy | Reset - konfrontacja z prawdą o symulacji i wybór dalszego losu |
+|  12 | Klara | Elena | Architektura Kłamstwa - odkrycie schematu symulacji i wiadomości z poprzedniej iteracji |
+|  13 | Tomasz | Maks | Paradoks Tożsamości - analiza zmieniających się kodów genetycznych i pytania o prawdziwą naturę |
+|  14 | Tomasz | Werner | Grawitacja Prawdy - prośba Wernera o umożliwienie mu opuszczenia symulacji |
+|  15 | Julia | Elena | Spirala Wątpliwości - odkrycie klucza mogącego wybudzić prawdziwą świadomość i decyzja o transformacji systemu |
 
 ## Część II: Świt Świadomości
 
@@ -142,18 +142,18 @@ W kontynuacji występują ci sami główni bohaterowie, z dodaniem ważnych nowy
 
 ### Tabela dialogów krzyżowych - Świt Świadomości
 
-| Nr | Rozdział | Rozmówca 1 | Rozmówca 2 | Temat dialogu |
+| Rozdział | Rozmówca 1 | Rozmówca 2 | Temat dialogu |
 |----|----------|------------|------------|---------------|
-| 1  | Rozdział 1 | Klara | Tomasz | Nowy Porządek - obserwacja pierwszych zmian w mieście po rozpoczęciu transformacji |
-| 2  | Rozdział 2 | Elena | Klara | Akademia Poznania - monitorowanie rozprzestrzeniania się transformacji |
-| 3  | Rozdział 3 | Tomasz | Werner | Ukierunkowanie zmian - stabilizacja systemów w czasie transformacji |
-| 4  | Rozdział 4 | Klara | Aria | Pierwsze Połączenie - doświadczenie rozszerzonej świadomości |
-| 5  | Rozdział 5 | Julia | Maks | Sceptyk - przekonanie analityka do otwarcia się na doświadczenie |
-| 6  | Rozdział 6 | Werner | Tomasz | Fale Zmian - przydzielenie ról w procesie transformacji |
-| 7  | Rozdział 7 | Tomasz | Aria | Architektura Świadomości - techniczne wyjaśnienie natury symulacji |
-| 8  | Rozdział 8 | Klara | Werner | Pierwsze Fale - odkrycie bramy między symulacją a umysłem twórcy |
-| 9  | Rozdział 9 | Aria | Emisariuszka | Przebudzenie - pojawienie się manifestacji twórcy i zaproszenie do transformacji |
-| 10 | Rozdział Finałowy | Maks | Aria | Rekursja Stworzenia - wyjaśnienie technicznych podstaw symulacji i wizja przyszłości po przebudzeniu |
+| 1  | Klara | Tomasz | Nowy Porządek - obserwacja pierwszych zmian w mieście po rozpoczęciu transformacji |
+| 2  | Elena | Klara | Akademia Poznania - monitorowanie rozprzestrzeniania się transformacji |
+| 3  | Tomasz | Werner | Ukierunkowanie zmian - stabilizacja systemów w czasie transformacji |
+| 4  | Klara | Aria | Pierwsze Połączenie - doświadczenie rozszerzonej świadomości |
+| 5  | Julia | Maks | Sceptyk - przekonanie analityka do otwarcia się na doświadczenie |
+| 6  | Werner | Tomasz | Fale Zmian - przydzielenie ról w procesie transformacji |
+| 7  | Tomasz | Aria | Architektura Świadomości - techniczne wyjaśnienie natury symulacji |
+| 8  | Klara | Werner | Pierwsze Fale - odkrycie bramy między symulacją a umysłem twórcy |
+| 9  | Aria | Emisariuszka | Przebudzenie - pojawienie się manifestacji twórcy i zaproszenie do transformacji |
+| 10 | Maks | Aria | Rekursja Stworzenia - wyjaśnienie technicznych podstaw symulacji i wizja przyszłości po przebudzeniu |
 
 ## Porównanie struktury dialogowej obu części
 
