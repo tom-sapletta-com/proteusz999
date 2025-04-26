@@ -1,6 +1,4 @@
-
 ![okladka.png](1/okladka.png)
-
 
 "Proteusz" to termin, który ma kilka znaczeń:
 

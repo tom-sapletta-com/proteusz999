@@ -1,5 +1,3 @@
-
-
 "Proteusz" to termin, który ma kilka znaczeń:
 
 W mitologii greckiej, Proteusz był bóstwem morskim, synem Posejdona, który posiadał zdolność zmieniania swojej postaci (mógł przemieniać się w różne stworzenia lub żywioły). Stąd wywodzi się określenie "proteuszowy" oznaczające kogoś lub coś zmiennego, nieuchwytnego.
@@ -3028,21 +3026,31 @@ Proteusz 999, Janusz Zajdel, Tom Sapletta, Frankfurt 2025
 
 "Zmierzch Stref" bezpośrednio nawiązuje do najważniejszych motywów twórczości Janusza A. Zajdla, łącząc elementy charakterystyczne dla jego najbardziej znanych powieści - "Limes inferior" i "Paradyzja":
 
-1. ### System kategoryzacji społecznej** - analogiczny do kolorów przepustek z "Limes inferior", określający precyzyjnie miejsce jednostki w systemie
-2. ### Iluzoryczność rzeczywistości** - jak w "Paradyzji", gdzie ludzie żyli w przekonaniu o istnieniu zewnętrznego świata, podczas gdy cała ich rzeczywistość zamknięta była w podziemnym kompleksie
-3. ### Poszukiwanie prawdy za cenę bezpieczeństwa** - główni bohaterowie decydują się na ryzyko w imię odkrycia natury systemu, w którym żyją
+### System kategoryzacji społecznej
+- analogiczny do kolorów przepustek z "Limes inferior", określający precyzyjnie miejsce jednostki w systemie
+
+### Iluzoryczność rzeczywistości
+- jak w "Paradyzji", gdzie ludzie żyli w przekonaniu o istnieniu zewnętrznego świata, podczas gdy cała ich rzeczywistość zamknięta była w podziemnym kompleksie
+
+### Poszukiwanie prawdy za cenę bezpieczeństwa
+- główni bohaterowie decydują się na ryzyko w imię odkrycia natury systemu, w którym żyją
 
 ## Struktura narracyjna i efekt zaskoczenia
 
 Zastosowana struktura narracyjna wykorzystuje technikę znaną z literatury postmodernistycznej:
 
-1. ### Zagnieżdżona struktura dialogów** - każda rozmowa prowadzi do kolejnej, tworząc efekt spirali zbliżającej się do centrum prawdy
-2. ### Stopniowe poszerzanie perspektywy** - od indywidualnych wątpliwości Klary, przez odkrycia grupowe, aż do konfrontacji z "Proteuszem"
-3. ### Wielopoziomowe zaskoczenie** - czytelnik odkrywa kolejne warstwy rzeczywistości:
-    - Najpierw: istnieje Szara Strefa jako miejsce wolności
-    - Potem: Szara Strefa jest kreacją systemu
-    - Następnie: cały świat jest symulacją
-    - Wreszcie: to tysiączna próba symulacji
+### Zagnieżdżona struktura dialogów
+- każda rozmowa prowadzi do kolejnej, tworząc efekt spirali zbliżającej się do centrum prawdy
+
+### Stopniowe poszerzanie perspektywy
+- od indywidualnych wątpliwości Klary, przez odkrycia grupowe, aż do konfrontacji z "Proteuszem"
+
+### Wielopoziomowe zaskoczenie
+czytelnik odkrywa kolejne warstwy rzeczywistości:
+- Najpierw: istnieje Szara Strefa jako miejsce wolności
+- Potem: Szara Strefa jest kreacją systemu
+- Następnie: cały świat jest symulacją
+- Wreszcie: to tysiączna próba symulacji
 
 Ta struktura przypomina mechanizm żartu, gdzie początkowe założenia są całkowicie reinterpretowane przez puentę.
 
