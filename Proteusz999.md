@@ -1,7 +1,7 @@
 
 # PROTEUSZ 999
 Janusz A. Zajdel & Tom Sapletta
----        
+---
 *Frankfurt, 2025*
 
 
@@ -82,7 +82,8 @@ body > h2:first-of-type {
 
 #### Rozmowa: Klara i Tomasz
 
-Szare niebo miasta Nowa Paradyzja rozciągało się nad milczącą metropolią jak wieczna przestroga. Klara siedziała na krawędzi dachu budynku Centrum Regulacji Społecznej, wpatrując się w migające punkty identyfikatorów obywateli poruszających się w dole.
+Nowa Paradyzja, szare niebo miasta rozciągało się nad milczącą metropolią jak wieczna przestroga. 
+Klara siedziała na krawędzi dachu budynku Centrum Regulacji Społecznej, wpatrując się w migające punkty identyfikatorów obywateli poruszających się w dole.
 
 — Myślisz, że to wszystko ma sens? — zapytała, nie odwracając wzroku od panoramy miasta.
 
@@ -1557,7 +1558,7 @@ Nowa era właśnie się zaczynała.
 
 # PROTEUSZ 999
 Janusz A. Zajdel & Tom Sapletta
----        
+---
 *Frankfurt, 2025*
 
 
