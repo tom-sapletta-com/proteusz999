@@ -3141,7 +3141,7 @@ Każdy z tych diagramów oferuje inną perspektywę na złożony świat przedsta
    - Poziom 1: Nowa Paradyzja (symulacja, w której żyją bohaterowie)
    
    Diagram jasno pokazuje hierarchiczną strukturę i przekształcenie symulacji przed i po transformacji.
-![1.png](../img/1.png)
+![1.png](img/1.png)
 
 
 2. **Manifestacje świadomości w różnych poziomach**
@@ -3150,12 +3150,12 @@ Każdy z tych diagramów oferuje inną perspektywę na złożony świat przedsta
    - Proteusz manifestuje się jako Werner i Aria
    - Szósta Postać (z potencjalnej przyszłości) subtelnie kieruje ewolucją
    - Julia pełni funkcję mostu między poziomami rzeczywistości
-![2.png](../img/2.png)
+![2.png](img/2.png)
 
 
 3. **Relacje między głównymi postaciami**
    Diagram przedstawia relacje między wszystkimi kluczowymi postaciami w powieści, zarówno ludzkimi bohaterami jak i manifestacjami wyższych świadomości. Pokazuje, jak ewoluują te relacje pomiędzy pierwszą a drugą częścią książki oraz jak wszyscy współdziałają w procesie transformacji.
-![3.png](../img/3.png)
+![3.png](img/3.png)
 
 
 4. **Ewolucja symulacji Nowej Paradyzji**
@@ -3165,17 +3165,17 @@ Każdy z tych diagramów oferuje inną perspektywę na złożony świat przedsta
    - Koncept Szarej Strefy (od teoretycznej do prawdziwej)
    - Rozwój świadomości (od oddzielnej do kolektywnej)
    - Transformacja Proteusza
-![4.png](../img/4.png)
+![4.png](img/4.png)
 
 5. **Architektura świadomości w rekursywnej strukturze rzeczywistości**
    Ten ostatni diagram przedstawia całościowy obraz rekursywnej struktury świadomości, od Twórcy, przez Proteusza, do symulacji i światów myśli tworzonych po Wielkim Przebudzeniu. Pokazuje relacje między wszystkimi poziomami i jak świadomości przepływają między nimi.
-![5.png](../img/5.png)
+![5.png](img/5.png)
 
 6. **Poziomy świadomości i ich manifestacje** - szczegółowo przedstawia hierarchię świadomości i sposób, w jaki przejawiają się na różnych poziomach.
-![6.png](../img/6.png)
+![6.png](img/6.png)
 
 7. **Proces transformacji i przebudzenia świadomości** - obrazuje drogę od sztywnego systemu kategorii do Wielkiego Przebudzenia i tworzenia nowych światów myśli.
-![7.png](../img/7.png)
+![7.png](img/7.png)
 
 ---
 
