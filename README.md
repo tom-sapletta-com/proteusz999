@@ -1559,12 +1559,9 @@ A gdzieś w głębi symulacji, pięcioro bohaterów rozpoczynało swoją nową p
 Nowa era właśnie się zaczynała.
 
 # PROTEUSZ 999
-
 **Janusz A. Zajdel & Tom Sapletta**
 *Frankfurt, 2025*
 
----
-```
 "Proteusz" to termin, który ma kilka znaczeń:
 
 W mitologii greckiej, Proteusz był bóstwem morskim, synem Posejdona, który 
@@ -1579,7 +1576,6 @@ W sensie przenośnym, określenie "proteuszowy" odnosi się do czegoś bardzo zm
 niestałego, przybierającego różne formy - podobnie jak mitologiczny Proteusz.
 
 Jest to również tytuł kilku dzieł literackich i artystycznych.
-```
 
 ## CZĘŚĆ II: ŚWIT ŚWIADOMOŚCI
 
