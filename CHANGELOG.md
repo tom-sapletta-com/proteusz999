@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.1.27] - 2025-04-26
+
+### Added
+- Changes in code/index2.html
+
+### Removed
+- Changes in code/prot.html
+
+### Fixed
+- Changes in code/index.html
+
 ## [0.1.26] - 2025-04-26
 
 ## [0.1.25] - 2025-04-26
