@@ -20,13 +20,6 @@ W sensie przenośnym, określenie "proteuszowy" odnosi się do czegoś bardzo zm
 niestałego, przybierającego różne formy - podobnie jak mitologiczny Proteusz.
 
 
-
-
-
-
-
-
-
 ## CZĘŚĆ I: ZMIERZCH STREF
 
 <style>
@@ -1578,7 +1571,9 @@ A gdzieś w głębi symulacji, pięcioro bohaterów rozpoczynało swoją nową p
 Nowa era właśnie się zaczynała.
 
 # PROTEUSZ 999
+
 **Janusz A. Zajdel & Tom Sapletta**
+
 *Frankfurt, 2025*
 
 
