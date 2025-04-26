@@ -1,6 +1,3 @@
-
-![okladka.png](1/okladka.png)
-
 "Proteusz" to termin, który ma kilka znaczeń:
 
 W mitologii greckiej, Proteusz był bóstwem morskim, synem Posejdona, który posiadał zdolność zmieniania swojej postaci (mógł przemieniać się w różne stworzenia lub żywioły). Stąd wywodzi się określenie "proteuszowy" oznaczające kogoś lub coś zmiennego, nieuchwytnego.
