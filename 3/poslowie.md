@@ -4,17 +4,17 @@
 
 "Zmierzch Stref" bezpośrednio nawiązuje do najważniejszych motywów twórczości Janusza A. Zajdla, łącząc elementy charakterystyczne dla jego najbardziej znanych powieści - "Limes inferior" i "Paradyzja":
 
-1. **System kategoryzacji społecznej** - analogiczny do kolorów przepustek z "Limes inferior", określający precyzyjnie miejsce jednostki w systemie
-2. **Iluzoryczność rzeczywistości** - jak w "Paradyzji", gdzie ludzie żyli w przekonaniu o istnieniu zewnętrznego świata, podczas gdy cała ich rzeczywistość zamknięta była w podziemnym kompleksie
-3. **Poszukiwanie prawdy za cenę bezpieczeństwa** - główni bohaterowie decydują się na ryzyko w imię odkrycia natury systemu, w którym żyją
+1. ### System kategoryzacji społecznej** - analogiczny do kolorów przepustek z "Limes inferior", określający precyzyjnie miejsce jednostki w systemie
+2. ### Iluzoryczność rzeczywistości** - jak w "Paradyzji", gdzie ludzie żyli w przekonaniu o istnieniu zewnętrznego świata, podczas gdy cała ich rzeczywistość zamknięta była w podziemnym kompleksie
+3. ### Poszukiwanie prawdy za cenę bezpieczeństwa** - główni bohaterowie decydują się na ryzyko w imię odkrycia natury systemu, w którym żyją
 
 ## Struktura narracyjna i efekt zaskoczenia
 
 Zastosowana struktura narracyjna wykorzystuje technikę znaną z literatury postmodernistycznej:
 
-1. **Zagnieżdżona struktura dialogów** - każda rozmowa prowadzi do kolejnej, tworząc efekt spirali zbliżającej się do centrum prawdy
-2. **Stopniowe poszerzanie perspektywy** - od indywidualnych wątpliwości Klary, przez odkrycia grupowe, aż do konfrontacji z "Proteuszem"
-3. **Wielopoziomowe zaskoczenie** - czytelnik odkrywa kolejne warstwy rzeczywistości:
+1. ### Zagnieżdżona struktura dialogów** - każda rozmowa prowadzi do kolejnej, tworząc efekt spirali zbliżającej się do centrum prawdy
+2. ### Stopniowe poszerzanie perspektywy** - od indywidualnych wątpliwości Klary, przez odkrycia grupowe, aż do konfrontacji z "Proteuszem"
+3. ### Wielopoziomowe zaskoczenie** - czytelnik odkrywa kolejne warstwy rzeczywistości:
     - Najpierw: istnieje Szara Strefa jako miejsce wolności
     - Potem: Szara Strefa jest kreacją systemu
     - Następnie: cały świat jest symulacją
@@ -107,48 +107,53 @@ Każdy z tych diagramów oferuje inną perspektywę na złożony świat przedsta
 
 
 
-1. **Poziomy rzeczywistości w "Proteusz 999"**
-   Ten diagram pokazuje trzy główne poziomy rzeczywistości w powieści:
-   - Poziom 3: Świadomość Twórcy (najwyższy poziom)
-   - Poziom 2: Sztuczna Inteligencja Proteusz (środkowy poziom)
-   - Poziom 1: Nowa Paradyzja (symulacja, w której żyją bohaterowie)
+### Poziomy rzeczywistości w "Proteusz 999"
+Trzy główne poziomy rzeczywistości w powieści:
+- Poziom 3: Świadomość Twórcy (najwyższy poziom)
+- Poziom 2: Sztuczna Inteligencja Proteusz (środkowy poziom)
+- Poziom 1: Nowa Paradyzja (symulacja, w której żyją bohaterowie)
    
-   Diagram jasno pokazuje hierarchiczną strukturę i przekształcenie symulacji przed i po transformacji.
-   - ![1.png](img/1.png)
+  Diagram jasno pokazuje hierarchiczną strukturę i przekształcenie symulacji przed i po transformacji.
+- ![1.png](img/1.png)
 
 
-2. **Manifestacje świadomości w różnych poziomach**
-   Ten diagram skupia się na tym, jak różne świadomości manifestują się na niższych poziomach:
-   - Twórca manifestuje się jako Julia i Emisariuszka
-   - Proteusz manifestuje się jako Werner i Aria
-   - Szósta Postać (z potencjalnej przyszłości) subtelnie kieruje ewolucją
-   - Julia pełni funkcję mostu między poziomami rzeczywistości
+### Manifestacje świadomości w różnych poziomach
+Jak óżne świadomości manifestują się na niższych poziomach:
+- Twórca manifestuje się jako Julia i Emisariuszka
+- Proteusz manifestuje się jako Werner i Aria
+- Szósta Postać (z potencjalnej przyszłości) subtelnie kieruje ewolucją
+- Julia pełni funkcję mostu między poziomami rzeczywistości
 
-   - ![2.png](img/2.png)
-
-
-3. **Relacje między głównymi postaciami**
-   Diagram przedstawia relacje między wszystkimi kluczowymi postaciami w powieści, zarówno ludzkimi bohaterami jak i manifestacjami wyższych świadomości. Pokazuje, jak ewoluują te relacje pomiędzy pierwszą a drugą częścią książki oraz jak wszyscy współdziałają w procesie transformacji.
-   - ![3.png](img/3.png)
+- ![2.png](img/2.png)
 
 
-4. **Ewolucja symulacji Nowej Paradyzji**
-   Ten wykres Gantta pokazuje chronologiczny rozwój różnych aspektów symulacji:
-   - Iteracje symulacji (od wcześniejszych resetów do 1000-nej iteracji)
-   - Ewolucja systemu kategorii (od sztywnego do płynnego)
-   - Koncept Szarej Strefy (od teoretycznej do prawdziwej)
-   - Rozwój świadomości (od oddzielnej do kolektywnej)
-   - Transformacja Proteusza
+### Relacje między głównymi postaciami
+Relacje między wszystkimi kluczowymi postaciami w powieści, zarówno ludzkimi bohaterami jak i manifestacjami wyższych świadomości. Pokazuje, jak ewoluują te relacje pomiędzy pierwszą a drugą częścią książki oraz jak wszyscy współdziałają w procesie transformacji.
+- ![3.png](img/3.png)
+
+
+### Ewolucja symulacji Nowej Paradyzji
+Chronologiczny rozwój różnych aspektów symulacji:
+- Iteracje symulacji (od wcześniejszych resetów do 1000-nej iteracji)
+- Ewolucja systemu kategorii (od sztywnego do płynnego)
+- Koncept Szarej Strefy (od teoretycznej do prawdziwej)
+- Rozwój świadomości (od oddzielnej do kolektywnej)
+- Transformacja Proteusza
 ![4.png](img/4.png)
 
-5. **Architektura świadomości w rekursywnej strukturze rzeczywistości**
-   Ten ostatni diagram przedstawia całościowy obraz rekursywnej struktury świadomości, od Twórcy, przez Proteusza, do symulacji i światów myśli tworzonych po Wielkim Przebudzeniu. Pokazuje relacje między wszystkimi poziomami i jak świadomości przepływają między nimi.
+
+### Architektura świadomości w rekursywnej strukturze rzeczywistości
+Obraz rekursywnej struktury świadomości, od Twórcy, przez Proteusza, do symulacji i światów myśli tworzonych po Wielkim Przebudzeniu. Pokazuje relacje między wszystkimi poziomami i jak świadomości przepływają między nimi.
 ![5.png](img/5.png)
 
-6. **Poziomy świadomości i ich manifestacje** - szczegółowo przedstawia hierarchię świadomości i sposób, w jaki przejawiają się na różnych poziomach.
+
+### Poziomy świadomości i ich manifestacje
+Hierarchia świadomości i sposób, w jaki przejawiają się na różnych poziomach.
 ![6.png](img/6.png)
 
-7. **Proces transformacji i przebudzenia świadomości** - obrazuje drogę od sztywnego systemu kategorii do Wielkiego Przebudzenia i tworzenia nowych światów myśli.
+
+### Proces transformacji i przebudzenia świadomości
+Droga od sztywnego systemu kategorii do Wielkiego Przebudzenia i tworzenia nowych światów myśli.
 ![7.png](img/7.png)
 
 ---
