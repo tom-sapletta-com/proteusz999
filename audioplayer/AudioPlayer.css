@@ -12,7 +12,16 @@ body {
 
 h1 {
     color: #333;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+h2 {
+    color: #666;
+    margin-top: 0;
     margin-bottom: 30px;
+    font-size: 18px;
+    font-weight: normal;
     text-align: center;
 }
 
@@ -41,10 +50,18 @@ h1 {
     color: #444;
 }
 
+.example-description {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
 .custom-controls {
     margin-top: 20px;
     display: flex;
     gap: 10px;
+    flex-wrap: wrap;
     justify-content: center;
 }
 
@@ -56,8 +73,50 @@ button {
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.2s;
+    font-size: 14px;
+}
+
+.secondary-button {
+    background-color: #f0f0f0;
+    color: #333;
 }
 
 button:hover {
     background-color: #45a049;
+}
+
+.secondary-button:hover {
+    background-color: #e0e0e0;
+}
+
+.status-indicator {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.storage-info {
+    margin-top: 10px;
+    font-size: 13px;
+    color: #666;
+    padding: 10px;
+    background-color: #eee;
+    border-radius: 4px;
+}
+
+.features-list {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #444;
+}
+
+.features-list ul {
+    padding-left: 20px;
+    margin: 5px 0;
+}
+
+.features-list li {
+    margin-bottom: 5px;
 }

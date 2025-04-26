@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.1.20] - 2025-04-26
+
+### Added
+- Changes in audioplayer/AudioPlayer.core.js
+- Changes in audioplayer/AudioPlayer.debug.js
+- Changes in audioplayer/AudioPlayer.events.js
+- Changes in audioplayer/AudioPlayer.storage.js
+- Changes in audioplayer/AudioPlayer.ui.js
+- Changes in audioplayer/AudioPlayer.utils.js
+- Changes in audioplayer/index.html
+- Changes in audioplayer/index2.html
+- Changes in audioplayer/player-loader.js
+
+### Removed
+- Changes in player.html
+
 ## [0.1.19] - 2025-04-26
 
 ### Added

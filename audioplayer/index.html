@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Odtwarzacz Audio z Zapamiętywaniem Pozycji</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    h1 {
+      color: #333;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    h2 {
+      color: #666;
+      margin-top: 0;
+      margin-bottom: 30px;
+      font-size: 18px;
+      font-weight: normal;
+      text-align: center;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 500px;
+    }
+
+    .player-examples {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    .example {
+      background-color: white;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .example-title {
+      margin-top: 0;
+      margin-bottom: 15px;
+      font-size: 18px;
+      color: #444;
+    }
+
+    .example-description {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
+
+    .custom-controls {
+      margin-top: 20px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+      font-size: 14px;
+    }
+
+    .secondary-button {
+      background-color: #f0f0f0;
+      color: #333;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    .secondary-button:hover {
+      background-color: #e0e0e0;
+    }
+
+    .status-indicator {
+      margin-top: 15px;
+      padding: 10px;
+      background-color: #f0f0f0;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+
+    .storage-info {
+      margin-top: 10px;
+      font-size: 13px;
+      color: #666;
+      padding: 10px;
+      background-color: #eee;
+      border-radius: 4px;
+    }
+
+    .features-list {
+      margin-top: 15px;
+      font-size: 14px;
+      color: #444;
+    }
+
+    .features-list ul {
+      padding-left: 20px;
+      margin: 5px 0;
+    }
+
+    .features-list li {
+      margin-bottom: 5px;
+    }
+
+    .module-info {
+      margin-top: 30px;
+      padding: 15px;
+      background-color: #e1f5fe;
+      border-radius: 6px;
+      font-size: 14px;
+      color: #01579b;
+    }
+
+    .module-info h3 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      color: #0277bd;
+    }
+
+    .module-info ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Odtwarzacz Audio</h1>
+    <h2>Z Zapamiętywaniem Pozycji</h2>
+
+    <div class="module-info">
+      <h3>Informacja o modułach</h3>
+      <p>Biblioteka AudioPlayer została podzielona na następujące moduły:</p>
+      <ul>
+        <li><strong>AudioPlayer.js</strong> - Główny plik eksportujący</li>
+        <li><strong>AudioPlayer.core.js</strong> - Główna klasa odtwarzacza</li>
+        <li><strong>AudioPlayer.ui.js</strong> - Zarządzanie interfejsem użytkownika</li>
+        <li><strong>AudioPlayer.events.js</strong> - Obsługa zdarzeń odtwarzacza</li>
+        <li><strong>AudioPlayer.storage.js</strong> - Zapisywanie i przywracanie pozycji</li>
+        <li><strong>AudioPlayer.utils.js</strong> - Funkcje pomocnicze</li>
+      </ul>
+    </div>
+
+    <div class="player-examples">
+      <div class="example">
+        <h3 class="example-title">Odtwarzacz z Zapisem Pozycji</h3>
+        <p class="example-description">
+          Ten odtwarzacz zapamiętuje Twoją pozycję odtwarzania. Po zamknięciu strony i ponownym jej otwarciu,
+          odtwarzanie zostanie wznowione od miejsca, w którym zostało przerwane.
+        </p>
+        <div id="player-with-memory"></div>
+        <div class="custom-controls">
+          <button id="play-btn">Odtwórz</button>
+          <button id="pause-btn">Pauza</button>
+          <button id="reload-btn" class="secondary-button">Odśwież Stronę</button>
+          <button id="clear-position-btn" class="secondary-button">Wyczyść Zapisaną Pozycję</button>
+          <button id="change-track-btn" class="secondary-button">Zmień Utwór</button>
+        </div>
+        <div id="player-status" class="status-indicator">
+          Status: Gotowy do odtwarzania
+        </div>
+        <div class="storage-info">
+          Pozycja odtwarzania jest zapisywana w pamięci lokalnej przeglądarki (localStorage).
+          Po ponownym załadowaniu strony, odtwarzanie zostanie wznowione od ostatniej pozycji.
+        </div>
+      </div>
+
+      <div class="example">
+        <h3 class="example-title">Odtwarzacz Standardowy</h3>
+        <p class="example-description">
+          Dla porównania - standardowy odtwarzacz bez zapisywania pozycji.
+        </p>
+        <div id="player-standard"></div>
+
+        <div class="features-list">
+          <strong>Funkcje i ulepszenia:</strong>
+          <ul>
+            <li>Zapis pozycji odtwarzania w localStorage</li>
+            <li>Automatyczne wznawianie odtwarzania od ostatniej pozycji</li>
+            <li>Obsługa błędów ładowania plików audio</li>
+            <li>Lepsze buforowanie i obsługa zdarzeń</li>
+            <li>Unikalne identyfikatory dla różnych plików audio</li>
+            <li>Modułowa struktura kodu dla lepszej organizacji</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Importowanie modułów AudioPlayer -->
+  <script type="module">
+    const audiofile = "https://proteusz999.sapletta.pl/Proteusz999a.mp3";
+
+    import AudioPlayer from './AudioPlayer.js';
+
+    // Funkcja inicjalizująca odtwarzacze po załadowaniu całej strony
+    window.addEventListener('DOMContentLoaded', () => {
+      // Utwórz odtwarzacz z zapisem pozycji
+      const playerWithMemory = new AudioPlayer({
+        containerId: 'player-with-memory',
+        title: 'Przykładowy Utwór',
+        artist: 'Z zapisem pozycji',
+        audioSrc: audiofile,
+        theme: 'dark',
+        rememberPosition: true
+      });
+
+      // Utwórz standardowy odtwarzacz
+      const standardPlayer = new AudioPlayer({
+        containerId: 'player-standard',
+        title: 'Przykładowy Utwór',
+        artist: 'Bez zapisu pozycji',
+        audioSrc: audiofile,
+        theme: 'light',
+        rememberPosition: false
+      });
+
+      // Element statusu
+      const statusElement = document.getElementById('player-status');
+
+      // Funkcja formatowania czasu
+      const formatTime = (seconds) => {
+        if (isNaN(seconds) || seconds === Infinity || seconds < 0) return '0:00';
+        const mins = Math.floor(seconds / 60);
+        const secs = Math.floor(seconds % 60);
+        return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
+      };
+
+      // Aktualizacja statusu
+      const updateStatus = () => {
+        if (!playerWithMemory.audioElement) return;
+
+        const state = playerWithMemory.getPlayerState();
+        if (state.isPlaying) {
+          statusElement.textContent = `Status: Odtwarzanie ${formatTime(state.currentTime)} / ${formatTime(state.duration)} (Pozycja zapisana)`;
+        } else {
+          statusElement.textContent = `Status: Wstrzymano na ${formatTime(state.currentTime)} (Pozycja zapisana)`;
+        }
+      };
+
+      // Dodanie nasłuchiwania zdarzeń po upewnieniu się, że elementy zostały utworzone
+      setTimeout(() => {
+        if (playerWithMemory.audioElement) {
+          // Nasłuchiwanie zdarzeń odtwarzacza
+          playerWithMemory.audioElement.addEventListener('timeupdate', updateStatus);
+          playerWithMemory.audioElement.addEventListener('pause', updateStatus);
+          playerWithMemory.audioElement.addEventListener('playing', updateStatus);
+
+          playerWithMemory.audioElement.addEventListener('waiting', () => {
+            statusElement.textContent = `Status: Buforowanie... Proszę czekać`;
+          });
+
+          playerWithMemory.audioElement.addEventListener('ended', () => {
+            statusElement.textContent = `Status: Odtwarzanie zakończone (Pozycja wyczyszczona)`;
+          });
+
+          playerWithMemory.audioElement.addEventListener('error', (e) => {
+            statusElement.textContent = `Status: Błąd odtwarzania (kod: ${playerWithMemory.audioElement.error ? playerWithMemory.audioElement.error.code : 'nieznany'})`;
+          });
+
+          // Konfiguracja przycisków
+          document.getElementById('play-btn').addEventListener('click', () => {
+            playerWithMemory.play();
+          });
+
+          document.getElementById('pause-btn').addEventListener('click', () => {
+            playerWithMemory.pause();
+          });
+
+          document.getElementById('reload-btn').addEventListener('click', () => {
+            // Ręczne zapisanie pozycji przed odświeżeniem
+            if (playerWithMemory.storage) {
+              playerWithMemory.storage.savePlaybackPosition();
+            }
+            location.reload();
+          });
+
+          document.getElementById('clear-position-btn').addEventListener('click', () => {
+            if (playerWithMemory.storage) {
+              playerWithMemory.storage.clearPlaybackPosition();
+              statusElement.textContent = `Status: Zapisana pozycja została wyczyszczona`;
+            }
+          });
+
+          document.getElementById('change-track-btn').addEventListener('click', () => {
+            // Zmiana na inny utwór
+            playerWithMemory.load(audiofile);
+            playerWithMemory.setTrackInfo('MellowDee', 'Dhalius');
+            playerWithMemory.play();
+          });
+
+          // Sprawdź czy została przywrócona pozycja
+          if (playerWithMemory.storage) {
+            const savedPosition = playerWithMemory.storage.getPlaybackPositionFromStorage();
+            if (savedPosition !== null && !isNaN(savedPosition) && savedPosition > 0) {
+              statusElement.textContent = `Status: Przywrócono do pozycji ${formatTime(savedPosition)}`;
+            }
+          }
+        } else {
+          console.error('AudioPlayer not properly initialized');
+          statusElement.textContent = 'Status: Błąd inicjalizacji odtwarzacza';
+        }
+      }, 300); // Większe opóźnienie, aby zapewnić, że elementy zostaną w pełni utworzone
+    });
+  </script>
+</body>
+</html>
