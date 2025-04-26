@@ -3,6 +3,7 @@
 
 
 # PROTEUSZ 999
+
 ---
 **Janusz A. Zajdel & Tom Sapletta**,  *Frankfurt, 2025*
 
