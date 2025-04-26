@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.1.23] - 2025-04-26
+
+### Added
+- Changes in code/REDAME.md
+- Changes in code/index.html
+- Changes in code/main.js
+- Changes in code/main.py
+
 ## [0.1.22] - 2025-04-26
 
 ### Added
