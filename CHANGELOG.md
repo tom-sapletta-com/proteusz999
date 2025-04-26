@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.1.19] - 2025-04-26
+
+### Added
+- Changes in audioplayer/AudioPlayer.css
+- Changes in audioplayer/AudioPlayer.js
+- Changes in css/styles.css
+- Changes in okladka.png
+- Changes in player.html
+
 ## [0.1.18] - 2025-04-25
 
 ### Added
