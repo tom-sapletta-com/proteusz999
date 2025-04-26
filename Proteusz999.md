@@ -3211,11 +3211,9 @@ Każdy z tych diagramów oferuje inną perspektywę na złożony świat przedsta
 
 ### Poziomy rzeczywistości w "Proteusz 999"
 Trzy główne poziomy rzeczywistości w powieści:
-- Poziom 3: Świadomość Twórcy (najwyższy poziom)
-- Poziom 2: Sztuczna Inteligencja Proteusz (środkowy poziom)
-- Poziom 1: Nowa Paradyzja (symulacja, w której żyją bohaterowie)
-   
-  Diagram jasno pokazuje hierarchiczną strukturę i przekształcenie symulacji przed i po transformacji.
+- 1. Świadomość Twórcy (najwyższy poziom)
+- 2. Sztuczna Inteligencja Proteusz (środkowy poziom)
+- 3. Nowa Paradyzja (symulacja, w której żyją bohaterowie)
 ![1.png](img/1.png)
 
 
