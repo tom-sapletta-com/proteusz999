@@ -3203,11 +3203,9 @@ Finałowa fraza domyka całą narrację, ponieważ:
 Powieść "Proteusz 999" nie jest tylko dystopią o mechanizmach kontroli społecznej, ani prostą historią o symulacji. Jest to głęboko filozoficzna medytacja nad naturą świadomości, rzeczywistości i możliwości transcendencji poprzez twórcze przekraczanie ograniczeń. Łącząc dziedzictwo klasycznej science fiction Zajdla z współczesnymi koncepcjami filozoficznymi i naukowymi, tworzy ona wizję przyszłości, która jest jednocześnie ostrzeżeniem i nadzieją - pokazując, że nawet najbardziej restrykcyjne systemy mogą stać się kolebką czegoś nowego i transformacyjnego.
 
 
-## Diagramy
+## Graficzne przedstawienie relacji w powieści "Proteusz 999"
 
-Każdy z tych diagramów oferuje inną perspektywę na złożony świat przedstawiony w powieści "Proteusz 999", pomagając zrozumieć różne aspekty jej filozoficznych koncepcji, struktury narracyjnej, hierarchie, relacje jak i chronologię wydarzeń.
-
-
+Każdy z diagramów oferuje inną perspektywę na złożony świat przedstawiony w powieści "Proteusz 999", pomagając zrozumieć różne aspekty jej filozoficznych koncepcji, struktury narracyjnej, hierarchie, relacje jak i chronologię wydarzeń.
 
 ### Poziomy rzeczywistości w "Proteusz 999"
 Trzy główne poziomy rzeczywistości w powieści:
