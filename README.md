@@ -11,6 +11,14 @@ W sensie przenośnym, określenie "proteuszowy" odnosi się do czegoś bardzo zm
 
 Jest to również tytuł kilku dzieł literackich i artystycznych.
 
+# PROTEUSZ 999
+
+**Janusz A. Zajdel & Tom Sapletta**
+
+*Frankfurt, 2025*
+
+## CZĘŚĆ I: ZMIERZCH STREF
+
 <style>
 /* CSS do umieszczenia na początku pliku Markdown */
 
@@ -81,14 +89,6 @@ body > h2:first-of-type {
   page-break-before: avoid;
 }
 </style>
-
-# PROTEUSZ 999
-
-**Janusz A. Zajdel & Tom Sapletta**
-
-*Frankfurt, 2025*
-
-## CZĘŚĆ I: ZMIERZCH STREF
 
 ### Rozdział 1. Granice Świadomości
 
@@ -3212,8 +3212,8 @@ Każdy z diagramów oferuje inną perspektywę na złożony świat przedstawiony
 
 ### Poziomy rzeczywistości w "Proteusz 999"
 Trzy główne poziomy rzeczywistości w powieści:
-1. Świadomość Twórcy (najwyższy poziom)
-2. Sztuczna Inteligencja Proteusz (środkowy poziom)
+1. Świadomość Twórcy
+2. Sztuczna Inteligencja Proteusz
 3. Nowa Paradyzja (symulacja, w której żyją bohaterowie)
 ![1.png](img/1.png)
 
