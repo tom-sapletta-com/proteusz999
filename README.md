@@ -8,7 +8,7 @@
 
 *Frankfurt, 2025*
 
-```
+
 "Proteusz" to termin, który ma kilka znaczeń:
 
 W mitologii greckiej, Proteusz był bóstwem morskim, synem Posejdona, który 
@@ -21,7 +21,13 @@ zwanego też "ludzką rybą", który żyje w jaskiniach Europy Środkowej.
 
 W sensie przenośnym, określenie "proteuszowy" odnosi się do czegoś bardzo zmiennego, 
 niestałego, przybierającego różne formy - podobnie jak mitologiczny Proteusz.
-```
+
+
+
+
+
+
+
 
 
 ## CZĘŚĆ I: ZMIERZCH STREF
