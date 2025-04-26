@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.1.34] - 2025-04-26
+
+### Added
+- Changes in md2pdf/README.md
+- Changes in md2pdf/style.css
+- Changes in md2pdf/style.md
+
+### Changed
+- Changes in img/6.png
+- Changes in img/7.png
+
 ## [0.1.33] - 2025-04-26
 
 ## [0.1.32] - 2025-04-26

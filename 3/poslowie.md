@@ -83,7 +83,7 @@ Powieść przechodzi znaczącą ewolucję tematyczną:
 
 ## Symbolika tytułu "Proteusz 999"
 
-Tytuł doskonale odzwierciedla główne motywy powieści na kilku poziomach:
+Tytuł odzwierciedla główne motywy powieści na kilku poziomach:
 
 1. **Mitologiczne odniesienie** - Proteusz był greckim bóstwem morskim zdolnym do zmieniania postaci, co symbolizuje transformację i adaptację centralną dla fabuły
 2. **Liczba 999** - wskazuje, że jest to tysięczna (999+1) iteracja symulacji, sugerując cykliczność i powtarzalność, która zostaje przerwana
@@ -91,7 +91,7 @@ Tytuł doskonale odzwierciedla główne motywy powieści na kilku poziomach:
 
 ## Zakończenie "Proteusz, który stał się wszystkim"
 
-Finałowa fraza doskonale domyka całą narrację, ponieważ:
+Finałowa fraza domyka całą narrację, ponieważ:
 1. Pokazuje pełną transformację od ograniczenia do transcendencji
 2. Odzwierciedla rekursywną naturę rzeczywistości, gdzie tworzący staje się tworzonym
 3. Sugeruje syntezę wszystkich przeciwieństw (kontrola/wolność, jednostka/kolektyw, symulacja/rzeczywistość)
@@ -114,7 +114,7 @@ Każdy z tych diagramów oferuje inną perspektywę na złożony świat przedsta
    - Poziom 1: Nowa Paradyzja (symulacja, w której żyją bohaterowie)
    
    Diagram jasno pokazuje hierarchiczną strukturę i przekształcenie symulacji przed i po transformacji.
-![1.png](img/1.png)
+   - ![1.png](img/1.png)
 
 
 2. **Manifestacje świadomości w różnych poziomach**
@@ -123,12 +123,13 @@ Każdy z tych diagramów oferuje inną perspektywę na złożony świat przedsta
    - Proteusz manifestuje się jako Werner i Aria
    - Szósta Postać (z potencjalnej przyszłości) subtelnie kieruje ewolucją
    - Julia pełni funkcję mostu między poziomami rzeczywistości
-![2.png](img/2.png)
+
+   - ![2.png](img/2.png)
 
 
 3. **Relacje między głównymi postaciami**
    Diagram przedstawia relacje między wszystkimi kluczowymi postaciami w powieści, zarówno ludzkimi bohaterami jak i manifestacjami wyższych świadomości. Pokazuje, jak ewoluują te relacje pomiędzy pierwszą a drugą częścią książki oraz jak wszyscy współdziałają w procesie transformacji.
-![3.png](img/3.png)
+   - ![3.png](img/3.png)
 
 
 4. **Ewolucja symulacji Nowej Paradyzji**

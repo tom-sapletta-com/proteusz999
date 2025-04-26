@@ -1,6 +1,78 @@
+<style>
+/* CSS do umieszczenia na początku pliku Markdown */
 
+img {
+  max-width: 100%; /* Upewnia się, że obrazy nigdy nie przekroczą szerokości kontenera */
+  height: auto;    /* Zachowuje proporcje obrazu */
+  display: block;  /* Sprawia, że obraz jest elementem blokowym */
+  margin: 20px auto; /* Centruje obraz z marginesem na górze i dole */
+  page-break-inside: avoid; /* Zapobiega łamaniu obrazu między stronami */
+}
+
+/* Style dla diagramów Mermaid */
+.mermaid {
+  max-width: 100%;
+  overflow-x: hidden; /* Zapobiega poziomemu przewijaniu */
+  svg {
+    max-width: 100%;
+    height: auto !important; /* Nadpisuje wysokość ustawioną przez Mermaid */
+  }
+}
+
+/* Style dla tabeli */
+table {
+  width: 100%;
+  max-width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  page-break-inside: avoid; /* Zapobiega łamaniu tabeli między stronami */
+}
+
+th, td {
+  padding: 8px;
+  border: 1px solid #ddd;
+  word-wrap: break-word; /* Zawijanie długich tekstów */
+}
+
+/* Style dla bloków kodu */
+pre {
+  white-space: pre-wrap; /* Zawijanie długich linii kodu */
+  max-width: 100%;
+  overflow-x: hidden;
+  padding: 10px;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  page-break-inside: avoid;
+}
+
+/* Każdy nagłówek h1 i h2 rozpoczyna nową stronę */
+h1 {
+  page-break-before: always;
+  margin-top: 0;          /* Usuwa górny margines */
+  padding-top: 20px;      /* Dodaje przestrzeń na górze nagłówka */
+}
+
+h2 {
+  page-break-before: always;
+  margin-top: 0;          /* Usuwa górny margines */
+  padding-top: 16px;      /* Dodaje przestrzeń na górze nagłówka */
+}
+
+/* Wyjątek dla pierwszego nagłówka w dokumencie */
+body > h1:first-of-type {
+  page-break-before: avoid;
+}
+</style>
 
 ![okladka.png](1/okladka.png)
+
+
+# PROTEUSZ 999
+
+**Janusz A. Zajdel & Tom Sapletta**
+
+*Frankfurt, 2025*
 
 
 "Proteusz" to termin, który ma kilka znaczeń:
@@ -13,11 +85,6 @@ W sensie przenośnym, określenie "proteuszowy" odnosi się do czegoś bardzo zm
 
 Jest to również tytuł kilku dzieł literackich i artystycznych.
 
-# PROTEUSZ 999
-
-**Janusz A. Zajdel & Tom Sapletta**
-
-*Frankfurt, 2025*
 
 ## CZĘŚĆ I: ZMIERZCH STREF
 
@@ -3110,7 +3177,7 @@ Powieść przechodzi znaczącą ewolucję tematyczną:
 
 ## Symbolika tytułu "Proteusz 999"
 
-Tytuł doskonale odzwierciedla główne motywy powieści na kilku poziomach:
+Tytuł odzwierciedla główne motywy powieści na kilku poziomach:
 
 1. **Mitologiczne odniesienie** - Proteusz był greckim bóstwem morskim zdolnym do zmieniania postaci, co symbolizuje transformację i adaptację centralną dla fabuły
 2. **Liczba 999** - wskazuje, że jest to tysięczna (999+1) iteracja symulacji, sugerując cykliczność i powtarzalność, która zostaje przerwana
@@ -3118,7 +3185,7 @@ Tytuł doskonale odzwierciedla główne motywy powieści na kilku poziomach:
 
 ## Zakończenie "Proteusz, który stał się wszystkim"
 
-Finałowa fraza doskonale domyka całą narrację, ponieważ:
+Finałowa fraza domyka całą narrację, ponieważ:
 1. Pokazuje pełną transformację od ograniczenia do transcendencji
 2. Odzwierciedla rekursywną naturę rzeczywistości, gdzie tworzący staje się tworzonym
 3. Sugeruje syntezę wszystkich przeciwieństw (kontrola/wolność, jednostka/kolektyw, symulacja/rzeczywistość)
