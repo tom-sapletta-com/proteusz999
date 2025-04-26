@@ -1,0 +1,203 @@
+[2025-04-26T14:17:11.614Z] Initializing Proteusz Simulation
+[2025-04-26T14:17:11.621Z] Key narrative nodes initialized
+[2025-04-26T14:17:11.621Z] --- Simulation Cycle 0 ---
+[2025-04-26T14:17:11.622Z] Awareness ratio: 0.0000 (0 of 6 nodes)
+[2025-04-26T14:17:11.622Z] --- Simulation Cycle 1 ---
+[2025-04-26T14:17:11.622Z] Awareness ratio: 0.0000 (0 of 6 nodes)
+[2025-04-26T14:17:11.622Z] --- Simulation Cycle 2 ---
+[2025-04-26T14:17:11.622Z] Awareness ratio: 0.0000 (0 of 6 nodes)
+[2025-04-26T14:17:11.623Z] --- Simulation Cycle 3 ---
+[2025-04-26T14:17:11.623Z] Awareness ratio: 0.0000 (0 of 6 nodes)
+[2025-04-26T14:17:11.623Z] --- Simulation Cycle 4 ---
+[2025-04-26T14:17:11.623Z] Awareness ratio: 0.0000 (0 of 6 nodes)
+[2025-04-26T14:17:11.623Z] --- Simulation Cycle 5 ---
+[2025-04-26T14:17:11.623Z] Awareness ratio: 0.0000 (0 of 6 nodes)
+[2025-04-26T14:17:11.623Z] --- Simulation Cycle 6 ---
+[2025-04-26T14:17:11.623Z] Awareness ratio: 0.0000 (0 of 6 nodes)
+[2025-04-26T14:17:11.623Z] --- Simulation Cycle 7 ---
+[2025-04-26T14:17:11.623Z] Awareness ratio: 0.0000 (0 of 6 nodes)
+[2025-04-26T14:17:11.623Z] --- Simulation Cycle 8 ---
+[2025-04-26T14:17:11.623Z] Awareness ratio: 0.0000 (0 of 6 nodes)
+[2025-04-26T14:17:11.623Z] --- Simulation Cycle 9 ---
+[2025-04-26T14:17:11.623Z] Awareness ratio: 0.0000 (0 of 6 nodes)
+[2025-04-26T14:17:11.623Z] --- Simulation Cycle 10 ---
+[2025-04-26T14:17:11.623Z] Awareness ratio: 0.0000 (0 of 6 nodes)
+[2025-04-26T14:17:11.623Z] --- Simulation Cycle 11 ---
+[2025-04-26T14:17:11.623Z] Awareness ratio: 0.0000 (0 of 6 nodes)
+[2025-04-26T14:17:11.623Z] --- Simulation Cycle 12 ---
+[2025-04-26T14:17:11.623Z] Awareness ratio: 0.0000 (0 of 6 nodes)
+[2025-04-26T14:17:11.623Z] --- Simulation Cycle 13 ---
+[2025-04-26T14:17:11.624Z] Awareness ratio: 0.0000 (0 of 6 nodes)
+[2025-04-26T14:17:11.624Z] --- Simulation Cycle 14 ---
+[2025-04-26T14:17:11.624Z] Awareness ratio: 0.0000 (0 of 6 nodes)
+[2025-04-26T14:17:11.624Z] --- Simulation Cycle 15 ---
+[2025-04-26T14:17:11.624Z] Awareness ratio: 0.0000 (0 of 6 nodes)
+[2025-04-26T14:17:11.624Z] --- Simulation Cycle 16 ---
+[2025-04-26T14:17:11.624Z] Awareness ratio: 0.0000 (0 of 6 nodes)
+[2025-04-26T14:17:11.624Z] --- Simulation Cycle 17 ---
+[2025-04-26T14:17:11.624Z] Awareness ratio: 0.0000 (0 of 6 nodes)
+[2025-04-26T14:17:11.624Z] --- Simulation Cycle 18 ---
+[2025-04-26T14:17:11.624Z] Awareness ratio: 0.0000 (0 of 6 nodes)
+[2025-04-26T14:17:11.624Z] --- Simulation Cycle 19 ---
+[2025-04-26T14:17:11.624Z] Awareness ratio: 0.0000 (0 of 6 nodes)
+[2025-04-26T14:17:11.624Z] --- Simulation Cycle 20 ---
+[2025-04-26T14:17:11.624Z] Awareness ratio: 0.0000 (0 of 6 nodes)
+[2025-04-26T14:17:11.624Z] --- Simulation Cycle 21 ---
+[2025-04-26T14:17:11.624Z] Awareness ratio: 0.0000 (0 of 6 nodes)
+[2025-04-26T14:17:11.624Z] --- Simulation Cycle 22 ---
+[2025-04-26T14:17:11.624Z] Awareness ratio: 0.0000 (0 of 6 nodes)
+[2025-04-26T14:17:11.624Z] --- Simulation Cycle 23 ---
+[2025-04-26T14:17:11.624Z] Awareness ratio: 0.0000 (0 of 6 nodes)
+[2025-04-26T14:17:11.624Z] --- Simulation Cycle 24 ---
+[2025-04-26T14:17:11.624Z] Awareness ratio: 0.0000 (0 of 6 nodes)
+[2025-04-26T14:17:11.624Z] --- Simulation Cycle 25 ---
+[2025-04-26T14:17:11.624Z] Awareness ratio: 0.0000 (0 of 6 nodes)
+[2025-04-26T14:17:11.624Z] --- Simulation Cycle 26 ---
+[2025-04-26T14:17:11.624Z] Awareness ratio: 0.0000 (0 of 6 nodes)
+[2025-04-26T14:17:11.624Z] --- Simulation Cycle 27 ---
+[2025-04-26T14:17:11.624Z] Awareness ratio: 0.0000 (0 of 6 nodes)
+[2025-04-26T14:17:11.624Z] --- Simulation Cycle 28 ---
+[2025-04-26T14:17:11.624Z] Awareness ratio: 0.0000 (0 of 6 nodes)
+[2025-04-26T14:17:11.624Z] --- Simulation Cycle 29 ---
+[2025-04-26T14:17:11.624Z] Awareness ratio: 0.0000 (0 of 6 nodes)
+[2025-04-26T14:17:11.624Z] --- Simulation Cycle 30 ---
+[2025-04-26T14:17:11.624Z] Awareness ratio: 0.0000 (0 of 6 nodes)
+[2025-04-26T14:17:11.624Z] --- Simulation Cycle 31 ---
+[2025-04-26T14:17:11.624Z] Awareness ratio: 0.0000 (0 of 6 nodes)
+[2025-04-26T14:17:11.624Z] --- Simulation Cycle 32 ---
+[2025-04-26T14:17:11.624Z] Awareness ratio: 0.0000 (0 of 6 nodes)
+[2025-04-26T14:17:11.624Z] --- Simulation Cycle 33 ---
+[2025-04-26T14:17:11.624Z] Awareness ratio: 0.0000 (0 of 6 nodes)
+[2025-04-26T14:17:11.624Z] --- Simulation Cycle 34 ---
+[2025-04-26T14:17:11.624Z] Awareness ratio: 0.0000 (0 of 6 nodes)
+[2025-04-26T14:17:11.625Z] --- Simulation Cycle 35 ---
+[2025-04-26T14:17:11.625Z] Awareness ratio: 0.0000 (0 of 6 nodes)
+[2025-04-26T14:17:11.625Z] --- Simulation Cycle 36 ---
+[2025-04-26T14:17:11.625Z] Awareness ratio: 0.0000 (0 of 6 nodes)
+[2025-04-26T14:17:11.625Z] --- Simulation Cycle 37 ---
+[2025-04-26T14:17:11.625Z] Awareness ratio: 0.0000 (0 of 6 nodes)
+[2025-04-26T14:17:11.625Z] --- Simulation Cycle 38 ---
+[2025-04-26T14:17:11.625Z] Awareness ratio: 0.0000 (0 of 6 nodes)
+[2025-04-26T14:17:11.625Z] --- Simulation Cycle 39 ---
+[2025-04-26T14:17:11.625Z] Awareness ratio: 0.0000 (0 of 6 nodes)
+[2025-04-26T14:17:11.625Z] --- Simulation Cycle 40 ---
+[2025-04-26T14:17:11.625Z] Awareness ratio: 0.0000 (0 of 6 nodes)
+[2025-04-26T14:17:11.625Z] --- Simulation Cycle 41 ---
+[2025-04-26T14:17:11.625Z] Awareness ratio: 0.0000 (0 of 6 nodes)
+[2025-04-26T14:17:11.625Z] --- Simulation Cycle 42 ---
+[2025-04-26T14:17:11.625Z] Awareness ratio: 0.0000 (0 of 6 nodes)
+[2025-04-26T14:17:11.625Z] --- Simulation Cycle 43 ---
+[2025-04-26T14:17:11.625Z] Awareness ratio: 0.0000 (0 of 6 nodes)
+[2025-04-26T14:17:11.625Z] --- Simulation Cycle 44 ---
+[2025-04-26T14:17:11.625Z] Awareness ratio: 0.0000 (0 of 6 nodes)
+[2025-04-26T14:17:11.625Z] --- Simulation Cycle 45 ---
+[2025-04-26T14:17:11.625Z] Awareness ratio: 0.0000 (0 of 6 nodes)
+[2025-04-26T14:17:11.625Z] --- Simulation Cycle 46 ---
+[2025-04-26T14:17:11.625Z] Awareness ratio: 0.0000 (0 of 6 nodes)
+[2025-04-26T14:17:11.625Z] --- Simulation Cycle 47 ---
+[2025-04-26T14:17:11.625Z] Awareness ratio: 0.0000 (0 of 6 nodes)
+[2025-04-26T14:17:11.625Z] --- Simulation Cycle 48 ---
+[2025-04-26T14:17:11.625Z] Awareness ratio: 0.0000 (0 of 6 nodes)
+[2025-04-26T14:17:11.625Z] --- Simulation Cycle 49 ---
+[2025-04-26T14:17:11.625Z] Awareness ratio: 0.0000 (0 of 6 nodes)
+[2025-04-26T14:17:11.625Z] --- Simulation Cycle 50 ---
+[2025-04-26T14:17:11.625Z] Awareness ratio: 0.0000 (0 of 6 nodes)
+[2025-04-26T14:17:11.625Z] --- Simulation Cycle 51 ---
+[2025-04-26T14:17:11.625Z] Awareness ratio: 0.0000 (0 of 6 nodes)
+[2025-04-26T14:17:11.625Z] --- Simulation Cycle 52 ---
+[2025-04-26T14:17:11.625Z] Awareness ratio: 0.0000 (0 of 6 nodes)
+[2025-04-26T14:17:11.625Z] --- Simulation Cycle 53 ---
+[2025-04-26T14:17:11.625Z] Awareness ratio: 0.0000 (0 of 6 nodes)
+[2025-04-26T14:17:11.625Z] --- Simulation Cycle 54 ---
+[2025-04-26T14:17:11.625Z] Awareness ratio: 0.0000 (0 of 6 nodes)
+[2025-04-26T14:17:11.625Z] --- Simulation Cycle 55 ---
+[2025-04-26T14:17:11.625Z] Awareness ratio: 0.0000 (0 of 6 nodes)
+[2025-04-26T14:17:11.625Z] --- Simulation Cycle 56 ---
+[2025-04-26T14:17:11.625Z] Awareness ratio: 0.0000 (0 of 6 nodes)
+[2025-04-26T14:17:11.625Z] --- Simulation Cycle 57 ---
+[2025-04-26T14:17:11.625Z] Awareness ratio: 0.0000 (0 of 6 nodes)
+[2025-04-26T14:17:11.625Z] --- Simulation Cycle 58 ---
+[2025-04-26T14:17:11.626Z] Awareness ratio: 0.0000 (0 of 6 nodes)
+[2025-04-26T14:17:11.626Z] --- Simulation Cycle 59 ---
+[2025-04-26T14:17:11.626Z] Awareness ratio: 0.0000 (0 of 6 nodes)
+[2025-04-26T14:17:11.626Z] --- Simulation Cycle 60 ---
+[2025-04-26T14:17:11.626Z] Awareness ratio: 0.0000 (0 of 6 nodes)
+[2025-04-26T14:17:11.626Z] --- Simulation Cycle 61 ---
+[2025-04-26T14:17:11.626Z] Awareness ratio: 0.0000 (0 of 6 nodes)
+[2025-04-26T14:17:11.626Z] --- Simulation Cycle 62 ---
+[2025-04-26T14:17:11.626Z] Awareness ratio: 0.0000 (0 of 6 nodes)
+[2025-04-26T14:17:11.626Z] --- Simulation Cycle 63 ---
+[2025-04-26T14:17:11.626Z] Awareness ratio: 0.0000 (0 of 6 nodes)
+[2025-04-26T14:17:11.626Z] --- Simulation Cycle 64 ---
+[2025-04-26T14:17:11.626Z] Awareness ratio: 0.0000 (0 of 6 nodes)
+[2025-04-26T14:17:11.626Z] --- Simulation Cycle 65 ---
+[2025-04-26T14:17:11.626Z] Awareness ratio: 0.0000 (0 of 6 nodes)
+[2025-04-26T14:17:11.626Z] --- Simulation Cycle 66 ---
+[2025-04-26T14:17:11.626Z] Awareness ratio: 0.0000 (0 of 6 nodes)
+[2025-04-26T14:17:11.626Z] --- Simulation Cycle 67 ---
+[2025-04-26T14:17:11.626Z] Awareness ratio: 0.0000 (0 of 6 nodes)
+[2025-04-26T14:17:11.626Z] --- Simulation Cycle 68 ---
+[2025-04-26T14:17:11.626Z] Awareness ratio: 0.0000 (0 of 6 nodes)
+[2025-04-26T14:17:11.626Z] --- Simulation Cycle 69 ---
+[2025-04-26T14:17:11.626Z] Awareness ratio: 0.0000 (0 of 6 nodes)
+[2025-04-26T14:17:11.626Z] --- Simulation Cycle 70 ---
+[2025-04-26T14:17:11.626Z] Awareness ratio: 0.0000 (0 of 6 nodes)
+[2025-04-26T14:17:11.626Z] --- Simulation Cycle 71 ---
+[2025-04-26T14:17:11.626Z] Awareness ratio: 0.0000 (0 of 6 nodes)
+[2025-04-26T14:17:11.626Z] --- Simulation Cycle 72 ---
+[2025-04-26T14:17:11.626Z] Awareness ratio: 0.0000 (0 of 6 nodes)
+[2025-04-26T14:17:11.626Z] --- Simulation Cycle 73 ---
+[2025-04-26T14:17:11.626Z] Awareness ratio: 0.0000 (0 of 6 nodes)
+[2025-04-26T14:17:11.626Z] --- Simulation Cycle 74 ---
+[2025-04-26T14:17:11.626Z] Awareness ratio: 0.0000 (0 of 6 nodes)
+[2025-04-26T14:17:11.626Z] --- Simulation Cycle 75 ---
+[2025-04-26T14:17:11.626Z] Awareness ratio: 0.0000 (0 of 6 nodes)
+[2025-04-26T14:17:11.627Z] --- Simulation Cycle 76 ---
+[2025-04-26T14:17:11.627Z] Awareness ratio: 0.0000 (0 of 6 nodes)
+[2025-04-26T14:17:11.627Z] --- Simulation Cycle 77 ---
+[2025-04-26T14:17:11.627Z] Awareness ratio: 0.0000 (0 of 6 nodes)
+[2025-04-26T14:17:11.627Z] --- Simulation Cycle 78 ---
+[2025-04-26T14:17:11.627Z] Awareness ratio: 0.0000 (0 of 6 nodes)
+[2025-04-26T14:17:11.627Z] --- Simulation Cycle 79 ---
+[2025-04-26T14:17:11.627Z] Awareness ratio: 0.0000 (0 of 6 nodes)
+[2025-04-26T14:17:11.627Z] --- Simulation Cycle 80 ---
+[2025-04-26T14:17:11.627Z] Awareness ratio: 0.0000 (0 of 6 nodes)
+[2025-04-26T14:17:11.627Z] --- Simulation Cycle 81 ---
+[2025-04-26T14:17:11.627Z] Awareness ratio: 0.0000 (0 of 6 nodes)
+[2025-04-26T14:17:11.627Z] --- Simulation Cycle 82 ---
+[2025-04-26T14:17:11.627Z] Awareness ratio: 0.0000 (0 of 6 nodes)
+[2025-04-26T14:17:11.627Z] --- Simulation Cycle 83 ---
+[2025-04-26T14:17:11.627Z] Awareness ratio: 0.0000 (0 of 6 nodes)
+[2025-04-26T14:17:11.627Z] --- Simulation Cycle 84 ---
+[2025-04-26T14:17:11.627Z] Awareness ratio: 0.0000 (0 of 6 nodes)
+[2025-04-26T14:17:11.627Z] --- Simulation Cycle 85 ---
+[2025-04-26T14:17:11.627Z] Awareness ratio: 0.0000 (0 of 6 nodes)
+[2025-04-26T14:17:11.627Z] --- Simulation Cycle 86 ---
+[2025-04-26T14:17:11.627Z] Awareness ratio: 0.0000 (0 of 6 nodes)
+[2025-04-26T14:17:11.627Z] --- Simulation Cycle 87 ---
+[2025-04-26T14:17:11.627Z] Awareness ratio: 0.0000 (0 of 6 nodes)
+[2025-04-26T14:17:11.627Z] --- Simulation Cycle 88 ---
+[2025-04-26T14:17:11.627Z] Awareness ratio: 0.0000 (0 of 6 nodes)
+[2025-04-26T14:17:11.627Z] --- Simulation Cycle 89 ---
+[2025-04-26T14:17:11.627Z] Awareness ratio: 0.0000 (0 of 6 nodes)
+[2025-04-26T14:17:11.627Z] --- Simulation Cycle 90 ---
+[2025-04-26T14:17:11.627Z] Awareness ratio: 0.0000 (0 of 6 nodes)
+[2025-04-26T14:17:11.627Z] --- Simulation Cycle 91 ---
+[2025-04-26T14:17:11.627Z] Awareness ratio: 0.0000 (0 of 6 nodes)
+[2025-04-26T14:17:11.627Z] --- Simulation Cycle 92 ---
+[2025-04-26T14:17:11.627Z] Awareness ratio: 0.0000 (0 of 6 nodes)
+[2025-04-26T14:17:11.627Z] --- Simulation Cycle 93 ---
+[2025-04-26T14:17:11.627Z] Awareness ratio: 0.0000 (0 of 6 nodes)
+[2025-04-26T14:17:11.628Z] --- Simulation Cycle 94 ---
+[2025-04-26T14:17:11.628Z] Awareness ratio: 0.0000 (0 of 6 nodes)
+[2025-04-26T14:17:11.628Z] --- Simulation Cycle 95 ---
+[2025-04-26T14:17:11.628Z] Awareness ratio: 0.0000 (0 of 6 nodes)
+[2025-04-26T14:17:11.628Z] --- Simulation Cycle 96 ---
+[2025-04-26T14:17:11.628Z] Awareness ratio: 0.0000 (0 of 6 nodes)
+[2025-04-26T14:17:11.628Z] --- Simulation Cycle 97 ---
+[2025-04-26T14:17:11.628Z] Awareness ratio: 0.0000 (0 of 6 nodes)
+[2025-04-26T14:17:11.628Z] --- Simulation Cycle 98 ---
+[2025-04-26T14:17:11.628Z] Awareness ratio: 0.0000 (0 of 6 nodes)
+[2025-04-26T14:17:11.628Z] --- Simulation Cycle 99 ---
+[2025-04-26T14:17:11.628Z] Awareness ratio: 0.0000 (0 of 6 nodes)
+[2025-04-26T14:17:11.628Z] Simulation complete
