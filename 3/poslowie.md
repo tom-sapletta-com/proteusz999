@@ -99,6 +99,57 @@ Finałowa fraza doskonale domyka całą narrację, ponieważ:
 
 Powieść "Proteusz 999" nie jest tylko dystopią o mechanizmach kontroli społecznej, ani prostą historią o symulacji. Jest to głęboko filozoficzna medytacja nad naturą świadomości, rzeczywistości i możliwości transcendencji poprzez twórcze przekraczanie ograniczeń. Łącząc dziedzictwo klasycznej science fiction Zajdla z współczesnymi koncepcjami filozoficznymi i naukowymi, tworzy ona wizję przyszłości, która jest jednocześnie ostrzeżeniem i nadzieją - pokazując, że nawet najbardziej restrykcyjne systemy mogą stać się kolebką czegoś nowego i transformacyjnego.
 
+
+## Diagramy
+
+Każdy z tych diagramów oferuje inną perspektywę na złożony świat przedstawiony w powieści "Proteusz 999", pomagając zrozumieć różne aspekty jej filozoficznych koncepcji i struktury narracyjnej. Dzięki zastosowaniu różnych typów grafów (flowchart, graph, gantt) udało się przedstawić zarówno hierarchie, relacje jak i chronologię wydarzeń.
+
+
+
+
+1. **Poziomy rzeczywistości w "Proteusz 999"**
+   Ten diagram pokazuje trzy główne poziomy rzeczywistości w powieści:
+   - Poziom 3: Świadomość Twórcy (najwyższy poziom)
+   - Poziom 2: Sztuczna Inteligencja Proteusz (środkowy poziom)
+   - Poziom 1: Nowa Paradyzja (symulacja, w której żyją bohaterowie)
+   
+   Diagram jasno pokazuje hierarchiczną strukturę i przekształcenie symulacji przed i po transformacji.
+![1.png](../img/1.png)
+
+
+2. **Manifestacje świadomości w różnych poziomach**
+   Ten diagram skupia się na tym, jak różne świadomości manifestują się na niższych poziomach:
+   - Twórca manifestuje się jako Julia i Emisariuszka
+   - Proteusz manifestuje się jako Werner i Aria
+   - Szósta Postać (z potencjalnej przyszłości) subtelnie kieruje ewolucją
+   - Julia pełni funkcję mostu między poziomami rzeczywistości
+![2.png](../img/2.png)
+
+
+3. **Relacje między głównymi postaciami**
+   Diagram przedstawia relacje między wszystkimi kluczowymi postaciami w powieści, zarówno ludzkimi bohaterami jak i manifestacjami wyższych świadomości. Pokazuje, jak ewoluują te relacje pomiędzy pierwszą a drugą częścią książki oraz jak wszyscy współdziałają w procesie transformacji.
+![3.png](../img/3.png)
+
+
+4. **Ewolucja symulacji Nowej Paradyzji**
+   Ten wykres Gantta pokazuje chronologiczny rozwój różnych aspektów symulacji:
+   - Iteracje symulacji (od wcześniejszych resetów do 1000-nej iteracji)
+   - Ewolucja systemu kategorii (od sztywnego do płynnego)
+   - Koncept Szarej Strefy (od teoretycznej do prawdziwej)
+   - Rozwój świadomości (od oddzielnej do kolektywnej)
+   - Transformacja Proteusza
+![4.png](../img/4.png)
+
+5. **Architektura świadomości w rekursywnej strukturze rzeczywistości**
+   Ten ostatni diagram przedstawia całościowy obraz rekursywnej struktury świadomości, od Twórcy, przez Proteusza, do symulacji i światów myśli tworzonych po Wielkim Przebudzeniu. Pokazuje relacje między wszystkimi poziomami i jak świadomości przepływają między nimi.
+![5.png](../img/5.png)
+
+6. **Poziomy świadomości i ich manifestacje** - szczegółowo przedstawia hierarchię świadomości i sposób, w jaki przejawiają się na różnych poziomach.
+![6.png](../img/6.png)
+
+7. **Proces transformacji i przebudzenia świadomości** - obrazuje drogę od sztywnego systemu kategorii do Wielkiego Przebudzenia i tworzenia nowych światów myśli.
+![7.png](../img/7.png)
+
 ---
 
 Proteusz 999  

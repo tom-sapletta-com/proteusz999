@@ -2,6 +2,30 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.1.32] - 2025-04-26
+
+### Added
+- Changes in img/1.md
+- Changes in img/1.png
+- Changes in img/2.md
+- Changes in img/2.png
+- Changes in img/2.svg
+- Changes in img/3.md
+- Changes in img/3.png
+- Changes in img/3.svg
+- Changes in img/4.md
+- Changes in img/4.png
+- Changes in img/4.svg
+- Changes in img/5.md
+- Changes in img/5.png
+- Changes in img/5.svg
+- Changes in img/6.md
+- Changes in img/6.png
+- Changes in img/6.svg
+- Changes in img/7.md
+- Changes in img/7.png
+- Changes in img/7.svg
+
 ## [0.1.31] - 2025-04-26
 
 ## [0.1.30] - 2025-04-26
