@@ -40,7 +40,7 @@
 </svg>
 
 <script>
-    // [Previous EvolutionNode and ProteuszSimulation classes remain the same]
+    const timestep = 400;
 
     class EvolutionNode {
         constructor(id, category, initialAwareness = 0.1) {
@@ -352,7 +352,7 @@
             this.initialize();
 
             // Run cycle every 100 milliseconds
-            this.simulationInterval = setInterval(() => this.runCycle(), 100);
+            this.simulationInterval = setInterval(() => this.runCycle(), timestep);
         }
 
         // Stop the simulation
