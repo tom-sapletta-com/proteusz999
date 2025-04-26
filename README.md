@@ -1565,6 +1565,7 @@ Nowa era właśnie się zaczynała.
 
 *Frankfurt, 2025*
 
+---
 
 ## CZĘŚĆ II: ŚWIT ŚWIADOMOŚCI
 
