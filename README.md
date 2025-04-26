@@ -3223,7 +3223,7 @@ Trzy główne poziomy rzeczywistości w powieści:
 
 
 ### Manifestacje świadomości w różnych poziomach
-Jak óżne świadomości manifestują się na niższych poziomach:
+Jak różne świadomości manifestują się na niższych poziomach:
 - Twórca manifestuje się jako Julia i Emisariuszka
 - Proteusz manifestuje się jako Werner i Aria
 - Szósta Postać (z potencjalnej przyszłości) subtelnie kieruje ewolucją
