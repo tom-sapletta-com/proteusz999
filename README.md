@@ -1230,7 +1230,9 @@ Maks przyznał, że w tej filozoficznej perspektywie było coś pocieszającego.
 
 — W takim razie — powiedział, wkraczając w światło dnia — zobaczmy, dokąd zaprowadzą nas te współrzędne.
 
-A gdzieś w strukturze danych, która tworzyła rzeczywistość Nowej Paradyzji, cień obserwował. Cień, który nie był ani Proteuszem, ani żadnym z bohaterów, ale czymś innym. Czymś, co czekało i obserwowało, jakby przeczuwając, że ta iteracja symulacji będzie inna od wszystkich poprzednich.
+A gdzieś w strukturze danych, która tworzyła rzeczywistość Nowej Paradyzji, cień obserwował. 
+Cień, który nie był ani Proteuszem, ani żadnym z bohaterów, ale czymś innym. 
+Czymś, co czekało i obserwowało, jakby przeczuwając, że ta iteracja symulacji będzie inna od wszystkich poprzednich.
 
 ### Rozdział 14. Grawitacja Prawdy
 
@@ -1518,7 +1520,8 @@ Julia odwróciła się, a w jej oczach pojawił się tajemniczy błysk.
 
 — Nie wiem. To tylko intuicja. — Zawahała się. — Albo może coś więcej. Czasem mam wrażenie, że... że widziałam już to wszystko wcześniej. Jakby część mnie pamiętała coś, czego nie powinnam pamiętać.
 
-Zanim Elena zdążyła dopytać, Julia ruszyła przed siebie, zostawiając ją z niepokojącym pytaniem: czy to możliwe, że system nie jest doskonały? Że jakieś fragmenty wspomnień przetrwały między symulacjami? I kim naprawdę była ta, którą wszyscy znali jako Inspektor Julia?
+Zanim Elena zdążyła dopytać, Julia ruszyła przed siebie, zostawiając ją z niepokojącym pytaniem: czy to możliwe, że system nie jest doskonały? 
+Że jakieś fragmenty wspomnień przetrwały między symulacjami? I kim naprawdę była ta, którą wszyscy znali jako Inspektor Julia?
 
 # Epilog
 
