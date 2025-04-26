@@ -99,11 +99,30 @@
                 this.sendButton = document.getElementById('send-command');
                 this.simulationFrame = document.getElementById('simulation-frame');
 
+                // Predefined commands with direct method calls
                 this.commands = {
-                    'pomoc': this.showHelp.bind(this),
+                    'pomoc': () => {
+                        this.log('Dostępne komendy:', 'system');
+                        this.log('pomoc - wyświetla listę komend', 'system');
+                        this.log('status - pokazuje aktualny stan symulacji', 'system');
+                        this.log('reset - resetuje symulację', 'system');
+                        this.log('info - wyświetla informacje o symulacji', 'system');
+                    },
                     'status': this.showStatus.bind(this),
                     'reset': this.resetSimulation.bind(this),
-                    'info': this.showSimulationInfo.bind(this)
+                    'info': () => {
+                        this.log('Symulacja Proteusz 999:', 'system');
+                        this.log('Projekt: Symulacja ewolucji świadomości', 'system');
+                        this.log('Liczba węzłów: 6', 'system');
+                        this.log('Kategorie: Zielony, Czerwony, Czarny', 'system');
+                        this.log('Bohaterowie:', 'system');
+                        this.log('- Klara (PSH-4072)', 'system');
+                        this.log('- Tomasz (PSH-8901)', 'system');
+                        this.log('- Maks (MWR-2390)', 'system');
+                        this.log('- Elena (ELN-1247)', 'system');
+                        this.log('- Julia (JUL-0001)', 'system');
+                        this.log('- Werner (DIR-0001)', 'system');
+                    }
                 };
 
                 this.initializeEventListeners();
@@ -151,14 +170,6 @@
                 this.outputElement.scrollTop = this.outputElement.scrollHeight;
             }
 
-            showHelp() {
-                this.log('Dostępne komendy:', 'system');
-                this.log('pomoc - wyświetla listę komend', 'system');
-                this.log('status - pokazuje aktualny stan symulacji', 'system');
-                this.log('reset - resetuje symulację', 'system');
-                this.log('info - wyświetla informacje o symulacji', 'system');
-            }
-
             showStatus() {
                 // Send message to simulation iframe
                 this.simulationFrame.contentWindow.postMessage({
@@ -171,13 +182,6 @@
                     type: 'RESET_SIMULATION'
                 }, '*');
                 this.log('Symulacja zostanie zresetowana...', 'system');
-            }
-
-            showSimulationInfo() {
-                this.log('Symulacja Proteusz 999:', 'system');
-                this.log('Projekt: Symulacja ewolucji świadomości', 'system');
-                this.log('Liczba węzłów: 6', 'system');
-                this.log('Kategorie: Zielony, Czerwony, Czarny', 'system');
             }
         }
 
