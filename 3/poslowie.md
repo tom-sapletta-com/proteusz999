@@ -162,6 +162,19 @@ Droga od sztywnego systemu kategorii do Wielkiego Przebudzenia i tworzenia nowyc
 
 ---
 
+
+Proteusz w mitologii greckiej był bóstwem morskim, synem Posejdona, który 
+posiadał zdolność zmieniania swojej postaci (mógł przemieniać się w różne stworzenia lub żywioły). 
+
+Stąd wywodzi się określenie "proteuszowy" oznaczające kogoś lub coś zmiennego, nieuchwytnego.
+
+W biologii Proteus (proteusz) to rodzaj bakterii, a także 
+nazwa rodzajowa płaza ogoniastego - odmieńca jaskiniowego (Proteus anguinus), 
+zwanego też "ludzką rybą", który żyje w jaskiniach Europy Środkowej.
+
+
+---
+
 Proteusz 999  
 Janusz A. Zajdel & Tom Sapletta  
 Frankfurt, 2025

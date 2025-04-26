@@ -9,20 +9,6 @@
 *Frankfurt, 2025*
 
 
-"Proteusz" to termin, który ma kilka znaczeń:
-
-W mitologii greckiej, Proteusz był bóstwem morskim, synem Posejdona, który 
-posiadał zdolność zmieniania swojej postaci (mógł przemieniać się w różne stworzenia lub żywioły). 
-Stąd wywodzi się określenie "proteuszowy" oznaczające kogoś lub coś zmiennego, nieuchwytnego.
-
-W biologii Proteus (proteusz) to rodzaj bakterii, a także 
-nazwa rodzajowa płaza ogoniastego - odmieńca jaskiniowego (Proteus anguinus), 
-zwanego też "ludzką rybą", który żyje w jaskiniach Europy Środkowej.
-
-W sensie przenośnym, określenie "proteuszowy" odnosi się do czegoś bardzo zmiennego, 
-niestałego, przybierającego różne formy - podobnie jak mitologiczny Proteusz.
-
-
 ## CZĘŚĆ I: ZMIERZCH STREF
 
 <style>
@@ -3263,6 +3249,19 @@ Hierarchia świadomości i sposób, w jaki przejawiają się na różnych poziom
 ### Proces transformacji i przebudzenia świadomości
 Droga od sztywnego systemu kategorii do Wielkiego Przebudzenia i tworzenia nowych światów myśli.
 ![7.png](img/7.png)
+
+---
+
+
+Proteusz w mitologii greckiej był bóstwem morskim, synem Posejdona, który 
+posiadał zdolność zmieniania swojej postaci (mógł przemieniać się w różne stworzenia lub żywioły). 
+
+Stąd wywodzi się określenie "proteuszowy" oznaczające kogoś lub coś zmiennego, nieuchwytnego.
+
+W biologii Proteus (proteusz) to rodzaj bakterii, a także 
+nazwa rodzajowa płaza ogoniastego - odmieńca jaskiniowego (Proteus anguinus), 
+zwanego też "ludzką rybą", który żyje w jaskiniach Europy Środkowej.
+
 
 ---
 
