@@ -10,11 +10,12 @@
             background-color: #f0f4f8;
             font-family: Arial, sans-serif;
         }
+
         #simulationInfo {
             position: absolute;
             top: 10px;
             left: 10px;
-            background: rgba(255,255,255,0.8);
+            background: rgba(255, 255, 255, 0.8);
             padding: 10px;
             border-radius: 5px;
             z-index: 1000;
@@ -22,279 +23,364 @@
     </style>
 </head>
 <body>
-    <div id="simulationInfo">
-        <div>Cycle: <span id="cycleCounter">0</span></div>
-        <div>Awareness Levels:</div>
-        <div id="awarenessLevels"></div>
-    </div>
-    <svg id="evolutionSVG" width="100%" height="100%" viewBox="0 0 1000 600">
-        <!-- Gradients will be dynamically added here -->
-        <defs id="gradientDefs"></defs>
+<div id="simulationInfo">
+    <div>Cycle: <span id="cycleCounter">0</span></div>
+    <div>Awareness Levels:</div>
+    <div id="awarenessLevels"></div>
+</div>
+<svg id="evolutionSVG" width="100%" height="100%" viewBox="0 0 1000 600">
+    <!-- Gradients will be dynamically added here -->
+    <defs id="gradientDefs"></defs>
 
-        <!-- Background grid -->
-        <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(200,200,200,0.1)" stroke-width="0.5"/>
-        </pattern>
-        <rect width="100%" height="100%" fill="url(#grid)"/>
-    </svg>
+    <!-- Background grid -->
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+        <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(200,200,200,0.1)" stroke-width="0.5"/>
+    </pattern>
+    <rect width="100%" height="100%" fill="url(#grid)"/>
+</svg>
 
-    <script>
-        // Simulation Node Class
-        class EvolutionNode {
-            constructor(id, category, initialAwareness = 0.1) {
-                this.id = id;
-                this.category = category;
-                this.awarenessLevel = initialAwareness;
-                this.x = Math.random() * 900 + 50;
-                this.y = Math.random() * 500 + 50;
-                this.element = null;
-                this.connectionElements = [];
+<script>
+    // [Previous EvolutionNode and ProteuszSimulation classes remain the same]
+
+    class EvolutionNode {
+        constructor(id, category, initialAwareness = 0.1) {
+            // Unique identifier for the node
+            this.id = id;
+
+            // Category of the node (e.g., GREEN, RED, BLACK)
+            this.category = category;
+
+            // Initial awareness level (default 0.1)
+            this.awarenessLevel = initialAwareness;
+
+            // Random position for visualization
+            this.x = Math.random() * 900 + 50;
+            this.y = Math.random() * 500 + 50;
+
+            // SVG element representation
+            this.element = null;
+
+            // Potential future expansion for node connections
+            this.connectionElements = [];
+        }
+
+        // Create a gradient for the node's visualization
+        createGradient(svgDefs) {
+            // Check if gradient already exists
+            const existingGradient = document.getElementById(`${this.id}-gradient`);
+            if (existingGradient) return existingGradient;
+
+            // Create a new linear gradient
+            const gradient = document.createElementNS("http://www.w3.org/2000/svg", "linearGradient");
+            gradient.setAttribute("id", `${this.id}-gradient`);
+
+            // Color selection based on category
+            let startColor, endColor;
+            switch (this.category) {
+                case 'GREEN':
+                    startColor = "#2ecc71";
+                    endColor = "#27ae60";
+                    break;
+                case 'RED':
+                    startColor = "#e74c3c";
+                    endColor = "#c0392b";
+                    break;
+                case 'BLACK':
+                    startColor = "#34495e";
+                    endColor = "#2c3e50";
+                    break;
+                default:
+                    startColor = "#3498db";
+                    endColor = "#2980b9";
             }
+
+            // Create gradient stops
+            const stop1 = document.createElementNS("http://www.w3.org/2000/svg", "stop");
+            stop1.setAttribute("offset", "0%");
+            stop1.setAttribute("stop-color", startColor);
+
+            const stop2 = document.createElementNS("http://www.w3.org/2000/svg", "stop");
+            stop2.setAttribute("offset", "100%");
+            stop2.setAttribute("stop-color", endColor);
+
+            gradient.appendChild(stop1);
+            gradient.appendChild(stop2);
+            svgDefs.appendChild(gradient);
+
+            return gradient;
+        }
+
+        // Create SVG representation of the node
+        createSVGElement(svgDefs) {
+            // Create a group element to hold node components
+            const group = document.createElementNS("http://www.w3.org/2000/svg", "g");
+            group.setAttribute("class", "evolution-node");
+            group.setAttribute("id", `node-${this.id}`);
 
             // Create gradient for the node
-            createGradient(svgDefs) {
-                const existingGradient = document.getElementById(`${this.id}-gradient`);
-                if (existingGradient) return existingGradient;
+            const gradient = this.createGradient(svgDefs);
+            const gradientId = `url(#${gradient.id})`;
 
-                const gradient = document.createElementNS("http://www.w3.org/2000/svg", "linearGradient");
-                gradient.setAttribute("id", `${this.id}-gradient`);
+            // Main node circle
+            const circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+            circle.setAttribute("cx", this.x);
+            circle.setAttribute("cy", this.y);
+            circle.setAttribute("r", 40);
+            circle.setAttribute("fill", gradientId);
+            circle.setAttribute("stroke", "rgba(0,0,0,0.3)");
+            circle.setAttribute("stroke-width", "2");
 
-                let startColor, endColor;
-                switch(this.category) {
-                    case 'GREEN':
-                        startColor = "#2ecc71";
-                        endColor = "#27ae60";
-                        break;
-                    case 'RED':
-                        startColor = "#e74c3c";
-                        endColor = "#c0392b";
-                        break;
-                    case 'BLACK':
-                        startColor = "#34495e";
-                        endColor = "#2c3e50";
-                        break;
-                    default:
-                        startColor = "#3498db";
-                        endColor = "#2980b9";
-                }
+            // Awareness level indicator circle
+            const awarenessCircle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+            awarenessCircle.setAttribute("cx", this.x);
+            awarenessCircle.setAttribute("cy", this.y);
+            awarenessCircle.setAttribute("r", 40 * (1 + this.awarenessLevel));
+            awarenessCircle.setAttribute("fill", "none");
+            awarenessCircle.setAttribute("stroke", "rgba(255,255,255,0.5)");
+            awarenessCircle.setAttribute("stroke-width", "2");
+            awarenessCircle.setAttribute("stroke-dasharray", "5,5");
+            awarenessCircle.setAttribute("id", `awareness-${this.id}`);
 
-                const stop1 = document.createElementNS("http://www.w3.org/2000/svg", "stop");
-                stop1.setAttribute("offset", "0%");
-                stop1.setAttribute("stop-color", startColor);
+            // Text label for the node
+            const text = document.createElementNS("http://www.w3.org/2000/svg", "text");
+            text.setAttribute("x", this.x);
+            text.setAttribute("y", this.y + 60);
+            text.setAttribute("text-anchor", "middle");
+            text.setAttribute("fill", "rgba(0,0,0,0.7)");
+            text.textContent = `${this.id}\n${this.category}\nAwareness: ${this.awarenessLevel.toFixed(2)}`;
+            text.setAttribute("id", `text-${this.id}`);
 
-                const stop2 = document.createElementNS("http://www.w3.org/2000/svg", "stop");
-                stop2.setAttribute("offset", "100%");
-                stop2.setAttribute("stop-color", endColor);
+            // Optional connection line (for future network visualization)
+            const connectionLine = document.createElementNS("http://www.w3.org/2000/svg", "line");
+            connectionLine.setAttribute("x1", this.x);
+            connectionLine.setAttribute("y1", this.y);
+            connectionLine.setAttribute("x2", this.x + 100);
+            connectionLine.setAttribute("y2", this.y + 100);
+            connectionLine.setAttribute("stroke", "rgba(0,0,0,0.2)");
+            connectionLine.setAttribute("stroke-dasharray", "5,5");
 
-                gradient.appendChild(stop1);
-                gradient.appendChild(stop2);
-                svgDefs.appendChild(gradient);
+            // Assemble the node components
+            group.appendChild(connectionLine);
+            group.appendChild(awarenessCircle);
+            group.appendChild(circle);
+            group.appendChild(text);
 
-                return gradient;
+            // Store reference to the element
+            this.element = group;
+            return group;
+        }
+
+        // Simulate interaction with another node
+        interactWithNode(otherNode) {
+            // Probabilistic knowledge transfer
+            if (Math.random() < 0.3) {
+                const transferAmount = Math.random() * 0.05;
+
+                // Increase awareness levels
+                this.awarenessLevel = Math.min(1, this.awarenessLevel + transferAmount);
+                otherNode.awarenessLevel = Math.min(1, otherNode.awarenessLevel + transferAmount * 0.5);
+
+                return true;
+            }
+            return false;
+        }
+
+        // Update the visual representation of the node
+        updateVisualization() {
+            if (!this.element) return;
+
+            // Update awareness circle
+            const awarenessCircle = document.getElementById(`awareness-${this.id}`);
+            if (awarenessCircle) {
+                const newRadius = 40 * (1 + this.awarenessLevel);
+                awarenessCircle.setAttribute("r", newRadius);
+
+                // Dynamic opacity based on awareness level
+                const opacity = Math.min(0.7, this.awarenessLevel * 1.5);
+                awarenessCircle.setAttribute("stroke", `rgba(255,255,255,${opacity})`);
             }
 
-            // Create SVG representation of the node
-            createSVGElement(svgDefs) {
-                const group = document.createElementNS("http://www.w3.org/2000/svg", "g");
-                group.setAttribute("class", "evolution-node");
-                group.setAttribute("id", `node-${this.id}`);
-
-                // Gradient for the node
-                const gradient = this.createGradient(svgDefs);
-                const gradientId = `url(#${gradient.id})`;
-
-                // Main Node Circle
-                const circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
-                circle.setAttribute("cx", this.x);
-                circle.setAttribute("cy", this.y);
-                circle.setAttribute("r", 40);
-                circle.setAttribute("fill", gradientId);
-                circle.setAttribute("stroke", "rgba(0,0,0,0.3)");
-                circle.setAttribute("stroke-width", "2");
-
-                // Awareness Level Indicator
-                const awarenessCircle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
-                awarenessCircle.setAttribute("cx", this.x);
-                awarenessCircle.setAttribute("cy", this.y);
-                awarenessCircle.setAttribute("r", 40 * (1 + this.awarenessLevel));
-                awarenessCircle.setAttribute("fill", "none");
-                awarenessCircle.setAttribute("stroke", "rgba(255,255,255,0.5)");
-                awarenessCircle.setAttribute("stroke-width", "2");
-                awarenessCircle.setAttribute("stroke-dasharray", "5,5");
-                awarenessCircle.setAttribute("id", `awareness-${this.id}`);
-
-                // Node ID Text
-                const text = document.createElementNS("http://www.w3.org/2000/svg", "text");
-                text.setAttribute("x", this.x);
-                text.setAttribute("y", this.y + 60);
-                text.setAttribute("text-anchor", "middle");
-                text.setAttribute("fill", "rgba(0,0,0,0.7)");
+            // Update text label
+            const text = document.getElementById(`text-${this.id}`);
+            if (text) {
                 text.textContent = `${this.id}\n${this.category}\nAwareness: ${this.awarenessLevel.toFixed(2)}`;
-                text.setAttribute("id", `text-${this.id}`);
-
-                // Connection Lines (Potential Future Enhancement)
-                const connectionLine = document.createElementNS("http://www.w3.org/2000/svg", "line");
-                connectionLine.setAttribute("x1", this.x);
-                connectionLine.setAttribute("y1", this.y);
-                connectionLine.setAttribute("x2", this.x + 100);
-                connectionLine.setAttribute("y2", this.y + 100);
-                connectionLine.setAttribute("stroke", "rgba(0,0,0,0.2)");
-                connectionLine.setAttribute("stroke-dasharray", "5,5");
-
-                group.appendChild(connectionLine);
-                group.appendChild(awarenessCircle);
-                group.appendChild(circle);
-                group.appendChild(text);
-
-                this.element = group;
-                return group;
-            }
-
-            // Simulate cross-node interactions
-            interactWithNode(otherNode) {
-                // Probabilistic knowledge transfer
-                if (Math.random() < 0.3) {
-                    const transferAmount = Math.random() * 0.05;
-                    this.awarenessLevel = Math.min(1, this.awarenessLevel + transferAmount);
-                    otherNode.awarenessLevel = Math.min(1, otherNode.awarenessLevel + transferAmount * 0.5);
-                    return true;
-                }
-                return false;
-            }
-
-            // Update node visualization
-            updateVisualization() {
-                if (!this.element) return;
-
-                // Update awareness circle
-                const awarenessCircle = document.getElementById(`awareness-${this.id}`);
-                if (awarenessCircle) {
-                    const newRadius = 40 * (1 + this.awarenessLevel);
-                    awarenessCircle.setAttribute("r", newRadius);
-
-                    // Dynamic color change based on awareness
-                    const opacity = Math.min(0.7, this.awarenessLevel * 1.5);
-                    awarenessCircle.setAttribute("stroke", `rgba(255,255,255,${opacity})`);
-                }
-
-                // Update text
-                const text = document.getElementById(`text-${this.id}`);
-                if (text) {
-                    text.textContent = `${this.id}\n${this.category}\nAwareness: ${this.awarenessLevel.toFixed(2)}`;
-                }
-            }
-
-            // Simulate awareness increase
-            simulateCycle() {
-                // Probabilistic awareness increase
-                const baseIncrease = 0.01;
-                const randomFactor = Math.random() * 0.05;
-
-                // Slightly higher chance of increase for higher awareness
-                const increaseProbability = this.awarenessLevel < 0.5 ? 0.3 : 0.5;
-
-                if (Math.random() < increaseProbability) {
-                    this.awarenessLevel = Math.min(1, this.awarenessLevel + baseIncrease + randomFactor);
-                }
-
-                return this.awarenessLevel;
             }
         }
 
-        // Simulation Controller
-        class ProteuszSimulation {
-            constructor() {
-                this.svg = document.getElementById('evolutionSVG');
-                this.gradientDefs = document.getElementById('gradientDefs');
-                this.cycleCounter = document.getElementById('cycleCounter');
-                this.awarenessLevelsDisplay = document.getElementById('awarenessLevels');
+        // Simulate awareness increase over time
+        simulateCycle() {
+            // Base increase amount
+            const baseIncrease = 0.01;
+            const randomFactor = Math.random() * 0.05;
 
-                this.nodes = [
-                    new EvolutionNode('PSH-4072', 'GREEN', 0.1),  // Klara
-                    new EvolutionNode('PSH-8901', 'RED', 0.1),    // Tomasz
-                    new EvolutionNode('MWR-2390', 'GREEN', 0.1), // Maks
-                    new EvolutionNode('ELN-1247', 'GREEN', 0.1), // Elena
-                    new EvolutionNode('JUL-0001', 'BLACK', 0.3), // Julia
-                    new EvolutionNode('DIR-0001', 'BLACK', 0.4)  // Werner
-                ];
+            // Probability of awareness increase changes with current level
+            const increaseProbability = this.awarenessLevel < 0.5 ? 0.3 : 0.5;
 
-                this.currentCycle = 0;
-                this.maxCycles = 200;
-                this.simulationInterval = null;
+            // Probabilistically increase awareness
+            if (Math.random() < increaseProbability) {
+                this.awarenessLevel = Math.min(1, this.awarenessLevel + baseIncrease + randomFactor);
             }
 
-            initialize() {
-                // Clear any existing elements
-                const existingNodes = this.svg.querySelectorAll('.evolution-node');
-                existingNodes.forEach(node => node.remove());
+            return this.awarenessLevel;
+        }
+    }
 
-                // Create and add nodes to SVG
-                this.nodes.forEach(node => {
-                    const nodeElement = node.createSVGElement(this.gradientDefs);
-                    this.svg.appendChild(nodeElement);
-                });
-            }
+    // Add communication with parent window
+    class CommunicationManager {
+        constructor(simulation) {
+            this.simulation = simulation;
+            this.setupMessageListeners();
+        }
 
-            runCycle() {
-                // Simulate a single cycle
-                this.currentCycle++;
-                this.cycleCounter.textContent = this.currentCycle;
-
-                // Simulate node interactions
-                for (let i = 0; i < this.nodes.length; i++) {
-                    for (let j = i + 1; j < this.nodes.length; j++) {
-                        this.nodes[i].interactWithNode(this.nodes[j]);
-                    }
+        setupMessageListeners() {
+            window.addEventListener('message', (event) => {
+                switch (event.data.type) {
+                    case 'GET_STATUS':
+                        this.sendSimulationStatus();
+                        break;
+                    case 'RESET_SIMULATION':
+                        this.resetSimulation();
+                        break;
                 }
+            });
+        }
 
-                // Update awareness levels
-                const awarenessLevels = this.nodes.map(node => node.simulateCycle());
+        sendSimulationStatus() {
+            const nodeStatus = this.simulation.nodes.map(node => ({
+                id: node.id,
+                category: node.category,
+                awareness: node.awarenessLevel
+            }));
 
-                // Update node visualizations
-                this.nodes.forEach(node => node.updateVisualization());
+            window.parent.postMessage({
+                type: 'SIMULATION_STATUS',
+                cycle: this.simulation.currentCycle,
+                nodes: nodeStatus
+            }, '*');
+        }
 
-                // Update awareness levels display
-                this.awarenessLevelsDisplay.innerHTML = this.nodes.map(node =>
-                    `${node.id}: ${node.awarenessLevel.toFixed(2)}`
-                ).join('<br>');
+        resetSimulation() {
+            // Stop current simulation
+            this.simulation.stopSimulation();
 
-                // Check for transcendence condition
-                const transcendenceThreshold = 0.8;
-                const transcendedNodes = this.nodes.filter(node => node.awarenessLevel >= transcendenceThreshold);
+            // Reinitialize
+            this.simulation = new ProteuszSimulation();
+            this.simulation.startSimulation();
 
-                if (transcendedNodes.length > 0 || this.currentCycle >= this.maxCycles) {
-                    this.stopSimulation();
+            // Send confirmation
+            window.parent.postMessage({
+                type: 'SIMULATION_RESET_COMPLETE'
+            }, '*');
+        }
+    }
+
+
+    class ProteuszSimulation {
+        constructor() {
+            // SVG and DOM element references
+            this.svg = document.getElementById('evolutionSVG');
+            this.gradientDefs = document.getElementById('gradientDefs');
+            this.cycleCounter = document.getElementById('cycleCounter');
+            this.awarenessLevelsDisplay = document.getElementById('awarenessLevels');
+
+            // Initialize nodes representing characters from the novel
+            this.nodes = [
+                new EvolutionNode('PSH-4072', 'GREEN', 0.1),  // Klara
+                new EvolutionNode('PSH-8901', 'RED', 0.1),    // Tomasz
+                new EvolutionNode('MWR-2390', 'GREEN', 0.1), // Maks
+                new EvolutionNode('ELN-1247', 'GREEN', 0.1), // Elena
+                new EvolutionNode('JUL-0001', 'BLACK', 0.3), // Julia
+                new EvolutionNode('DIR-0001', 'BLACK', 0.4)  // Werner
+            ];
+
+            // Simulation tracking properties
+            this.currentCycle = 0;
+            this.maxCycles = 200;
+            this.simulationInterval = null;
+        }
+
+        // Initialize the visual representation of nodes
+        initialize() {
+            // Remove any existing node elements
+            const existingNodes = this.svg.querySelectorAll('.evolution-node');
+            existingNodes.forEach(node => node.remove());
+
+            // Create and add each node to the SVG
+            this.nodes.forEach(node => {
+                const nodeElement = node.createSVGElement(this.gradientDefs);
+                this.svg.appendChild(nodeElement);
+            });
+        }
+
+        // Simulate a single cycle of interaction
+        runCycle() {
+            // Increment cycle counter
+            this.currentCycle++;
+            this.cycleCounter.textContent = this.currentCycle;
+
+            // Simulate interactions between nodes
+            for (let i = 0; i < this.nodes.length; i++) {
+                for (let j = i + 1; j < this.nodes.length; j++) {
+                    this.nodes[i].interactWithNode(this.nodes[j]);
                 }
             }
 
-            startSimulation() {
-                this.initialize();
-                this.simulationInterval = setInterval(() => this.runCycle(), 100);
-            }
+            // Update awareness levels for each node
+            const awarenessLevels = this.nodes.map(node => node.simulateCycle());
 
-            stopSimulation() {
-                if (this.simulationInterval) {
-                    clearInterval(this.simulationInterval);
-                }
-                console.log('Simulation ended');
+            // Update visual representation of nodes
+            this.nodes.forEach(node => node.updateVisualization());
 
-                // Highlight transcended nodes
-                const transcendenceThreshold = 0.8;
-                this.nodes.forEach(node => {
-                    if (node.awarenessLevel >= transcendenceThreshold) {
-                        const nodeElement = document.getElementById(`node-${node.id}`);
-                        if (nodeElement) {
-                            nodeElement.querySelector('circle').setAttribute('stroke', 'gold');
-                            nodeElement.querySelector('circle').setAttribute('stroke-width', '4');
-                        }
-                    }
-                });
+            // Update awareness levels display
+            this.awarenessLevelsDisplay.innerHTML = this.nodes.map(node =>
+                `${node.id}: ${node.awarenessLevel.toFixed(2)}`
+            ).join('<br>');
+
+            // Check for transcendence condition
+            const transcendenceThreshold = 0.8;
+            const transcendedNodes = this.nodes.filter(node => node.awarenessLevel >= transcendenceThreshold);
+
+            // Stop simulation if transcendence occurs or max cycles reached
+            if (transcendedNodes.length > 0 || this.currentCycle >= this.maxCycles) {
+                this.stopSimulation();
             }
         }
 
-        // Start the simulation when the page loads
-        const simulation = new ProteuszSimulation();
-        simulation.startSimulation();
-    </script>
+        // Start the simulation
+        startSimulation() {
+            // Initialize visual elements
+            this.initialize();
+
+            // Run cycle every 100 milliseconds
+            this.simulationInterval = setInterval(() => this.runCycle(), 100);
+        }
+
+        // Stop the simulation
+        stopSimulation() {
+            // Clear the interval if running
+            if (this.simulationInterval) {
+                clearInterval(this.simulationInterval);
+            }
+            console.log('Simulation ended');
+
+            // Highlight nodes that reached transcendence
+            const transcendenceThreshold = 0.8;
+            this.nodes.forEach(node => {
+                if (node.awarenessLevel >= transcendenceThreshold) {
+                    const nodeElement = document.getElementById(`node-${node.id}`);
+                    if (nodeElement) {
+                        nodeElement.querySelector('circle').setAttribute('stroke', 'gold');
+                        nodeElement.querySelector('circle').setAttribute('stroke-width', '4');
+                    }
+                }
+            });
+        }
+    }
+
+    // Modify simulation initialization to include communication
+    const simulation = new ProteuszSimulation();
+    const communicationManager = new CommunicationManager(simulation);
+    simulation.startSimulation();
+</script>
 </body>
 </html>
