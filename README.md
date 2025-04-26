@@ -3208,8 +3208,7 @@ Powieść "Proteusz 999" nie jest tylko dystopią o mechanizmach kontroli społe
 
 ## Diagramy
 
-Każdy z tych diagramów oferuje inną perspektywę na złożony świat przedstawiony w powieści "Proteusz 999", pomagając zrozumieć różne aspekty jej filozoficznych koncepcji i struktury narracyjnej. Dzięki zastosowaniu różnych typów grafów (flowchart, graph, gantt) udało się przedstawić zarówno hierarchie, relacje jak i chronologię wydarzeń.
-
+Każdy z tych diagramów oferuje inną perspektywę na złożony świat przedstawiony w powieści "Proteusz 999", pomagając zrozumieć różne aspekty jej filozoficznych koncepcji, struktury narracyjnej, hierarchie, relacje jak i chronologię wydarzeń.
 
 
 
@@ -3220,7 +3219,7 @@ Trzy główne poziomy rzeczywistości w powieści:
 - Poziom 1: Nowa Paradyzja (symulacja, w której żyją bohaterowie)
    
   Diagram jasno pokazuje hierarchiczną strukturę i przekształcenie symulacji przed i po transformacji.
-- ![1.png](img/1.png)
+![1.png](img/1.png)
 
 
 ### Manifestacje świadomości w różnych poziomach
@@ -3229,13 +3228,12 @@ Jak óżne świadomości manifestują się na niższych poziomach:
 - Proteusz manifestuje się jako Werner i Aria
 - Szósta Postać (z potencjalnej przyszłości) subtelnie kieruje ewolucją
 - Julia pełni funkcję mostu między poziomami rzeczywistości
-
-- ![2.png](img/2.png)
+![2.png](img/2.png)
 
 
 ### Relacje między głównymi postaciami
 Relacje między wszystkimi kluczowymi postaciami w powieści, zarówno ludzkimi bohaterami jak i manifestacjami wyższych świadomości. Pokazuje, jak ewoluują te relacje pomiędzy pierwszą a drugą częścią książki oraz jak wszyscy współdziałają w procesie transformacji.
-- ![3.png](img/3.png)
+![3.png](img/3.png)
 
 
 ### Ewolucja symulacji Nowej Paradyzji
