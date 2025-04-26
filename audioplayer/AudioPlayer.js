@@ -10,5 +10,5 @@ export default AudioPlayer;
 
 // Eksportuj również jako obiekt globalny dla starszych przeglądarek, które nie obsługują modułów
 if (typeof window !== 'undefined') {
-  window.AudioPlayer = AudioPlayer;
+    window.AudioPlayer = AudioPlayer;
 }

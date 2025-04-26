@@ -7,6 +7,8 @@ import { UIManager } from './AudioPlayer.ui.js';
 import { EventManager } from './AudioPlayer.events.js';
 import { Utils } from './AudioPlayer.utils.js';
 import { DebugHelper } from './AudioPlayer.debug.js';
+import { PlaylistManager } from './AudioPlayer.playlist.js';
+import { PlaylistUIManager } from './AudioPlayer.playlistUI.js';
 
 class AudioPlayer {
   constructor(options = {}) {
@@ -19,6 +21,7 @@ class AudioPlayer {
       rememberPosition: options.rememberPosition !== undefined ? options.rememberPosition : true,
       storagePrefix: options.storagePrefix || 'audioPlayer_',
       debug: options.debug || false,
+      showPlaylist: options.showPlaylist !== undefined ? options.showPlaylist : true,
       ...options
     };
 
@@ -32,6 +35,8 @@ class AudioPlayer {
     this.storage = null;
     this.ui = null;
     this.events = null;
+    this.playlist = null;
+    this.playlistUI = null;
 
     // Narzędzie do debugowania
     this.debug = new DebugHelper(this);
@@ -48,108 +53,153 @@ class AudioPlayer {
    * Inicjalizacja odtwarzacza
    */
   initialize() {
-    // Pobierz lub utwórz kontener
-    this.container = document.getElementById(this.options.containerId);
-    if (!this.container) {
-      this.container = document.createElement('div');
-      this.container.id = this.options.containerId;
-      document.body.appendChild(this.container);
-
-      if (this.options.debug) {
-        this.debug.log('Container created dynamically', this.container);
-      }
-    } else if (this.options.debug) {
-      this.debug.log('Using existing container', this.container);
-    }
-
-    // Inicjalizacja menedżerów w odpowiedniej kolejności
-    // 1. Najpierw UI - tworzy elementy HTML
-    this.ui = new UIManager(this);
-    const uiInitialized = this.ui.createPlayerElements();
-
-    if (!uiInitialized) {
-      console.error('UI initialization failed. Cannot create audio element.');
-      if (this.options.debug) {
-        this.debug.log('UI initialization failed', { container: this.container });
-        this.debug.createDebugPanel();
-      }
-      return;
-    }
-
-    if (this.options.debug) {
-      this.debug.log('UI initialized successfully');
-      this.debug.testAudioElement();
-    }
-
-    this.ui.applyStyles();
-
-    // Dodatkowe sprawdzenie czy element audio został poprawnie utworzony
-    if (!this.audioElement) {
-      console.error('Audio element not initialized correctly');
-      if (this.options.debug) {
-        this.debug.log('Audio element not initialized correctly');
-        this.debug.createDebugPanel();
-      }
-      return;
-    }
-
-    // 2. Następnie storage - zarządza przechowywaniem danych
-    this.storage = new StorageManager(this);
-
-    // 3. Na końcu events - dodaje obsługę zdarzeń do już utworzonych elementów
-    this.events = new EventManager(this);
-
-    // Inicjalizacja zdarzeń po krótkim opóźnieniu
-    const initializeEventsAndRestore = () => {
-      if (this.audioElement) {
-        this.events.addEventListeners();
-
-        // Przywróć zapisaną pozycję, jeśli opcja jest włączona
-        if (this.options.rememberPosition && this.storage) {
-          this.storage.restorePlaybackPosition();
-        }
-
-        // Sprawdź, czy możemy odtwarzać
-        if (this.options.autoplay && typeof this.audioElement.play === 'function') {
-          try {
-            const playPromise = this.audioElement.play();
-            if (playPromise !== undefined) {
-              playPromise.catch(error => {
-                console.warn('Autoplay prevented:', error);
-                if (this.options.debug) {
-                  this.debug.log('Autoplay prevented', error);
-                }
-              });
-            }
-          } catch (e) {
-            console.warn('Error during autoplay:', e);
-            if (this.options.debug) {
-              this.debug.log('Error during autoplay', e);
-            }
-          }
-        }
+    try {
+      // Pobierz lub utwórz kontener
+      this.container = document.getElementById(this.options.containerId);
+      if (!this.container) {
+        this.container = document.createElement('div');
+        this.container.id = this.options.containerId;
+        document.body.appendChild(this.container);
 
         if (this.options.debug) {
-          this.debug.log('Events initialized and position restored');
-          this.debug.updateDebugPanel();
+          this.debug.log('Container created dynamically', this.container);
         }
-      } else {
+      } else if (this.options.debug) {
+        this.debug.log('Using existing container', this.container);
+      }
+
+      // Inicjalizacja menedżerów w odpowiedniej kolejności
+      // 1. Najpierw UI - tworzy elementy HTML
+      this.ui = new UIManager(this);
+      const uiInitialized = this.ui.createPlayerElements();
+
+      if (!uiInitialized) {
+        console.error('UI initialization failed. Cannot create audio element.');
+        if (this.options.debug) {
+          this.debug.log('UI initialization failed', { container: this.container });
+          this.debug.createDebugPanel();
+        }
+        return;
+      }
+
+      if (this.options.debug) {
+        this.debug.log('UI initialized successfully');
+        this.debug.testAudioElement();
+      }
+
+      this.ui.applyStyles();
+
+      // Dodatkowe sprawdzenie czy element audio został poprawnie utworzony
+      if (!this.audioElement) {
+        console.error('Audio element not initialized correctly');
+        if (this.options.debug) {
+          this.debug.log('Audio element not initialized correctly');
+          this.debug.createDebugPanel();
+        }
+        return;
+      }
+
+      // 2. Najpierw storage - zarządza przechowywaniem danych
+      this.storage = new StorageManager(this);
+
+      // 3. Inicjalizacja playlist
+      this.playlist = new PlaylistManager(this);
+
+      // 4. UI dla playlisty (jeśli opcja jest włączona)
+      if (this.options.showPlaylist) {
+        this.playlistUI = new PlaylistUIManager(this);
+        this.playlistUI.initialize();
+      }
+
+      // 5. Na końcu events - dodaje obsługę zdarzeń do już utworzonych elementów
+      this.events = new EventManager(this);
+
+      // Inicjalizacja zdarzeń po krótkim opóźnieniu
+      setTimeout(() => {
+        this._initializePlayerFunctions();
+      }, 200);
+
+    } catch (error) {
+      console.error('Error initializing player:', error);
+      if (this.options.debug) {
+        this.debug.log('Error during initialization', error);
+        this.debug.createDebugPanel();
+      }
+    }
+  }
+
+  /**
+   * Inicjalizacja funkcji odtwarzacza (po załadowaniu elementów)
+   * @private
+   */
+  _initializePlayerFunctions() {
+    try {
+      if (!this.audioElement) {
         console.error('Audio element not initialized correctly after waiting');
         if (this.options.debug) {
           this.debug.log('Audio element still not available after waiting');
           this.debug.createDebugPanel();
         }
+        return;
       }
-    };
 
-    // Dajemy przeglądarce czas na pełne załadowanie elementu audio
-    setTimeout(initializeEventsAndRestore, 200);
+      // Dodaj nasłuchiwanie zdarzeń
+      this.events.addEventListeners();
 
-    if (this.options.debug) {
-      // Pokaż panel debugowania
-      setTimeout(() => {
-        this.debug.createDebugPanel();
-      }, 500);
+      // Jeśli jest przekazany audioSrc, dodajmy go jako pierwszy utwór do playlisty
+      if (this.options.audioSrc && this.playlist) {
+        this.playlist.addTrack(this.options.audioSrc);
+
+        if (this.options.debug) {
+          this.debug.log('Added initial track to playlist', { src: this.options.audioSrc });
+        }
+      }
+
+      // Podłącz obsługę zakończenia utworu
+      this.audioElement.addEventListener('ended', () => {
+        if (this.playlist) {
+          if (this.options.debug) {
+            this.debug.log('Track ended, playing next');
+          }
+          this.playlist.playNext();
+        }
+      });
+
+      // Przywróć zapisaną pozycję, jeśli opcja jest włączona
+      if (this.options.rememberPosition && this.storage) {
+        this.storage.restorePlaybackPosition();
+      }
+
+      // Sprawdź, czy możemy odtwarzać
+      if (this.options.autoplay && typeof this.audioElement.play === 'function') {
+        try {
+          const playPromise = this.audioElement.play();
+          if (playPromise !== undefined) {
+            playPromise.catch(error => {
+              console.warn('Autoplay prevented:', error);
+              if (this.options.debug) {
+                this.debug.log('Autoplay prevented', error);
+              }
+            });
+          }
+        } catch (e) {
+          console.warn('Error during autoplay:', e);
+          if (this.options.debug) {
+            this.debug.log('Error during autoplay', e);
+          }
+        }
+      }
+
+      if (this.options.debug) {
+        this.debug.log('Player fully initialized');
+        this.debug.updateDebugPanel();
+      }
+
+    } catch (error) {
+      console.error('Error initializing player functions:', error);
+      if (this.options.debug) {
+        this.debug.log('Error initializing player functions', error);
+      }
     }
   }
 
@@ -203,7 +253,9 @@ class AudioPlayer {
         playPromise
           .then(() => {
             this.isPlaying = true;
-            this.ui.updatePlayPauseUI();
+            if (this.ui) {
+              this.ui.updatePlayPauseUI();
+            }
             if (this.options.debug) {
               this.debug.log('Playing successfully started');
               this.debug.updateDebugPanel();
@@ -226,7 +278,9 @@ class AudioPlayer {
           });
       } else {
         this.isPlaying = true;
-        this.ui.updatePlayPauseUI();
+        if (this.ui) {
+          this.ui.updatePlayPauseUI();
+        }
         if (this.options.debug) {
           this.debug.log('Playing started (legacy mode)');
           this.debug.updateDebugPanel();
@@ -255,10 +309,13 @@ class AudioPlayer {
     try {
       this.audioElement.pause();
       this.isPlaying = false;
-      this.ui.updatePlayPauseUI();
+
+      if (this.ui) {
+        this.ui.updatePlayPauseUI();
+      }
 
       // Zapisz pozycję przy zatrzymaniu
-      if (this.options.rememberPosition) {
+      if (this.options.rememberPosition && this.storage) {
         this.storage.savePlaybackPosition();
       }
 
@@ -324,7 +381,9 @@ class AudioPlayer {
    * Ustawienie informacji o utworze
    */
   setTrackInfo(title, artist) {
-    this.ui.setTrackInfo(title, artist);
+    if (this.ui) {
+      this.ui.setTrackInfo(title, artist);
+    }
 
     if (this.options.debug) {
       this.debug.log(`Track info updated - Title: ${title}, Artist: ${artist}`);
@@ -345,7 +404,7 @@ class AudioPlayer {
     const volume = Math.max(0, Math.min(1, value));
     this.audioElement.volume = volume;
 
-    if (this.ui.volumeSliderFill) {
+    if (this.ui && this.ui.volumeSliderFill) {
       this.ui.volumeSliderFill.style.width = `${volume * 100}%`;
     }
 
@@ -355,7 +414,9 @@ class AudioPlayer {
       this.audioElement.muted = false;
     }
 
-    this.ui.updateVolumeUI();
+    if (this.ui) {
+      this.ui.updateVolumeUI();
+    }
 
     if (this.options.debug) {
       this.debug.log(`Volume set to: ${volume}`);
@@ -375,7 +436,10 @@ class AudioPlayer {
     }
 
     this.audioElement.muted = !this.audioElement.muted;
-    this.ui.updateVolumeUI();
+
+    if (this.ui) {
+      this.ui.updateVolumeUI();
+    }
 
     if (this.options.debug) {
       this.debug.log(`Mute toggled to: ${this.audioElement.muted ? 'muted' : 'unmuted'}`);
@@ -395,7 +459,7 @@ class AudioPlayer {
    */
   enablePositionMemory(enable = true) {
     this.options.rememberPosition = enable;
-    if (!enable) {
+    if (!enable && this.storage) {
       this.storage.clearPlaybackPosition();
     }
 
@@ -468,6 +532,183 @@ class AudioPlayer {
   }
 
   /**
+   * Dodaje utwór lub utwory do playlisty
+   * @param {String|Object|Array} tracks - URL lub obiekt utworu lub tablica utworów
+   * @param {Boolean} autoplay - czy rozpocząć odtwarzanie automatycznie
+   */
+  addToPlaylist(tracks, autoplay = false) {
+    if (!this.playlist) {
+      if (this.options.debug) {
+        this.debug.log('Playlist manager not initialized');
+      }
+      return false;
+    }
+
+    if (Array.isArray(tracks)) {
+      // Jeśli to tablica utworów, przekazujemy ją do setPlaylist
+      return this.playlist.setPlaylist(tracks, autoplay);
+    } else {
+      // Dodajemy pojedynczy utwór
+      const index = this.playlist.addTrack(tracks);
+
+      // Jeśli włączony autoplay i to pierwszy utwór, odtwórz go
+      if (autoplay && this.playlist.tracks.length === 1) {
+        this.playlist.playTrack(0);
+      }
+
+      return index >= 0;
+    }
+  }
+
+  /**
+   * Ustawia całą playlistę
+   * @param {Array} tracks - tablica utworów
+   * @param {Boolean} autoplay - czy rozpocząć odtwarzanie automatycznie
+   */
+  setPlaylist(tracks, autoplay = false) {
+    if (!this.playlist) {
+      if (this.options.debug) {
+        this.debug.log('Playlist manager not initialized');
+      }
+      return false;
+    }
+
+    return this.playlist.setPlaylist(tracks, autoplay);
+  }
+
+  /**
+   * Wczytuje zapisaną playlistę
+   * @param {String} name - nazwa playlisty
+   * @param {Boolean} autoplay - czy rozpocząć odtwarzanie automatycznie
+   */
+  loadPlaylist(name, autoplay = false) {
+    if (!this.playlist) {
+      if (this.options.debug) {
+        this.debug.log('Playlist manager not initialized');
+      }
+      return false;
+    }
+
+    return this.playlist.loadPlaylist(name, autoplay);
+  }
+
+  /**
+   * Zapisuje aktualną playlistę
+   * @param {String} name - nazwa playlisty
+   */
+  savePlaylist(name) {
+    if (!this.playlist) {
+      if (this.options.debug) {
+        this.debug.log('Playlist manager not initialized');
+      }
+      return false;
+    }
+
+    return this.playlist.savePlaylist(name);
+  }
+
+  /**
+   * Odtwarza następny utwór z playlisty
+   */
+  playNext() {
+    if (!this.playlist) {
+      if (this.options.debug) {
+        this.debug.log('Playlist manager not initialized');
+      }
+      return false;
+    }
+
+    return this.playlist.playNext();
+  }
+
+  /**
+   * Odtwarza poprzedni utwór z playlisty
+   */
+  playPrevious() {
+    if (!this.playlist) {
+      if (this.options.debug) {
+        this.debug.log('Playlist manager not initialized');
+      }
+      return false;
+    }
+
+    return this.playlist.playPrevious();
+  }
+
+  /**
+   * Przełącza zapętlenie playlisty
+   * @param {Boolean} enable - czy włączyć zapętlenie (opcjonalne)
+   */
+  toggleLoop(enable = null) {
+    if (!this.playlist) {
+      if (this.options.debug) {
+        this.debug.log('Playlist manager not initialized');
+      }
+      return false;
+    }
+
+    return this.playlist.toggleLoop(enable);
+  }
+
+  /**
+   * Przełącza tasowanie playlisty
+   * @param {Boolean} enable - czy włączyć tasowanie (opcjonalne)
+   */
+  toggleShuffle(enable = null) {
+    if (!this.playlist) {
+      if (this.options.debug) {
+        this.debug.log('Playlist manager not initialized');
+      }
+      return false;
+    }
+
+    return this.playlist.toggleShuffle(enable);
+  }
+
+  /**
+   * Pobiera listę utworów z playlisty
+   */
+  getPlaylist() {
+    if (!this.playlist) {
+      if (this.options.debug) {
+        this.debug.log('Playlist manager not initialized');
+      }
+      return [];
+    }
+
+    return this.playlist.getPlaylist();
+  }
+
+  /**
+   * Pobiera aktualnie odtwarzany utwór
+   */
+  getCurrentTrack() {
+    if (!this.playlist) {
+      if (this.options.debug) {
+        this.debug.log('Playlist manager not initialized');
+      }
+      return null;
+    }
+
+    return this.playlist.getCurrentTrack();
+  }
+
+  /**
+   * Przełącza widoczność panelu playlisty
+   */
+  togglePlaylistPanel() {
+    if (!this.playlistUI) {
+      if (this.options.debug) {
+        this.debug.log('Playlist UI manager not initialized');
+      }
+      return false;
+    }
+
+    this.playlistUI.togglePlaylistVisibility();
+    return true;
+  }
+
+  /**
    * Zniszczenie odtwarzacza i wyczyszczenie zasobów
    */
   destroy() {
@@ -499,6 +740,11 @@ class AudioPlayer {
       this.events.removeEventListeners();
     }
 
+    // Wyczyść playlist
+    if (this.playlist) {
+      this.playlist.clear();
+    }
+
     // Usuń kontener
     if (this.container) {
       this.container.innerHTML = '';
@@ -516,6 +762,8 @@ class AudioPlayer {
     this.ui = null;
     this.storage = null;
     this.events = null;
+    this.playlist = null;
+    this.playlistUI = null;
     this.audioElement = null;
 
     if (this.options.debug) {

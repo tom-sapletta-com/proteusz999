@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.1.22] - 2025-04-26
+
+### Added
+- Changes in audioplayer/AudioPlayer.bundle.js
+- Changes in audioplayer/AudioPlayer.playlist.js
+- Changes in audioplayer/AudioPlayer.playlistUI.js
+- Changes in audioplayer/README.md
+- Changes in audioplayer/index1.html
+- Changes in audioplayer/index3.html
+
 ## [0.1.21] - 2025-04-26
 
 ## [0.1.20] - 2025-04-26

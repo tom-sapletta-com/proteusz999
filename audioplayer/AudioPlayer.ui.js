@@ -2,34 +2,34 @@
  * AudioPlayer.ui.js - Zarządzanie interfejsem użytkownika odtwarzacza audio
  */
 
-import { Utils } from './AudioPlayer.utils.js';
+import {Utils} from './AudioPlayer.utils.js';
 
 export class UIManager {
-  constructor(player) {
-    this.player = player;
-    this.playPauseBtn = null;
-    this.progressBar = null;
-    this.progressFill = null;
-    this.bufferProgress = null;
-    this.currentTimeDisplay = null;
-    this.durationDisplay = null;
-    this.volumeBtn = null;
-    this.volumeSlider = null;
-    this.volumeSliderFill = null;
-    this.waveformElement = null;
-  }
+    constructor(player) {
+        this.player = player;
+        this.playPauseBtn = null;
+        this.progressBar = null;
+        this.progressFill = null;
+        this.bufferProgress = null;
+        this.currentTimeDisplay = null;
+        this.durationDisplay = null;
+        this.volumeBtn = null;
+        this.volumeSlider = null;
+        this.volumeSliderFill = null;
+        this.waveformElement = null;
+    }
 
-  /**
-   * Tworzenie elementów HTML odtwarzacza
-   */
-  createPlayerElements() {
-    try {
-      const streamingEnabled = this.player.options.streaming && this.player.hasMediaSourceSupport;
+    /**
+     * Tworzenie elementów HTML odtwarzacza
+     */
+    createPlayerElements() {
+        try {
+            const streamingEnabled = this.player.options.streaming && this.player.hasMediaSourceSupport;
 
-      // Generujemy unikalny identyfikator dla elementu audio, używając timestamp
-      const audioElementId = `audio-element-${this.player.audioId}-${Date.now()}`;
+            // Generujemy unikalny identyfikator dla elementu audio, używając timestamp
+            const audioElementId = `audio-element-${this.player.audioId}-${Date.now()}`;
 
-      const playerHTML = `
+            const playerHTML = `
         <div class="audio-player ${this.player.options.theme}">
           <div class="player-header">
             <div class="track-info">
@@ -78,124 +78,124 @@ export class UIManager {
         </div>
       `;
 
-      // Ustawiamy HTML kontenera
-      this.player.container.innerHTML = playerHTML;
+            // Ustawiamy HTML kontenera
+            this.player.container.innerHTML = playerHTML;
 
-      // Zapisujemy ID elementu audio, aby później móc go łatwo zlokalizować
-      this.player._audioElementId = audioElementId;
+            // Zapisujemy ID elementu audio, aby później móc go łatwo zlokalizować
+            this.player._audioElementId = audioElementId;
 
-      // Pobieramy referencje do elementów DOM
-      this._findAndAssignElements();
+            // Pobieramy referencje do elementów DOM
+            this._findAndAssignElements();
 
-      // Sprawdzamy poprawność inicjalizacji
-      if (!this._validateElements()) {
-        return false;
-      }
+            // Sprawdzamy poprawność inicjalizacji
+            if (!this._validateElements()) {
+                return false;
+            }
 
-      // Ustaw źródło audio jeśli zostało podane
-      if (this.player.audioElement && this.player.options.audioSrc) {
-        this.player.audioElement.src = this.player.options.audioSrc;
-      }
+            // Ustaw źródło audio jeśli zostało podane
+            if (this.player.audioElement && this.player.options.audioSrc) {
+                this.player.audioElement.src = this.player.options.audioSrc;
+            }
 
-      return true;
-    } catch (error) {
-      console.error('Error creating player elements:', error);
-      if (this.player.options.debug) {
-        this.player.debug.log('Error creating player elements', error);
-      }
-      return false;
-    }
-  }
-
-  /**
-   * Pobiera i przypisuje referencje do elementów DOM
-   */
-  _findAndAssignElements() {
-    try {
-      // Najpierw próbujemy znaleźć element audio po ID
-      this.player.audioElement = document.getElementById(this.player._audioElementId);
-
-      // Jeśli nie udało się znaleźć po ID, szukamy po klasie
-      if (!this.player.audioElement) {
-        this.player.audioElement = this.player.container.querySelector('.audio-element');
-      }
-
-      // Przypisujemy pozostałe elementy DOM
-      this.playPauseBtn = this.player.container.querySelector('.play-pause-btn');
-      this.progressBar = this.player.container.querySelector('.progress-bar');
-      this.progressFill = this.player.container.querySelector('.progress-fill');
-      this.bufferProgress = this.player.container.querySelector('.buffer-progress');
-      this.currentTimeDisplay = this.player.container.querySelector('.current-time');
-      this.durationDisplay = this.player.container.querySelector('.duration');
-      this.volumeBtn = this.player.container.querySelector('.volume-btn');
-      this.volumeSlider = this.player.container.querySelector('.volume-slider');
-      this.volumeSliderFill = this.player.container.querySelector('.volume-slider-fill');
-
-      if (this.player.options.showWaveform) {
-        this.waveformElement = this.player.container.querySelector('.waveform');
-      }
-    } catch (error) {
-      console.error('Error finding and assigning elements:', error);
-      if (this.player.options.debug) {
-        this.player.debug.log('Error finding and assigning elements', error);
-      }
-    }
-  }
-
-  /**
-   * Sprawdza, czy wszystkie wymagane elementy zostały znalezione
-   */
-  _validateElements() {
-    const requiredElements = [
-      { name: 'audioElement', ref: this.player.audioElement },
-      { name: 'playPauseBtn', ref: this.playPauseBtn },
-      { name: 'progressBar', ref: this.progressBar },
-      { name: 'progressFill', ref: this.progressFill },
-      { name: 'currentTimeDisplay', ref: this.currentTimeDisplay },
-      { name: 'durationDisplay', ref: this.durationDisplay }
-    ];
-
-    const missingElements = requiredElements.filter(element => !element.ref);
-
-    if (missingElements.length > 0) {
-      const missingNames = missingElements.map(element => element.name).join(', ');
-      console.error(`Missing required elements: ${missingNames}`);
-
-      if (this.player.options.debug) {
-        this.player.debug.log(`Missing required elements: ${missingNames}`);
-      }
-
-      return false;
+            return true;
+        } catch (error) {
+            console.error('Error creating player elements:', error);
+            if (this.player.options.debug) {
+                this.player.debug.log('Error creating player elements', error);
+            }
+            return false;
+        }
     }
 
-    // Dodatkowe sprawdzenie elementu audio
-    if (this.player.audioElement) {
-      if (typeof this.player.audioElement.play !== 'function') {
-        console.error('Audio element does not have play method');
+    /**
+     * Pobiera i przypisuje referencje do elementów DOM
+     */
+    _findAndAssignElements() {
+        try {
+            // Najpierw próbujemy znaleźć element audio po ID
+            this.player.audioElement = document.getElementById(this.player._audioElementId);
 
-        if (this.player.options.debug) {
-          this.player.debug.log('Audio element does not have play method');
+            // Jeśli nie udało się znaleźć po ID, szukamy po klasie
+            if (!this.player.audioElement) {
+                this.player.audioElement = this.player.container.querySelector('.audio-element');
+            }
+
+            // Przypisujemy pozostałe elementy DOM
+            this.playPauseBtn = this.player.container.querySelector('.play-pause-btn');
+            this.progressBar = this.player.container.querySelector('.progress-bar');
+            this.progressFill = this.player.container.querySelector('.progress-fill');
+            this.bufferProgress = this.player.container.querySelector('.buffer-progress');
+            this.currentTimeDisplay = this.player.container.querySelector('.current-time');
+            this.durationDisplay = this.player.container.querySelector('.duration');
+            this.volumeBtn = this.player.container.querySelector('.volume-btn');
+            this.volumeSlider = this.player.container.querySelector('.volume-slider');
+            this.volumeSliderFill = this.player.container.querySelector('.volume-slider-fill');
+
+            if (this.player.options.showWaveform) {
+                this.waveformElement = this.player.container.querySelector('.waveform');
+            }
+        } catch (error) {
+            console.error('Error finding and assigning elements:', error);
+            if (this.player.options.debug) {
+                this.player.debug.log('Error finding and assigning elements', error);
+            }
+        }
+    }
+
+    /**
+     * Sprawdza, czy wszystkie wymagane elementy zostały znalezione
+     */
+    _validateElements() {
+        const requiredElements = [
+            {name: 'audioElement', ref: this.player.audioElement},
+            {name: 'playPauseBtn', ref: this.playPauseBtn},
+            {name: 'progressBar', ref: this.progressBar},
+            {name: 'progressFill', ref: this.progressFill},
+            {name: 'currentTimeDisplay', ref: this.currentTimeDisplay},
+            {name: 'durationDisplay', ref: this.durationDisplay}
+        ];
+
+        const missingElements = requiredElements.filter(element => !element.ref);
+
+        if (missingElements.length > 0) {
+            const missingNames = missingElements.map(element => element.name).join(', ');
+            console.error(`Missing required elements: ${missingNames}`);
+
+            if (this.player.options.debug) {
+                this.player.debug.log(`Missing required elements: ${missingNames}`);
+            }
+
+            return false;
         }
 
-        return false;
-      }
+        // Dodatkowe sprawdzenie elementu audio
+        if (this.player.audioElement) {
+            if (typeof this.player.audioElement.play !== 'function') {
+                console.error('Audio element does not have play method');
+
+                if (this.player.options.debug) {
+                    this.player.debug.log('Audio element does not have play method');
+                }
+
+                return false;
+            }
+        }
+
+        return true;
     }
 
-    return true;
-  }
+    /**
+     * Zastosowanie stylów CSS
+     */
+    applyStyles() {
+        const styleId = 'audio-player-styles';
 
-  /**
-   * Zastosowanie stylów CSS
-   */
-  applyStyles() {
-    const styleId = 'audio-player-styles';
+        // Sprawdź, czy style zostały już dodane
+        if (!document.getElementById(styleId)) {
+            const styleElement = document.createElement('style');
+            styleElement.id = styleId;
 
-    // Sprawdź, czy style zostały już dodane
-    if (!document.getElementById(styleId)) {
-      const styleElement = document.createElement('style');
-      styleElement.id = styleId;
-
-      styleElement.textContent = `
+            styleElement.textContent = `
         .audio-player {
           border-radius: 8px;
           overflow: hidden;
@@ -439,128 +439,128 @@ export class UIManager {
         }
       `;
 
-      document.head.appendChild(styleElement);
+            document.head.appendChild(styleElement);
+        }
     }
-  }
 
-  /**
-   * Aktualizacja paska postępu
-   */
-  updateProgress() {
-    try {
-      if (!this.player.audioElement || !this.player.audioElement.duration || !this.progressFill || !this.currentTimeDisplay) {
-        return;
-      }
+    /**
+     * Aktualizacja paska postępu
+     */
+    updateProgress() {
+        try {
+            if (!this.player.audioElement || !this.player.audioElement.duration || !this.progressFill || !this.currentTimeDisplay) {
+                return;
+            }
 
-      const currentTime = this.player.audioElement.currentTime;
-      const duration = this.player.audioElement.duration;
-      const progressPercent = (currentTime / duration) * 100;
+            const currentTime = this.player.audioElement.currentTime;
+            const duration = this.player.audioElement.duration;
+            const progressPercent = (currentTime / duration) * 100;
 
-      this.progressFill.style.width = `${progressPercent}%`;
-      this.currentTimeDisplay.textContent = Utils.formatTime(currentTime);
+            this.progressFill.style.width = `${progressPercent}%`;
+            this.currentTimeDisplay.textContent = Utils.formatTime(currentTime);
 
-      if (this.player.options.showWaveform && this.waveformElement) {
-        // Wizualizacja formy fali mogłaby być tutaj zaimplementowana
-      }
-    } catch (error) {
-      console.error('Error updating progress:', error);
-      if (this.player.options.debug) {
-        this.player.debug.log('Error updating progress', error);
-      }
+            if (this.player.options.showWaveform && this.waveformElement) {
+                // Wizualizacja formy fali mogłaby być tutaj zaimplementowana
+            }
+        } catch (error) {
+            console.error('Error updating progress:', error);
+            if (this.player.options.debug) {
+                this.player.debug.log('Error updating progress', error);
+            }
+        }
     }
-  }
 
-  /**
-   * Aktualizacja paska buforowania
-   */
-  updateBufferProgress() {
-    try {
-      if (!this.player.audioElement || !this.bufferProgress ||
-          !this.player.audioElement.buffered || this.player.audioElement.buffered.length === 0) {
-        return;
-      }
+    /**
+     * Aktualizacja paska buforowania
+     */
+    updateBufferProgress() {
+        try {
+            if (!this.player.audioElement || !this.bufferProgress ||
+                !this.player.audioElement.buffered || this.player.audioElement.buffered.length === 0) {
+                return;
+            }
 
-      const duration = this.player.audioElement.duration;
-      if (!duration) return;
+            const duration = this.player.audioElement.duration;
+            if (!duration) return;
 
-      // Pobierz czas końcowy ostatniego buforowanego zakresu
-      const bufferedEnd = this.player.audioElement.buffered.end(this.player.audioElement.buffered.length - 1);
-      const bufferPercent = (bufferedEnd / duration) * 100;
+            // Pobierz czas końcowy ostatniego buforowanego zakresu
+            const bufferedEnd = this.player.audioElement.buffered.end(this.player.audioElement.buffered.length - 1);
+            const bufferPercent = (bufferedEnd / duration) * 100;
 
-      this.bufferProgress.style.width = `${bufferPercent}%`;
-    } catch (error) {
-      // Ignorujemy błędy bufora, ponieważ są one niekrytyczne
-      if (this.player.options.debug) {
-        this.player.debug.log('Error updating buffer progress', error);
-      }
+            this.bufferProgress.style.width = `${bufferPercent}%`;
+        } catch (error) {
+            // Ignorujemy błędy bufora, ponieważ są one niekrytyczne
+            if (this.player.options.debug) {
+                this.player.debug.log('Error updating buffer progress', error);
+            }
+        }
     }
-  }
 
-  /**
-   * Aktualizacja interfejsu przycisku odtwarzania/pauzy
-   */
-  updatePlayPauseUI() {
-    try {
-      const playIcon = this.player.container?.querySelector('.play-icon');
-      const pauseIcon = this.player.container?.querySelector('.pause-icon');
+    /**
+     * Aktualizacja interfejsu przycisku odtwarzania/pauzy
+     */
+    updatePlayPauseUI() {
+        try {
+            const playIcon = this.player.container?.querySelector('.play-icon');
+            const pauseIcon = this.player.container?.querySelector('.pause-icon');
 
-      if (!playIcon || !pauseIcon) return;
+            if (!playIcon || !pauseIcon) return;
 
-      if (this.player.isPlaying) {
-        playIcon.style.display = 'none';
-        pauseIcon.style.display = 'block';
-      } else {
-        playIcon.style.display = 'block';
-        pauseIcon.style.display = 'none';
-      }
-    } catch (error) {
-      console.error('Error updating play/pause UI:', error);
-      if (this.player.options.debug) {
-        this.player.debug.log('Error updating play/pause UI', error);
-      }
+            if (this.player.isPlaying) {
+                playIcon.style.display = 'none';
+                pauseIcon.style.display = 'block';
+            } else {
+                playIcon.style.display = 'block';
+                pauseIcon.style.display = 'none';
+            }
+        } catch (error) {
+            console.error('Error updating play/pause UI:', error);
+            if (this.player.options.debug) {
+                this.player.debug.log('Error updating play/pause UI', error);
+            }
+        }
     }
-  }
 
-  /**
-   * Aktualizacja interfejsu głośności
-   */
-  updateVolumeUI() {
-    try {
-      const volumeIcon = this.player.container?.querySelector('.volume-icon');
-      const muteIcon = this.player.container?.querySelector('.mute-icon');
+    /**
+     * Aktualizacja interfejsu głośności
+     */
+    updateVolumeUI() {
+        try {
+            const volumeIcon = this.player.container?.querySelector('.volume-icon');
+            const muteIcon = this.player.container?.querySelector('.mute-icon');
 
-      if (!volumeIcon || !muteIcon || !this.player.audioElement) return;
+            if (!volumeIcon || !muteIcon || !this.player.audioElement) return;
 
-      if (this.player.audioElement.muted || this.player.audioElement.volume === 0) {
-        volumeIcon.style.display = 'none';
-        muteIcon.style.display = 'block';
-      } else {
-        volumeIcon.style.display = 'block';
-        muteIcon.style.display = 'none';
-      }
-    } catch (error) {
-      console.error('Error updating volume UI:', error);
-      if (this.player.options.debug) {
-        this.player.debug.log('Error updating volume UI', error);
-      }
+            if (this.player.audioElement.muted || this.player.audioElement.volume === 0) {
+                volumeIcon.style.display = 'none';
+                muteIcon.style.display = 'block';
+            } else {
+                volumeIcon.style.display = 'block';
+                muteIcon.style.display = 'none';
+            }
+        } catch (error) {
+            console.error('Error updating volume UI:', error);
+            if (this.player.options.debug) {
+                this.player.debug.log('Error updating volume UI', error);
+            }
+        }
     }
-  }
 
-  /**
-   * Ustawienie informacji o utworze
-   */
-  setTrackInfo(title, artist) {
-    try {
-      const titleElement = this.player.container?.querySelector('.track-title');
-      const artistElement = this.player.container?.querySelector('.track-artist');
+    /**
+     * Ustawienie informacji o utworze
+     */
+    setTrackInfo(title, artist) {
+        try {
+            const titleElement = this.player.container?.querySelector('.track-title');
+            const artistElement = this.player.container?.querySelector('.track-artist');
 
-      if (titleElement) titleElement.textContent = title || 'Audio Track';
-      if (artistElement) artistElement.textContent = artist || '';
-    } catch (error) {
-      console.error('Error setting track info:', error);
-      if (this.player.options.debug) {
-        this.player.debug.log('Error setting track info', error);
-      }
+            if (titleElement) titleElement.textContent = title || 'Audio Track';
+            if (artistElement) artistElement.textContent = artist || '';
+        } catch (error) {
+            console.error('Error setting track info:', error);
+            if (this.player.options.debug) {
+                this.player.debug.log('Error setting track info', error);
+            }
+        }
     }
-  }
 }

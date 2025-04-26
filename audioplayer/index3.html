@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AudioPlayer - Playlist Demo</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            color: #666;
+            text-align: center;
+            font-weight: normal;
+            margin-top: 0;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+
+        .player-container {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        #audio-player-container {
+            margin: 0 auto;
+        }
+
+        .section {
+            margin-top: 30px;
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        h3 {
+            margin-top: 0;
+            color: #444;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        .demo-controls {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .secondary-button {
+            background-color: #f0f0f0;
+            color: #333;
+        }
+
+        .secondary-button:hover {
+            background-color: #e0e0e0;
+        }
+
+        .sample-tracks {
+            margin-top: 15px;
+        }
+
+        .track-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+            align-items: center;
+        }
+
+        .track-item:last-child {
+            border-bottom: none;
+        }
+
+        .track-title {
+            flex: 1;
+        }
+
+        .track-item button {
+            padding: 5px 10px;
+            font-size: 0.9em;
+        }
+
+        .code-sample {
+            background-color: #f8f8f8;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: monospace;
+            overflow-x: auto;
+            margin-top: 15px;
+        }
+
+        .feature-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .feature-list li {
+            padding: 8px 0;
+            border-bottom: 1px dashed #eee;
+        }
+
+        .feature-list li:last-child {
+            border-bottom: none;
+        }
+
+        /* Karta z informacjami o debugowaniu */
+        .debug-card {
+            margin-top: 15px;
+            background-color: #fffde7;
+            padding: 15px;
+            border-left: 4px solid #ffd54f;
+            border-radius: 4px;
+        }
+
+        .debug-title {
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        #player-status {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border-radius: 4px;
+            min-height: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>AudioPlayer</h1>
+    <h2>Demonstracja funkcji playlist</h2>
+
+    <div class="player-container">
+        <div id="audio-player-container"></div>
+        <div id="player-status"></div>
+    </div>
+
+    <!-- Dołączenie wszystkich skryptów w odpowiedniej kolejności -->
+    <script src="AudioPlayer.utils.js"></script>
+    <script src="AudioPlayer.debug.js"></script>
+    <script src="AudioPlayer.ui.js"></script>
+    <script src="AudioPlayer.storage.js"></script>
+    <script src="AudioPlayer.events.js"></script>
+    <script src="AudioPlayer.playlist.js"></script>
+    <script src="AudioPlayer.playlistUI.js"></script>
+    <script src="AudioPlayer.core.js"></script>
+    <script src="AudioPlayer.js"></script>
+
+    <script>
+        // Czekaj na załadowanie dokumentu
+        document.addEventListener('DOMContentLoaded', function () {
+            // Inicjalizacja odtwarzacza
+            const player = new AudioPlayer({
+                containerId: 'audio-player-container',
+                theme: 'dark',
+                showPlaylist: true,
+                debug: false,  // Początkowy stan trybu debugowania
+                storagePrefix: 'demo_player_'
+            });
+
+            // Element statusu
+            const statusElement = document.getElementById('player-status');
+
+            // Funkcja aktualizująca status
+            function updateStatus(message) {
+                if (statusElement) {
+                    statusElement.textContent = message;
+                }
+            }
+
+            // Przyciski zarządzania playlistą
+            const togglePlaylistBtn = document.getElementById('toggle-playlist-btn');
+            const toggleLoopBtn = document.getElementById('toggle-loop-btn');
+            const toggleShuffleBtn = document.getElementById('toggle-shuffle-btn');
+            const savePlaylistBtn = document.getElementById('save-playlist-btn');
+            const loadPlaylistBtn = document.getElementById('load-playlist-btn');
+            const clearPlaylistBtn = document.getElementById('clear-playlist-btn');
+            const toggleDebugBtn = document.getElementById('toggle-debug-btn');
+
+            // Przyciski przykładowych utworów
+            const addTrackBtns = document.querySelectorAll('.add-track-btn');
+
+            // Obsługa przycisku przełączania playlisty
+            if (togglePlaylistBtn) {
+                togglePlaylistBtn.addEventListener('click', function () {
+                    player.togglePlaylistPanel();
+                    updateStatus("Przełączono widoczność playlisty");
+                });
+            }
+
+            // Obsługa przycisku zapętlania
+            if (toggleLoopBtn) {
+                toggleLoopBtn.addEventListener('click', function () {
+                    const isLoopEnabled = player.toggleLoop();
+                    updateStatus(`Zapętlenie ${isLoopEnabled ? 'włączone' : 'wyłączone'}`);
+                });
+            }
+
+            // Obsługa przycisku tasowania
+            if (toggleShuffleBtn) {
+                toggleShuffleBtn.addEventListener('click', function () {
+                    const isShuffleEnabled = player.toggleShuffle();
+                    updateStatus(`Tasowanie ${isShuffleEnabled ? 'włączone' : 'wyłączone'}`);
+                });
+            }
+
+            // Obsługa przycisku zapisywania playlisty
+            if (savePlaylistBtn) {
+                savePlaylistBtn.addEventListener('click', function () {
+                    const playlistName = prompt("Podaj nazwę playlisty do zapisania:", "moja-playlista");
+                    if (playlistName) {
+                        const success = player.savePlaylist(playlistName);
+                        if (success) {
+                            updateStatus(`Playlista "${playlistName}" została zapisana`);
+                        } else {
+                            updateStatus("Nie udało się zapisać playlisty");
+                        }
+                    }
+                });
+            }
+
+            // Obsługa przycisku wczytywania playlisty
+            if (loadPlaylistBtn) {
+                loadPlaylistBtn.addEventListener('click', function () {
+                    // Pobierz listę zapisanych playlist
+                    if (player.playlist) {
+                        const savedPlaylists = player.playlist.getSavedPlaylists();
+
+                        if (savedPlaylists.length === 0) {
+                            alert("Brak zapisanych playlist.");
+                            return;
+                        }
+
+                        // Utwórz listę do wyboru
+                        const playlistName = prompt(
+                            "Wybierz playlistę do wczytania:\n\n" +
+                            savedPlaylists.join("\n"),
+                            savedPlaylists[0]
+                        );
+
+                        if (playlistName) {
+                            const success = player.loadPlaylist(playlistName, true);
+                            if (success) {
+                                updateStatus(`Playlista "${playlistName}" została wczytana`);
+                            } else {
+                                updateStatus("Nie udało się wczytać playlisty");
+                            }
+                        }
+                    }
+                });
+            }
+
+            // Obsługa przycisku czyszczenia playlisty
+            if (clearPlaylistBtn) {
+                clearPlaylistBtn.addEventListener('click', function () {
+                    if (player.playlist) {
+                        player.playlist.clear();
+                        updateStatus("Playlista została wyczyszczona");
+                    }
+                });
+            }
+
+            // Obsługa przycisku trybu debugowania
+            if (toggleDebugBtn) {
+                toggleDebugBtn.addEventListener('click', function () {
+                    // Przełącz tryb debugowania
+                    player.setDebugMode(!player.options.debug);
+                    updateStatus(`Tryb debugowania ${player.options.debug ? 'włączony' : 'wyłączony'}`);
+
+                    // Zaktualizuj tekst przycisku
+                    toggleDebugBtn.textContent = player.options.debug
+                        ? "Wyłącz tryb debugowania"
+                        : "Włącz tryb debugowania";
+                });
+            }
+
+            // Obsługa przycisków dodawania utworów
+            if (addTrackBtns) {
+                addTrackBtns.forEach(function (btn) {
+                    btn.addEventListener('click', function () {
+                        const url = this.getAttribute('data-url');
+                        const title = this.getAttribute('data-title');
+                        const artist = this.getAttribute('data-artist');
+
+                        if (url) {
+                            const trackData = {
+                                src: url,
+                                title: title || 'Unknown Title',
+                                artist: artist || 'Unknown Artist'
+                            };
+
+                            const success = player.addToPlaylist(trackData, player.getPlaylist().length === 0);
+                            if (success) {
+                                updateStatus(`Dodano "${title}" do playlisty`);
+                            } else {
+                                updateStatus("Nie udało się dodać utworu do playlisty");
+                            }
+                        }
+                    });
+                });
+            }
+
+            // Nasłuchuj zdarzenia zakończenia utworu
+            document.getElementById('audio-player-container').addEventListener('playlistUpdated', function (event) {
+                const currentTrack = player.getCurrentTrack();
+                if (currentTrack) {
+                    updateStatus(`Aktualnie odtwarzany: ${currentTrack.title} - ${currentTrack.artist}`);
+                }
+            });
+
+            // Inicjalizuj status
+            updateStatus("Odtwarzacz gotowy. Dodaj utwory do playlisty, aby rozpocząć.");
+        });
+    </script>
+
+
+    <div class="section">
+        <h3>Zarządzanie playlistą</h3>
+
+        <div class="demo-controls">
+            <button id="toggle-playlist-btn">Pokaż/Ukryj playlistę</button>
+            <button id="toggle-loop-btn" class="secondary-button">Włącz/Wyłącz zapętlenie</button>
+            <button id="toggle-shuffle-btn" class="secondary-button">Włącz/Wyłącz tasowanie</button>
+        </div>
+
+        <h4>Przykładowe utwory</h4>
+        <div class="sample-tracks">
+            <div class="track-item">
+                <div class="track-title">Utwór testowy 1</div>
+                <button class="add-track-btn"
+                        data-url="https://cdn.plyr.io/static/demo/Kishi_Bashi_-_It_All_Began_With_a_Burst.mp3"
+                        data-title="It All Began With a Burst" data-artist="Kishi Bashi">Dodaj do playlisty
+                </button>
+            </div>
+            <div class="track-item">
+                <div class="track-title">Utwór testowy 2</div>
+                <button class="add-track-btn"
+                        data-url="https://ia800905.us.archive.org/19/items/FREE_background_music_dhalius/MellowDee.mp3"
+                        data-title="Mellow Dee" data-artist="Dhalius">Dodaj do playlisty
+                </button>
+            </div>
+            <div class="track-item">
+                <div class="track-title">Utwór testowy 3</div>
+                <button class="add-track-btn"
+                        data-url="https://ia802609.us.archive.org/13/items/quraninindonesia/001AlFatihah.mp3"
+                        data-title="Al Fatihah" data-artist="Quran Recitation">Dodaj do playlisty
+                </button>
+            </div>
+            <div class="track-item">
+                <div class="track-title">Utwór testowy 4</div>
+                <button class="add-track-btn"
+                        data-url="https://ia800608.us.archive.org/17/items/music_for_programming/music_for_programming_1-datassette.mp3"
+                        data-title="Music For Programming" data-artist="Datassette">Dodaj do playlisty
+                </button>
+            </div>
+            <div class="track-item">
+                <div class="track-title">Utwór testowy 5</div>
+                <button class="add-track-btn"
+                        data-url="https://ia800504.us.archive.org/15/items/TenMinJazzPiano/Ten%20Minute%20Jazz%20Piano.mp3"
+                        data-title="Ten Minute Jazz Piano" data-artist="Unknown Artist">Dodaj do playlisty
+                </button>
+            </div>
+        </div>
+
+        <div class="demo-controls" style="margin-top: 20px;">
+            <button id="save-playlist-btn">Zapisz playlistę</button>
+            <button id="load-playlist-btn">Wczytaj playlistę</button>
+            <button id="clear-playlist-btn" class="secondary-button">Wyczyść playlistę</button>
+        </div>
+    </div>
+
+    <div class="section">
+        <h3>Obsługiwane funkcje playlisty</h3>
+        <ul class="feature-list">
+            <li>Dodawanie i usuwanie utworów z playlisty</li>
+            <li>Zmiana kolejności utworów przez przeciąganie</li>
+            <li>Odtwarzanie następnego/poprzedniego utworu</li>
+            <li>Zapętlanie całej playlisty</li>
+            <li>Losowe odtwarzanie (shuffle)</li>
+            <li>Zapisywanie i wczytywanie playlist</li>
+            <li>Automatyczne przechodzenie do następnego utworu po zakończeniu</li>
+        </ul>
+
+        <div class="debug-card">
+            <div class="debug-title">Debug Mode</div>
+            <p>Aby włączyć tryb debugowania, dodaj opcję <code>debug: true</code> do konfiguracji odtwarzacza.</p>
+            <button id="toggle-debug-btn" class="secondary-button">Włącz tryb debugowania</button>
+        </div>
+    </div>
+
+
+</body>
+</html>>
