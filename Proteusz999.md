@@ -1,7 +1,8 @@
 
 # PROTEUSZ 999
-
-**Janusz A. Zajdel & Tom Sapletta**,  *Frankfurt, 2025*
+**Janusz A. Zajdel & Tom Sapletta**
+---        
+*Frankfurt, 2025*
 
 
 ## CZĘŚĆ I: ZMIERZCH STREF
@@ -1555,9 +1556,8 @@ A gdzieś w głębi symulacji, pięcioro bohaterów rozpoczynało swoją nową p
 Nowa era właśnie się zaczynała.
 
 # PROTEUSZ 999
----
 **Janusz A. Zajdel & Tom Sapletta**
-
+---
 *Frankfurt, 2025*
 
 
