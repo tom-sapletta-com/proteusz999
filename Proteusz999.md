@@ -1,9 +1,23 @@
 
 # PROTEUSZ 999
-
 **Janusz A. Zajdel & Tom Sapletta**
-
 *Frankfurt, 2025*
+
+"Proteusz" to termin, który ma kilka znaczeń:
+
+W mitologii greckiej, Proteusz był bóstwem morskim, synem Posejdona, który 
+posiadał zdolność zmieniania swojej postaci (mógł przemieniać się w różne stworzenia lub żywioły). 
+Stąd wywodzi się określenie "proteuszowy" oznaczające kogoś lub coś zmiennego, nieuchwytnego.
+
+W biologii Proteus (proteusz) to rodzaj bakterii, a także 
+nazwa rodzajowa płaza ogoniastego - odmieńca jaskiniowego (Proteus anguinus), 
+zwanego też "ludzką rybą", który żyje w jaskiniach Europy Środkowej.
+
+W sensie przenośnym, określenie "proteuszowy" odnosi się do czegoś bardzo zmiennego, 
+niestałego, przybierającego różne formy - podobnie jak mitologiczny Proteusz.
+
+Jest to również tytuł kilku dzieł literackich i artystycznych.
+
 
 ## CZĘŚĆ I: ZMIERZCH STREF
 
@@ -1559,20 +1573,6 @@ Nowa era właśnie się zaczynała.
 **Janusz A. Zajdel & Tom Sapletta**
 *Frankfurt, 2025*
 
-"Proteusz" to termin, który ma kilka znaczeń:
-
-W mitologii greckiej, Proteusz był bóstwem morskim, synem Posejdona, który 
-posiadał zdolność zmieniania swojej postaci (mógł przemieniać się w różne stworzenia lub żywioły). 
-Stąd wywodzi się określenie "proteuszowy" oznaczające kogoś lub coś zmiennego, nieuchwytnego.
-
-W biologii Proteus (proteusz) to rodzaj bakterii, a także 
-nazwa rodzajowa płaza ogoniastego - odmieńca jaskiniowego (Proteus anguinus), 
-zwanego też "ludzką rybą", który żyje w jaskiniach Europy Środkowej.
-
-W sensie przenośnym, określenie "proteuszowy" odnosi się do czegoś bardzo zmiennego, 
-niestałego, przybierającego różne formy - podobnie jak mitologiczny Proteusz.
-
-Jest to również tytuł kilku dzieł literackich i artystycznych.
 
 ## CZĘŚĆ II: ŚWIT ŚWIADOMOŚCI
 
