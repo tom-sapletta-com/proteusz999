@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.1.25] - 2025-04-26
+
+### Added
+- Changes in code/evolution.html
+- Changes in code/index.svg
+- Changes in code/prot.html
+- Changes in code/proteusz-dynamic-evolution.html
+
 ## [0.1.24] - 2025-04-26
 
 ## [0.1.23] - 2025-04-26

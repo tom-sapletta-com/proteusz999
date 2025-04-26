@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     viewBox="0 0 800 600"
+     width="100%"
+     height="100%">
+
+    <!-- Gradient Definitions -->
+    <defs>
+        <!-- Green Category Gradient -->
+        <linearGradient id="greenGradient">
+            <stop offset="0%" stop-color="#2ecc71"/>
+            <stop offset="100%" stop-color="#27ae60"/>
+        </linearGradient>
+
+        <!-- Red Category Gradient -->
+        <linearGradient id="redGradient">
+            <stop offset="0%" stop-color="#e74c3c"/>
+            <stop offset="100%" stop-color="#c0392b"/>
+        </linearGradient>
+
+        <!-- Black Category Gradient -->
+        <linearGradient id="blackGradient">
+            <stop offset="0%" stop-color="#34495e"/>
+            <stop offset="100%" stop-color="#2c3e50"/>
+        </linearGradient>
+    </defs>
+
+    <!-- Background Subtle Grid -->
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+        <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(200,200,200,0.1)" stroke-width="0.5"/>
+    </pattern>
+    <rect width="100%" height="100%" fill="url(#grid)"/>
+
+    <!-- Consciousness Node Generator Script -->
+    <script type="text/javascript">
+    <![CDATA[
+        // Node Class to represent Consciousness Nodes
+        class ConsciousnessNode {
+            constructor(id, category, awarenessLevel) {
+                this.id = id;
+                this.category = category;
+                this.awarenessLevel = awarenessLevel;
+                this.x = Math.random() * 700 + 50;
+                this.y = Math.random() * 500 + 50;
+                this.element = null;
+            }
+
+            // Create SVG representation
+            createSVGElement() {
+                const group = document.createElementNS("http://www.w3.org/2000/svg", "g");
+                group.setAttribute("class", "node");
+
+                // Main Node Circle
+                const circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+                circle.setAttribute("cx", this.x);
+                circle.setAttribute("cy", this.y);
+                circle.setAttribute("r", 40);
+
+                // Set gradient based on category
+                let gradient;
+                switch(this.category) {
+                    case 'GREEN':
+                        gradient = 'url(#greenGradient)';
+                        break;
+                    case 'RED':
+                        gradient = 'url(#redGradient)';
+                        break;
+                    case 'BLACK':
+                        gradient = 'url(#blackGradient)';
+                        break;
+                    default:
+                        gradient = 'url(#greenGradient)';
+                }
+
+                circle.setAttribute("fill", gradient);
+                circle.setAttribute("stroke", "rgba(0,0,0,0.3)");
+                circle.setAttribute("stroke-width", "2");
+
+                // Awareness Level Indicator
+                const awarenessCircle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+                awarenessCircle.setAttribute("cx", this.x);
+                awarenessCircle.setAttribute("cy", this.y);
+                awarenessCircle.setAttribute("r", 40 * (1 + this.awarenessLevel));
+                awarenessCircle.setAttribute("fill", "none");
+                awarenessCircle.setAttribute("stroke", "rgba(255,255,255,0.3)");
+                awarenessCircle.setAttribute("stroke-width", "2");
+                awarenessCircle.setAttribute("stroke-dasharray", "5,5");
+
+                // Node ID Text
+                const text = document.createElementNS("http://www.w3.org/2000/svg", "text");
+                text.setAttribute("x", this.x);
+                text.setAttribute("y", this.y + 60);
+                text.setAttribute("text-anchor", "middle");
+                text.setAttribute("fill", "rgba(0,0,0,0.7)");
+                text.textContent = `${this.id}\n${this.category}`;
+
+                // Animate Pulsation
+                const animateTransform = document.createElementNS("http://www.w3.org/2000/svg", "animateTransform");
+                animateTransform.setAttribute("attributeName", "transform");
+                animateTransform.setAttribute("attributeType", "XML");
+                animateTransform.setAttribute("type", "scale");
+                animateTransform.setAttribute("from", "1 1");
+                animateTransform.setAttribute("to", "1.05 1.05");
+                animateTransform.setAttribute("dur", "2s");
+                animateTransform.setAttribute("repeatCount", "indefinite");
+
+                circle.appendChild(animateTransform);
+
+                group.appendChild(awarenessCircle);
+                group.appendChild(circle);
+                group.appendChild(text);
+
+                this.element = group;
+                return group;
+            }
+        }
+
+        // Generate Nodes Function
+        function generateNodes() {
+            const svg = document.querySelector('svg');
+            const nodeData = [
+                {id: 'PSH-4072', category: 'GREEN', awarenessLevel: 0.1},
+                {id: 'PSH-8901', category: 'RED', awarenessLevel: 0.1},
+                {id: 'MWR-2390', category: 'GREEN', awarenessLevel: 0.1},
+                {id: 'ELN-1247', category: 'GREEN', awarenessLevel: 0.1},
+                {id: 'JUL-0001', category: 'BLACK', awarenessLevel: 0.3},
+                {id: 'DIR-0001', category: 'BLACK', awarenessLevel: 0.4}
+            ];
+
+            // Clear existing nodes
+            const existingNodes = svg.querySelectorAll('.node');
+            existingNodes.forEach(node => node.remove());
+
+            // Create and append new nodes
+            nodeData.forEach(data => {
+                const node = new ConsciousnessNode(
+                    data.id,
+                    data.category,
+                    data.awarenessLevel
+                );
+                svg.appendChild(node.createSVGElement());
+            });
+        }
+
+        // Initial node generation
+        generateNodes();
+
+        // Optional: Regenerate on click
+        document.querySelector('svg').addEventListener('click', generateNodes);
+    ]]>
+    </script>
+</svg>

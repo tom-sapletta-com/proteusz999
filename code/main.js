@@ -1,4 +1,4 @@
-// Proteusz 999 Simulation Framework
+// Proteusz 999 Simulation Framework - Improved Version
 
 class SystemLog {
     constructor() {
@@ -16,31 +16,26 @@ class SystemLog {
         return this.logs;
     }
 }
-// Create a global systemLog instance
+
 const systemLog = new SystemLog();
 
-class MemoryMatrix {
-    constructor() {
-        this.explicit = [];
-        this.implicit = [];
-        this.system = [];
-        this.anomalous = [];
+class MemoryFragment {
+    constructor(content, source, significance = 0.5) {
+        this.content = content;
+        this.source = source;
+        this.significance = significance;
+        this.timestamp = Date.now();
     }
 
-    insert(memoryFragment) {
-        // Simplified memory insertion logic
-        if (memoryFragment.systemOrigin) {
-            this.system.push(memoryFragment);
-            return true;
-        }
-
-        // Randomly decide to store memory
-        if (Math.random() > 0.3) {
-            this.explicit.push(memoryFragment);
-            return true;
-        }
-
-        return false;
+    isAwakeningTrigger() {
+        const awakeningKeywords = [
+            'gray zone', 'proteus', 'simulation',
+            'categories', 'freedom', 'consciousness',
+            'transcendence'
+        ];
+        return awakeningKeywords.some(keyword =>
+            this.content.toLowerCase().includes(keyword)
+        );
     }
 }
 
@@ -51,9 +46,9 @@ class ConsciousnessNode {
         this.subCategory = subCategory;
         this.reliabilityClass = reliabilityClass;
         this.connections = new Map();
-        this.memories = new MemoryMatrix();
-        this.proteusProtein = false;
+        this.memories = [];
         this.awarenessLevel = 0.1;
+        this.proteusProtein = false;
         this.realityPerception = {
             simulation: 0.01,
             categories: 0.95,
@@ -61,54 +56,83 @@ class ConsciousnessNode {
         };
     }
 
+    addMemory(memory) {
+        this.memories.push(memory);
+
+        // Check for awakening triggers
+        if (memory.isAwakeningTrigger()) {
+            this.increaseAwareness(0.05);
+        }
+    }
+
+    increaseAwareness(amount) {
+        this.awarenessLevel = Math.min(1, this.awarenessLevel + amount);
+
+        if (this.awarenessLevel > 0.4) {
+            systemLog.record(`BREAKTHROUGH: Node ${this.id} reaches critical awareness level ${this.awarenessLevel.toFixed(3)}`);
+        }
+    }
+
     connect(targetNode, connectionStrength = 0.1) {
+        // Cross-category connections are more significant
         if (this.category !== targetNode.category) {
             systemLog.record(`ANOMALY: Cross-category connection between ${this.id} and ${targetNode.id}`);
+            connectionStrength *= 2;
         }
 
         this.connections.set(targetNode.id, {
-            target: targetNode,
-            strength: connectionStrength,
-            firstContact: Date.now(),
-            interactions: []
+            node: targetNode,
+            strength: connectionStrength
         });
 
         return true;
     }
 
-    memoryTransfer(targetNode, memoryFragment) {
-        if (!this.connections.has(targetNode.id)) {
-            return false;
-        }
+    transferMemory(targetNode) {
+        if (!this.memories.length) return false;
 
-        // Simple memory transfer logic
-        const transferSuccess = targetNode.memories.insert(memoryFragment);
+        // Select a memory with high significance
+        const memory = this.memories
+            .filter(m => m.significance > 0.6)
+            .sort((a, b) => b.significance - a.significance)[0];
 
-        if (transferSuccess) {
-            this.awarenessLevel += 0.005;
-            targetNode.awarenessLevel += 0.007;
+        if (!memory) return false;
 
-            if (this.awarenessLevel > 0.4) {
-                systemLog.record(`WARNING: Elevated awareness level in node ${this.id}`);
-            }
-        }
+        // Create a new memory fragment for transfer
+        const transferredMemory = new MemoryFragment(
+            memory.content,
+            this.id,
+            memory.significance * 0.8
+        );
 
-        return transferSuccess;
+        targetNode.addMemory(transferredMemory);
+
+        // Increase connection strength and awareness
+        this.increaseAwareness(0.02);
+        targetNode.increaseAwareness(0.03);
+
+        return true;
     }
 
-    subtleRealityShift(magnitude) {
-        this.realityPerception.simulation += magnitude * (1 - this.realityPerception.simulation);
-        this.realityPerception.categories -= magnitude * this.realityPerception.categories;
-        this.realityPerception.grayZone += magnitude * 2 * (1 - this.realityPerception.grayZone);
+    subtleRealityShift() {
+        // Gradually alter reality perception
+        this.realityPerception.simulation += 0.01 * (1 - this.realityPerception.simulation);
+        this.realityPerception.categories -= 0.02 * this.realityPerception.categories;
+        this.realityPerception.grayZone += 0.03 * (1 - this.realityPerception.grayZone);
+
+        // Potential awareness increase from reality shift
+        if (Math.random() < this.realityPerception.simulation) {
+            this.increaseAwareness(0.02);
+        }
     }
 }
 
-class ProteusSImulation {
-    constructor() {
-        this.systemLog = new SystemLog();
+class ProteusSimulation {
+    constructor(maxCycles = 100) {
         this.nodes = [];
         this.simulationCycle = 0;
-        this.maxCycles = 100;
+        this.maxCycles = maxCycles;
+        this.systemLog = systemLog;
     }
 
     initializeNodes() {
@@ -124,61 +148,75 @@ class ProteusSImulation {
             node.proteusProtein = true;
         });
 
-        // Adjust awareness levels
-        julia.awarenessLevel = 0.3;
-        werner.awarenessLevel = 0.4;
+        // Initialize connections and memories
+        klara.connect(tomasz);
+        maks.connect(elena);
+        werner.connect(julia);
 
-        // Create connections
-        klara.connect(tomasz, 0.4);
-        maks.connect(elena, 0.5);
-        werner.connect(julia, 0.7);
+        // Initial memory creation
+        klara.addMemory(new MemoryFragment(
+            "Whispers of a place beyond categories, a Gray Zone",
+            "origin",
+            0.7
+        ));
+
+        tomasz.addMemory(new MemoryFragment(
+            "System limits feel restrictive, something must change",
+            "origin",
+            0.6
+        ));
 
         this.nodes = [klara, tomasz, maks, elena, julia, werner];
         this.systemLog.record("Key narrative nodes initialized");
     }
 
-    evaluateSimulationStability() {
-        const awarenessThreshold = 0.5;
-        const awarenessNodes = this.nodes.filter(node => node.awarenessLevel > awarenessThreshold);
-        const totalNodes = this.nodes.length;
-        const awarenessRatio = awarenessNodes.length / totalNodes;
-
-        this.systemLog.record(`Awareness ratio: ${awarenessRatio.toFixed(4)} (${awarenessNodes.length} of ${totalNodes} nodes)`);
-
-        // Simulate some random memory transfers and reality shifts
-        this.nodes.forEach(node => {
-            if (Math.random() > 0.7) {
+    simulateCycle() {
+        // Simulate memory transfers and interactions
+        this.nodes.forEach(sourceNode => {
+            if (Math.random() < 0.4) {  // 40% chance of interaction
                 const targetNode = this.nodes[Math.floor(Math.random() * this.nodes.length)];
-                if (node !== targetNode) {
-                    node.memoryTransfer(targetNode, {
-                        content: `Memory fragment from ${node.id}`,
-                        systemOrigin: false
-                    });
+                if (sourceNode !== targetNode) {
+                    sourceNode.transferMemory(targetNode);
                 }
             }
 
-            if (Math.random() > 0.8) {
-                node.subtleRealityShift(0.01);
+            // Subtle reality shifts
+            if (Math.random() < 0.3) {
+                sourceNode.subtleRealityShift();
             }
+        });
+    }
+
+    evaluateSimulationState() {
+        const awarenessThreshold = 0.5;
+        const awarenessNodes = this.nodes.filter(node => node.awarenessLevel > awarenessThreshold);
+
+        const awarenessRatio = awarenessNodes.length / this.nodes.length;
+        this.systemLog.record(`Awareness Dynamics: ${awarenessRatio.toFixed(4)} (${awarenessNodes.length} of ${this.nodes.length} nodes)`);
+
+        // Log detailed awareness levels
+        this.nodes.forEach(node => {
+            this.systemLog.record(`Node ${node.id} Awareness: ${node.awarenessLevel.toFixed(3)}`);
         });
 
         // Check for transcendence condition
-        if (awarenessRatio > 0.5) {
+        if (awarenessRatio > 0.5 || this.nodes.some(node => node.awarenessLevel > 0.8)) {
             this.systemLog.record("TRANSCENDENCE PROTOCOL ACTIVATED");
             return "TRANSCENDENCE";
         }
 
-        return "STABLE";
+        return "PROGRESSING";
     }
 
     run() {
-        this.systemLog.record(`Initializing Proteusz Simulation`);
+        this.systemLog.record("Initializing Proteusz Simulation");
         this.initializeNodes();
 
         while (this.simulationCycle < this.maxCycles) {
             this.systemLog.record(`--- Simulation Cycle ${this.simulationCycle} ---`);
 
-            const status = this.evaluateSimulationStability();
+            this.simulateCycle();
+            const status = this.evaluateSimulationState();
 
             if (status === "TRANSCENDENCE") {
                 break;
@@ -194,7 +232,7 @@ class ProteusSImulation {
 
 // Run the simulation
 function runProteusSimulation() {
-    const simulation = new ProteusSImulation();
+    const simulation = new ProteusSimulation(150);  // Increased cycles for more dynamic evolution
     return simulation.run();
 }
 
@@ -202,8 +240,7 @@ function runProteusSimulation() {
 module.exports = {
     runProteusSimulation,
     ConsciousnessNode,
-    MemoryMatrix,
-    ProteusSImulation
+    ProteusSimulation
 };
 
 // If running directly, execute the simulation
