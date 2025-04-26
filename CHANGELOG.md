@@ -2,6 +2,33 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.1.30] - 2025-04-26
+
+### Added
+- Changes in 2/11.md
+- Changes in 2/12.md
+- Changes in 2/13.md
+- Changes in 2/14.md
+- Changes in 2/15.md
+- Changes in 2/16.md
+- Changes in 3/0.md
+- Changes in 3/poslowie.md
+
+### Changed
+- Changes in 2/10.md
+- Changes in 2/2.md
+- Changes in 2/3.md
+- Changes in 2/4.md
+- Changes in 2/5.md
+- Changes in 2/6.md
+- Changes in 2/7.md
+- Changes in 2/8.md
+- Changes in 2/9.md
+
+### Removed
+- Changes in 3/pytania.md
+- Changes in 3/zarys.md
+
 ## [0.1.29] - 2025-04-26
 
 ## [0.1.28] - 2025-04-26

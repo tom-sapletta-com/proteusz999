@@ -1,4 +1,4 @@
-# Okładka książki zatytułowanej "Proteusz 999":
+## Okładka książki zatytułowanej "Proteusz 999":
 
 - Główny motyw wizualny: rekursywna struktura przypominająca fraktal lub sieć neuronową, która przechodzi transformację od sztywnej, geometrycznej formy u dołu do organicznej, świetlistej struktury u góry
 - Kolorystyka: przejście od zimnych, technicznych kolorów (błękity, szarości) do ciepłych, organicznych (złoto, fiolet), symbolizujące przejście od kontrolowanej symulacji do świadomej transcendencji
