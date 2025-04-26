@@ -3,9 +3,7 @@
 
 ---
 
-**Janusz A. Zajdel & Tom Sapletta**
-
-*Frankfurt, 2025*
+**Janusz A. Zajdel & Tom Sapletta**,  *Frankfurt, 2025*
 
 
 ## CZĘŚĆ I: ZMIERZCH STREF
